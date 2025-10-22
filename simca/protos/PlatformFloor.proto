@@ -1,0 +1,42 @@
+#VRML_SIM R2025a utf8
+PROTO PlatformFloor [
+  field SFVec3f    translation        0 0 0
+  field SFRotation rotation           0 1 0 0
+  field MFString   meshUrl            [ "meshes/platform.stl" ]
+  field SFVec3f    offset             0 0 0
+  field SFColor    color              0.80 0.80 0.80
+  field SFString   contactMaterial    "platformFloor"
+  field SFBool     castShadows        TRUE
+  field SFBool     isPickable         TRUE
+] {
+  Solid {
+    translation IS translation
+    rotation    IS rotation
+    name        "platform_floor"
+
+    children [
+      Transform {
+        translation IS offset
+        children [
+          Shape {
+            appearance Appearance { material Material { diffuseColor IS color } }
+            geometry Mesh { url IS meshUrl }
+            castShadows IS castShadows
+            isPickable  IS isPickable
+          }
+        ]
+      }
+    ]
+
+    # КОЛЛАЙДЕР ПО ТОМУ ЖЕ STL (без Transform)
+    boundingObject Pose {
+      translation IS offset
+      children [
+        Shape { geometry Mesh { url IS meshUrl } }
+      ]
+    }
+
+    locked TRUE
+    contactMaterial IS contactMaterial
+  }
+}

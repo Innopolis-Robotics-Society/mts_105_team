@@ -1,0 +1,8 @@
+=== Repository URL: https://git.robot.cybertech.ai/xakaton-codenrockcom-21/truetecharena1758047997-team-13328/zadacha-3-ne-upadi-v-propast-280 ===
+Commit: 527c693027a4e474672691641738e5c4496044ff
+
+2025-10-20 08:40:53 [INFO] [Checker/INFO] Detected programming language: python
+2025-10-20 08:40:53 [INFO] [Checker/INFO] Starting docker-compose. Wait...
+2025-10-20 08:40:53 [INFO] [Runner/BUILD] Building image
+2025-10-20 08:41:00 [INFO] [Runner/BUILD] Step 1/14 : FROM osrf/ros:humble-desktop-full
+2025-10-20 08:41:01 [ERROR] [Runner/BUILD ERROR] unknown: failed to resolve reference "docker.io/osrf/ros:humble-desktop-full": failed to authorize: failed to fetch anonymous token: unexpected status from GET request to https://auth.docker.io/token?scope=repository%3Aosrf%2Fros%3Apull&service=registry.docker.io: 503 Service Unavailable
