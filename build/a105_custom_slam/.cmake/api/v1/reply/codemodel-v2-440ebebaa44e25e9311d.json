@@ -1,0 +1,88 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-2cbc83d01dc31f769670.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.12"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3
+					]
+				}
+			],
+			"name" : "",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "a105_custom_slam",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "a105_custom_slam_uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-a105_custom_slam_uninstall-f122c792a21ec24b30c6.json",
+					"name" : "a105_custom_slam_uninstall",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ekf_navigator::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ekf_navigator-eb38f206b1ea56818055.json",
+					"name" : "ekf_navigator",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "segment_grid_mapper::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-segment_grid_mapper-36e93b0dcf542fbd707a.json",
+					"name" : "segment_grid_mapper",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-uninstall-f6bfd856f95d326567eb.json",
+					"name" : "uninstall",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/mobile/ros2_ws/src/build/a105_custom_slam",
+		"source" : "/home/mobile/ros2_ws/src/a105_custom_slam"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 3
+	}
+}

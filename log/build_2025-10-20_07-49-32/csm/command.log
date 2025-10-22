@@ -1,0 +1,4 @@
+Invoking command in '/home/mobile/ros2_ws/src/build/csm': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/mobile/ros2_ws/src/build/csm -- -j16 -l16
+Invoked command in '/home/mobile/ros2_ws/src/build/csm' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/mobile/ros2_ws/src/build/csm -- -j16 -l16
+Invoking command in '/home/mobile/ros2_ws/src/build/csm': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/mobile/ros2_ws/src/build/csm
+Invoked command in '/home/mobile/ros2_ws/src/build/csm' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/mobile/ros2_ws/src/build/csm

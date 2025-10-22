@@ -1,0 +1,8 @@
+source;share/segment_grid_localizer/hook/cmake_prefix_path.ps1
+source;share/segment_grid_localizer/hook/cmake_prefix_path.dsv
+source;share/segment_grid_localizer/hook/cmake_prefix_path.sh
+source;share/segment_grid_localizer/local_setup.bash
+source;share/segment_grid_localizer/local_setup.dsv
+source;share/segment_grid_localizer/local_setup.ps1
+source;share/segment_grid_localizer/local_setup.sh
+source;share/segment_grid_localizer/local_setup.zsh

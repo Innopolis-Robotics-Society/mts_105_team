@@ -1,0 +1,2 @@
+source;share/segment_grid_localizer/environment/ament_prefix_path.sh
+source;share/segment_grid_localizer/environment/path.sh

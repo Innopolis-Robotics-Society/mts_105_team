@@ -1,0 +1,79 @@
+ekf_odom:
+  ros__parameters:
+    frequency: 60.0
+    two_d_mode: true
+    publish_tf: true
+
+    odom_frame: odom
+    base_link_frame: base_link
+    world_frame: odom
+
+    odom0: /wheel/odom
+    #             [x,     y,     z,      roll,  pitch, yaw,    vx,   vy,    vz,     vroll, vpitch, vyaw,  ax,    ay,    az]
+    odom0_config: [true, true, false,  false, false, false,  true, true, false,  false, false,  true,  false, false, false]
+    odom0_differential: false
+    odom0_relative: false
+    odom0_queue_size: 5
+    odom0_nodelay: true
+
+    # lidar
+    odom1: /lidar/odom
+    odom1_config: [false, false, false, # x, y, z,
+                  false, false, true, # roll,  pitch, yaw
+                  false, false, false, # vx,   vy,    vz
+                  false, false,  true, #vroll, vpitch, vyaw
+                  false, false, false] # ax,    ay,    az
+    odom1_differential: false
+    odom1_relative: false
+    odom1_queue_size: 5
+    odom1_nodelay: true
+
+    # IMU raw → используем только yaw-rate (wz)
+    imu0: /imu/data_raw
+    #             [x,     y,     z,      roll,  pitch, yaw,    vx,    vy,    vz,     vroll, vpitch, vyaw,  ax,    ay,    az]
+    imu0_config:  [false, false, false,  false, false, false,  false, false, false,  false, false,  true,  false, false, false]
+    imu0_differential: false
+    imu0_relative: false
+    imu0_queue_size: 20
+    imu0_nodelay: true
+    imu0_remove_gravitational_acceleration: false
+
+    # ===== 15x15 process_noise_covariance (row-major) =====
+    process_noise_covariance: [
+    # x     y     z     roll  pitch yaw   vx     vy     vz    vroll vpitch vyaw ax    ay    az
+      0.05, 0.0 , 0.0 , 0.0 , 0.0 , 0.0 , 0.0  , 0.0  , 0.0 , 0.0 , 0.0 , 0.0 , 0.0 , 0.0 , 0.0,
+      0.0 , 0.05, 0.0 , 0.0 , 0.0 , 0.0 , 0.0  , 0.0  , 0.0 , 0.0 , 0.0 , 0.0 , 0.0 , 0.0 , 0.0,
+      0.0 , 0.0 , 0.06, 0.0 , 0.0 , 0.0 , 0.0  , 0.0  , 0.0 , 0.0 , 0.0 , 0.0 , 0.0 , 0.0 , 0.0,
+      0.0 , 0.0 , 0.0 , 0.03, 0.0 , 0.0 , 0.0  , 0.0  , 0.0 , 0.0 , 0.0 , 0.0 , 0.0 , 0.0 , 0.0,
+      0.0 , 0.0 , 0.0 , 0.0 , 0.03, 0.0 , 0.0  , 0.0  , 0.0 , 0.0 , 0.0 , 0.0 , 0.0 , 0.0 , 0.0,
+      0.0 , 0.0 , 0.0 , 0.0 , 0.0 , 0.06, 0.0  , 0.0  , 0.0 , 0.0 , 0.0 , 0.0 , 0.0 , 0.0 , 0.0,
+      0.0 , 0.0 , 0.0 , 0.0 , 0.0 , 0.0 , 0.025, 0.0  , 0.0 , 0.0 , 0.0 , 0.0 , 0.0 , 0.0 , 0.0,
+      0.0 , 0.0 , 0.0 , 0.0 , 0.0 , 0.0 , 0.0  , 0.025, 0.0 , 0.0 , 0.0 , 0.0 , 0.0 , 0.0 , 0.0,
+      0.0 , 0.0 , 0.0 , 0.0 , 0.0 , 0.0 , 0.0  , 0.0  , 0.04, 0.0 , 0.0 , 0.0 , 0.0 , 0.0 , 0.0,
+      0.0 , 0.0 , 0.0 , 0.0 , 0.0 , 0.0 , 0.0  , 0.0  , 0.0 , 0.01, 0.0 , 0.0 , 0.0 , 0.0 , 0.0,
+      0.0 , 0.0 , 0.0 , 0.0 , 0.0 , 0.0 , 0.0  , 0.0  , 0.0 , 0.0 , 0.01, 0.0 , 0.0 , 0.0 , 0.0,
+      0.0 , 0.0 , 0.0 , 0.0 , 0.0 , 0.0 , 0.0  , 0.0  , 0.0 , 0.0 , 0.0 , 0.02, 0.0 , 0.0 , 0.0,
+      0.0 , 0.0 , 0.0 , 0.0 , 0.0 , 0.0 , 0.0  , 0.0  , 0.0 , 0.0 , 0.0 , 0.0 , 0.01, 0.0 , 0.0,
+      0.0 , 0.0 , 0.0 , 0.0 , 0.0 , 0.0 , 0.0  , 0.0  , 0.0 , 0.0 , 0.0 , 0.0 , 0.0 , 0.01, 0.0,
+      0.0 , 0.0 , 0.0 , 0.0 , 0.0 , 0.0 , 0.0  , 0.0  , 0.0 , 0.0 , 0.0 , 0.0 , 0.0 , 0.0 , 0.015
+    ]
+
+    # ===== 15x15 initial_estimate_covariance (row-major) =====
+    initial_estimate_covariance: [
+    # x     y     z     roll  pitch yaw   vx     vy     vz    vroll vpitch vyaw ax    ay    az
+      0.10, 0.0 , 0.0 , 0.0 , 0.0 , 0.0 , 0.0 , 0.0 , 0.0 , 0.0 , 0.0 , 0.0 , 0.0 , 0.0 , 0.0,
+      0.0 , 0.10, 0.0 , 0.0 , 0.0 , 0.0 , 0.0 , 0.0 , 0.0 , 0.0 , 0.0 , 0.0 , 0.0 , 0.0 , 0.0,
+      0.0 , 0.0 , 1.00, 0.0 , 0.0 , 0.0 , 0.0 , 0.0 , 0.0 , 0.0 , 0.0 , 0.0 , 0.0 , 0.0 , 0.0,
+      0.0 , 0.0 , 0.0 , 1.00, 0.0 , 0.0 , 0.0 , 0.0 , 0.0 , 0.0 , 0.0 , 0.0 , 0.0 , 0.0 , 0.0,
+      0.0 , 0.0 , 0.0 , 0.0 , 1.00, 0.0 , 0.0 , 0.0 , 0.0 , 0.0 , 0.0 , 0.0 , 0.0 , 0.0 , 0.0,
+      0.0 , 0.0 , 0.0 , 0.0 , 0.0 , 0.10, 0.0 , 0.0 , 0.0 , 0.0 , 0.0 , 0.0 , 0.0 , 0.0 , 0.0,
+      0.0 , 0.0 , 0.0 , 0.0 , 0.0 , 0.0 , 0.50, 0.0 , 0.0 , 0.0 , 0.0 , 0.0 , 0.0 , 0.0 , 0.0,
+      0.0 , 0.0 , 0.0 , 0.0 , 0.0 , 0.0 , 0.0 , 0.50, 0.0 , 0.0 , 0.0 , 0.0 , 0.0 , 0.0 , 0.0,
+      0.0 , 0.0 , 0.0 , 0.0 , 0.0 , 0.0 , 0.0 , 0.0 , 1.00, 0.0 , 0.0 , 0.0 , 0.0 , 0.0 , 0.0,
+      0.0 , 0.0 , 0.0 , 0.0 , 0.0 , 0.0 , 0.0 , 0.0 , 0.0 , 1.00, 0.0 , 0.0 , 0.0 , 0.0 , 0.0,
+      0.0 , 0.0 , 0.0 , 0.0 , 0.0 , 0.0 , 0.0 , 0.0 , 0.0 , 0.0 , 1.00, 0.0 , 0.0 , 0.0 , 0.0,
+      0.0 , 0.0 , 0.0 , 0.0 , 0.0 , 0.0 , 0.0 , 0.0 , 0.0 , 0.0 , 0.0 , 0.20, 0.0 , 0.0 , 0.0,
+      0.0 , 0.0 , 0.0 , 0.0 , 0.0 , 0.0 , 0.0 , 0.0 , 0.0 , 0.0 , 0.0 , 0.0 , 1.00, 0.0 , 0.0,
+      0.0 , 0.0 , 0.0 , 0.0 , 0.0 , 0.0 , 0.0 , 0.0 , 0.0 , 0.0 , 0.0 , 0.0 , 0.0 , 1.00, 0.0,
+      0.0 , 0.0 , 0.0 , 0.0 , 0.0 , 0.0 , 0.0 , 0.0 , 0.0 , 0.0 , 0.0 , 0.0 , 0.0 , 0.0 , 1.00
+    ]

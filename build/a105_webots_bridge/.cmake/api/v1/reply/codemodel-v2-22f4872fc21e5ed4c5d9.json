@@ -1,0 +1,88 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-8acd067065d1273f5331.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.12"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3
+					]
+				}
+			],
+			"name" : "",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "a105_webots_bridge",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "3d_webots_bridge_node::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-3d_webots_bridge_node-5eab81352816acd711e4.json",
+					"name" : "3d_webots_bridge_node",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "a105_webots_bridge_uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-a105_webots_bridge_uninstall-e4ed2fe1e0ef4a94dbcc.json",
+					"name" : "a105_webots_bridge_uninstall",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-uninstall-fdcfc6e204d3aee2996f.json",
+					"name" : "uninstall",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "webots_bridge_node::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-webots_bridge_node-db1e95fda2b14d8ee584.json",
+					"name" : "webots_bridge_node",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/mobile/ros2_ws/src/build/a105_webots_bridge",
+		"source" : "/home/mobile/ros2_ws/src/a105_webots_bridge"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 3
+	}
+}

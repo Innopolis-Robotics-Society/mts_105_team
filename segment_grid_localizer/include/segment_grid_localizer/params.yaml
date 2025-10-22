@@ -1,0 +1,27 @@
+segment_grid_localizer:
+  ros__parameters:
+    zero_scan_rot: true 
+    scan_yaw_bias: 0.0  
+    map_topic: /map
+    scan_topic: /scan
+    odom_topic: /odometry/filtered
+    map_frame: map
+    odom_frame: odom
+    base_frame: base_link
+
+    search_xy_max: 0.40
+    search_yaw_max: 0.35
+    step_xy_coarse: 0.05
+    step_yaw_coarse: 0.05
+    step_xy_fine: 0.01
+    step_yaw_fine: 0.01
+
+    range_min: 0.05
+    range_max: 8.0
+    downsample: 2
+
+    occ_threshold: 95
+    sigma_hit: 0.05
+    penalty_unknown: 0.2
+    penalty_outside: 0.0
+    alpha_smooth: 1.0

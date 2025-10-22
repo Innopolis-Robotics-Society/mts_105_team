@@ -1,0 +1,24 @@
+[35m[1mConsolidate compiler generated dependencies of target segment_grid_localizer_node[0m
+[ 50%] [32mBuilding CXX object CMakeFiles/segment_grid_localizer_node.dir/src/segment_grid_localizer.cpp.o[0m
+[100%] [32m[1mLinking CXX executable segment_grid_localizer_node[0m
+[100%] Built target segment_grid_localizer_node
+-- Install configuration: ""
+-- Installing: /home/mobile/ros2_ws/src/install/segment_grid_localizer/lib/segment_grid_localizer/segment_grid_localizer_node
+-- Set runtime path of "/home/mobile/ros2_ws/src/install/segment_grid_localizer/lib/segment_grid_localizer/segment_grid_localizer_node" to ""
+-- Installing: /home/mobile/ros2_ws/src/install/segment_grid_localizer/share/segment_grid_localizer/launch
+-- Installing: /home/mobile/ros2_ws/src/install/segment_grid_localizer/share/segment_grid_localizer/launch/localizer.launch.py
+-- Installing: /home/mobile/ros2_ws/src/install/segment_grid_localizer/share/ament_index/resource_index/package_run_dependencies/segment_grid_localizer
+-- Installing: /home/mobile/ros2_ws/src/install/segment_grid_localizer/share/ament_index/resource_index/parent_prefix_path/segment_grid_localizer
+-- Installing: /home/mobile/ros2_ws/src/install/segment_grid_localizer/share/segment_grid_localizer/environment/ament_prefix_path.sh
+-- Installing: /home/mobile/ros2_ws/src/install/segment_grid_localizer/share/segment_grid_localizer/environment/ament_prefix_path.dsv
+-- Installing: /home/mobile/ros2_ws/src/install/segment_grid_localizer/share/segment_grid_localizer/environment/path.sh
+-- Installing: /home/mobile/ros2_ws/src/install/segment_grid_localizer/share/segment_grid_localizer/environment/path.dsv
+-- Installing: /home/mobile/ros2_ws/src/install/segment_grid_localizer/share/segment_grid_localizer/local_setup.bash
+-- Installing: /home/mobile/ros2_ws/src/install/segment_grid_localizer/share/segment_grid_localizer/local_setup.sh
+-- Installing: /home/mobile/ros2_ws/src/install/segment_grid_localizer/share/segment_grid_localizer/local_setup.zsh
+-- Installing: /home/mobile/ros2_ws/src/install/segment_grid_localizer/share/segment_grid_localizer/local_setup.dsv
+-- Installing: /home/mobile/ros2_ws/src/install/segment_grid_localizer/share/segment_grid_localizer/package.dsv
+-- Installing: /home/mobile/ros2_ws/src/install/segment_grid_localizer/share/ament_index/resource_index/packages/segment_grid_localizer
+-- Installing: /home/mobile/ros2_ws/src/install/segment_grid_localizer/share/segment_grid_localizer/cmake/segment_grid_localizerConfig.cmake
+-- Installing: /home/mobile/ros2_ws/src/install/segment_grid_localizer/share/segment_grid_localizer/cmake/segment_grid_localizerConfig-version.cmake
+-- Installing: /home/mobile/ros2_ws/src/install/segment_grid_localizer/share/segment_grid_localizer/package.xml

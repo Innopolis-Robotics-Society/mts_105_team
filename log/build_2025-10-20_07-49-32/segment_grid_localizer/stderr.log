@@ -1,0 +1,4 @@
+[01m[K/home/mobile/ros2_ws/src/segment_grid_localizer/src/segment_grid_localizer.cpp:[m[K In member function ‘[01m[Kdouble SegmentGridLocalizer::scorePose(const Pose2&, const std::vector<std::pair<double, double> >&) const[m[K’:
+[01m[K/home/mobile/ros2_ws/src/segment_grid_localizer/src/segment_grid_localizer.cpp:233:37:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[KH[m[K’ [[01;35m[K-Wunused-variable[m[K]
+  233 |     const int W = map_->info.width, [01;35m[KH[m[K = map_->info.height;
+      |                                     [01;35m[K^[m[K

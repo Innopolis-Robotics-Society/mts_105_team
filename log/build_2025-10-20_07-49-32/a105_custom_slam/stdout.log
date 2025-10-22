@@ -1,0 +1,26 @@
+[35m[1mConsolidate compiler generated dependencies of target ekf_navigator[0m
+[35m[1mConsolidate compiler generated dependencies of target segment_grid_mapper[0m
+[ 50%] Built target ekf_navigator
+[100%] Built target segment_grid_mapper
+-- Install configuration: ""
+-- Installing: /home/mobile/ros2_ws/src/install/a105_custom_slam/lib/a105_custom_slam/segment_grid_mapper
+-- Set runtime path of "/home/mobile/ros2_ws/src/install/a105_custom_slam/lib/a105_custom_slam/segment_grid_mapper" to ""
+-- Installing: /home/mobile/ros2_ws/src/install/a105_custom_slam/lib/a105_custom_slam/ekf_navigator
+-- Set runtime path of "/home/mobile/ros2_ws/src/install/a105_custom_slam/lib/a105_custom_slam/ekf_navigator" to ""
+-- Installing: /home/mobile/ros2_ws/src/install/a105_custom_slam/share/a105_custom_slam/config
+-- Installing: /home/mobile/ros2_ws/src/install/a105_custom_slam/share/a105_custom_slam/config/segment_grid_mapper.yaml
+-- Installing: /home/mobile/ros2_ws/src/install/a105_custom_slam/share/ament_index/resource_index/package_run_dependencies/a105_custom_slam
+-- Installing: /home/mobile/ros2_ws/src/install/a105_custom_slam/share/ament_index/resource_index/parent_prefix_path/a105_custom_slam
+-- Installing: /home/mobile/ros2_ws/src/install/a105_custom_slam/share/a105_custom_slam/environment/ament_prefix_path.sh
+-- Installing: /home/mobile/ros2_ws/src/install/a105_custom_slam/share/a105_custom_slam/environment/ament_prefix_path.dsv
+-- Installing: /home/mobile/ros2_ws/src/install/a105_custom_slam/share/a105_custom_slam/environment/path.sh
+-- Installing: /home/mobile/ros2_ws/src/install/a105_custom_slam/share/a105_custom_slam/environment/path.dsv
+-- Installing: /home/mobile/ros2_ws/src/install/a105_custom_slam/share/a105_custom_slam/local_setup.bash
+-- Installing: /home/mobile/ros2_ws/src/install/a105_custom_slam/share/a105_custom_slam/local_setup.sh
+-- Installing: /home/mobile/ros2_ws/src/install/a105_custom_slam/share/a105_custom_slam/local_setup.zsh
+-- Installing: /home/mobile/ros2_ws/src/install/a105_custom_slam/share/a105_custom_slam/local_setup.dsv
+-- Installing: /home/mobile/ros2_ws/src/install/a105_custom_slam/share/a105_custom_slam/package.dsv
+-- Installing: /home/mobile/ros2_ws/src/install/a105_custom_slam/share/ament_index/resource_index/packages/a105_custom_slam
+-- Installing: /home/mobile/ros2_ws/src/install/a105_custom_slam/share/a105_custom_slam/cmake/a105_custom_slamConfig.cmake
+-- Installing: /home/mobile/ros2_ws/src/install/a105_custom_slam/share/a105_custom_slam/cmake/a105_custom_slamConfig-version.cmake
+-- Installing: /home/mobile/ros2_ws/src/install/a105_custom_slam/share/a105_custom_slam/package.xml

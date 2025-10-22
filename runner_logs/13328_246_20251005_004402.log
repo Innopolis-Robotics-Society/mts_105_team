@@ -1,0 +1,8 @@
+=== Repository URL: https://git.robot.cybertech.ai/xakaton-codenrockcom-21/truetecharena1758047997-team-13328/robots ===
+Commit: 2169afe9d1796ec84e5868566a9af581fb79b326
+
+2025-10-05 00:44:03 [INFO] [Checker/INFO] Detected programming language: python
+2025-10-05 00:44:06 [INFO] [Checker/INFO] Starting docker-compose. Wait...
+2025-10-05 00:44:06 [INFO] [Runner/DOCKER] Using prebuilt image fabook/champ:v0.0.3
+2025-10-05 00:44:06 [INFO] [Runner/CONTAINER] Starting team container
+2025-10-05 00:44:06 [INFO] [Runner] Exception while starting container: 500 Server Error for http+docker://localhost/v1.51/containers/create?name=team_13328_246_20251004_213134-terminal: Internal Server Error ("mount denied: the source path "${HOME}/.Xauthority:/home/mobile/.Xauthority:rw:rw" too many colons")

@@ -1,0 +1,30 @@
+[0.020s] Invoking command in '/home/mobile/ros2_ws/src/build/a105_path_planner': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/mobile/ros2_ws/src/build/a105_path_planner -- -j16 -l16
+[0.057s] [35m[1mConsolidate compiler generated dependencies of target nav2_goal_client[0m
+[0.068s] [100%] Built target nav2_goal_client
+[0.091s] Invoked command in '/home/mobile/ros2_ws/src/build/a105_path_planner' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/mobile/ros2_ws/src/build/a105_path_planner -- -j16 -l16
+[0.092s] Invoking command in '/home/mobile/ros2_ws/src/build/a105_path_planner': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/mobile/ros2_ws/src/build/a105_path_planner
+[0.106s] -- Install configuration: ""
+[0.106s] -- Up-to-date: /home/mobile/ros2_ws/src/install/a105_path_planner/share/a105_path_planner//launch
+[0.107s] -- Up-to-date: /home/mobile/ros2_ws/src/install/a105_path_planner/share/a105_path_planner//launch/path_planner_nav2.launch.py
+[0.107s] -- Up-to-date: /home/mobile/ros2_ws/src/install/a105_path_planner/share/a105_path_planner//launch/go.launch.py
+[0.107s] -- Up-to-date: /home/mobile/ros2_ws/src/install/a105_path_planner/share/a105_path_planner//config
+[0.107s] -- Up-to-date: /home/mobile/ros2_ws/src/install/a105_path_planner/share/a105_path_planner//config/nav2_middle_age.yaml
+[0.107s] -- Up-to-date: /home/mobile/ros2_ws/src/install/a105_path_planner/share/a105_path_planner//config/nav2_params.yaml
+[0.107s] -- Up-to-date: /home/mobile/ros2_ws/src/install/a105_path_planner/share/a105_path_planner//config/nav2_old.yaml
+[0.107s] -- Up-to-date: /home/mobile/ros2_ws/src/install/a105_path_planner/lib/a105_path_planner/nav2_goal_client
+[0.107s] -- Up-to-date: /home/mobile/ros2_ws/src/install/a105_path_planner/share/ament_index/resource_index/package_run_dependencies/a105_path_planner
+[0.107s] -- Up-to-date: /home/mobile/ros2_ws/src/install/a105_path_planner/share/ament_index/resource_index/parent_prefix_path/a105_path_planner
+[0.107s] -- Up-to-date: /home/mobile/ros2_ws/src/install/a105_path_planner/share/a105_path_planner/environment/ament_prefix_path.sh
+[0.108s] -- Up-to-date: /home/mobile/ros2_ws/src/install/a105_path_planner/share/a105_path_planner/environment/ament_prefix_path.dsv
+[0.108s] -- Up-to-date: /home/mobile/ros2_ws/src/install/a105_path_planner/share/a105_path_planner/environment/path.sh
+[0.108s] -- Up-to-date: /home/mobile/ros2_ws/src/install/a105_path_planner/share/a105_path_planner/environment/path.dsv
+[0.108s] -- Up-to-date: /home/mobile/ros2_ws/src/install/a105_path_planner/share/a105_path_planner/local_setup.bash
+[0.108s] -- Up-to-date: /home/mobile/ros2_ws/src/install/a105_path_planner/share/a105_path_planner/local_setup.sh
+[0.108s] -- Up-to-date: /home/mobile/ros2_ws/src/install/a105_path_planner/share/a105_path_planner/local_setup.zsh
+[0.108s] -- Up-to-date: /home/mobile/ros2_ws/src/install/a105_path_planner/share/a105_path_planner/local_setup.dsv
+[0.108s] -- Installing: /home/mobile/ros2_ws/src/install/a105_path_planner/share/a105_path_planner/package.dsv
+[0.108s] -- Up-to-date: /home/mobile/ros2_ws/src/install/a105_path_planner/share/ament_index/resource_index/packages/a105_path_planner
+[0.108s] -- Up-to-date: /home/mobile/ros2_ws/src/install/a105_path_planner/share/a105_path_planner/cmake/a105_path_plannerConfig.cmake
+[0.109s] -- Up-to-date: /home/mobile/ros2_ws/src/install/a105_path_planner/share/a105_path_planner/cmake/a105_path_plannerConfig-version.cmake
+[0.109s] -- Up-to-date: /home/mobile/ros2_ws/src/install/a105_path_planner/share/a105_path_planner/package.xml
+[0.155s] Invoked command in '/home/mobile/ros2_ws/src/build/a105_path_planner' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/mobile/ros2_ws/src/build/a105_path_planner

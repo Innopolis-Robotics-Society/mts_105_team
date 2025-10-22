@@ -1,0 +1,6 @@
+Invoking command in '/home/mobile/ros2_ws/src/build/a105_navigation': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /home/mobile/ros2_ws/src/a105_navigation -DCMAKE_INSTALL_PREFIX=/home/mobile/ros2_ws/src/install/a105_navigation
+Invoked command in '/home/mobile/ros2_ws/src/build/a105_navigation' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /home/mobile/ros2_ws/src/a105_navigation -DCMAKE_INSTALL_PREFIX=/home/mobile/ros2_ws/src/install/a105_navigation
+Invoking command in '/home/mobile/ros2_ws/src/build/a105_navigation': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/mobile/ros2_ws/src/build/a105_navigation -- -j16 -l16
+Invoked command in '/home/mobile/ros2_ws/src/build/a105_navigation' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/mobile/ros2_ws/src/build/a105_navigation -- -j16 -l16
+Invoking command in '/home/mobile/ros2_ws/src/build/a105_navigation': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/mobile/ros2_ws/src/build/a105_navigation
+Invoked command in '/home/mobile/ros2_ws/src/build/a105_navigation' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/mobile/ros2_ws/src/build/a105_navigation

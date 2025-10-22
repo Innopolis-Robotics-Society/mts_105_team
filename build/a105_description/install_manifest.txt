@@ -1,0 +1,16 @@
+/home/mobile/ros2_ws/src/install/a105_description/lib/a105_description/tf_broadcaster
+/home/mobile/ros2_ws/src/install/a105_description/share/ament_index/resource_index/package_run_dependencies/a105_description
+/home/mobile/ros2_ws/src/install/a105_description/share/ament_index/resource_index/parent_prefix_path/a105_description
+/home/mobile/ros2_ws/src/install/a105_description/share/a105_description/environment/ament_prefix_path.sh
+/home/mobile/ros2_ws/src/install/a105_description/share/a105_description/environment/ament_prefix_path.dsv
+/home/mobile/ros2_ws/src/install/a105_description/share/a105_description/environment/path.sh
+/home/mobile/ros2_ws/src/install/a105_description/share/a105_description/environment/path.dsv
+/home/mobile/ros2_ws/src/install/a105_description/share/a105_description/local_setup.bash
+/home/mobile/ros2_ws/src/install/a105_description/share/a105_description/local_setup.sh
+/home/mobile/ros2_ws/src/install/a105_description/share/a105_description/local_setup.zsh
+/home/mobile/ros2_ws/src/install/a105_description/share/a105_description/local_setup.dsv
+/home/mobile/ros2_ws/src/install/a105_description/share/a105_description/package.dsv
+/home/mobile/ros2_ws/src/install/a105_description/share/ament_index/resource_index/packages/a105_description
+/home/mobile/ros2_ws/src/install/a105_description/share/a105_description/cmake/a105_descriptionConfig.cmake
+/home/mobile/ros2_ws/src/install/a105_description/share/a105_description/cmake/a105_descriptionConfig-version.cmake
+/home/mobile/ros2_ws/src/install/a105_description/share/a105_description/package.xml

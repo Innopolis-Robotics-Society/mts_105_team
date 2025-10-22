@@ -1,0 +1,679 @@
+[0.067s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'build']
+[0.067s] DEBUG:colcon:Parsed command line arguments: Namespace(log_base=None, log_level=None, verb_name='build', build_base='build', install_base='install', merge_install=False, symlink_install=False, test_result_base=None, continue_on_error=False, executor='parallel', parallel_workers=16, event_handlers=None, ignore_user_meta=False, metas=['./colcon.meta'], base_paths=['.'], packages_ignore=None, packages_ignore_regex=None, paths=None, packages_up_to=None, packages_up_to_regex=None, packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_select_by_dep=None, packages_skip_by_dep=None, packages_skip_up_to=None, packages_select_build_failed=False, packages_skip_build_finished=False, packages_select_test_failures=False, packages_skip_test_passed=False, packages_select=None, packages_skip=None, packages_select_regex=None, packages_skip_regex=None, packages_start=None, packages_end=None, cmake_args=None, cmake_target=None, cmake_target_skip_unavailable=False, cmake_clean_cache=False, cmake_clean_first=False, cmake_force_configure=False, ament_cmake_args=None, catkin_cmake_args=None, catkin_skip_building_tests=False, mixin_files=None, mixin=None, verb_parser=<colcon_mixin.mixin.mixin_argument.MixinArgumentDecorator object at 0x7638080939d0>, verb_extension=<colcon_core.verb.build.BuildVerb object at 0x76380825c9d0>, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0x76380825c9d0>>, mixin_verb=('build',))
+[0.139s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[0.139s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[0.139s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[0.139s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[0.139s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) discover
+[0.139s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[0.139s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/home/mobile/ros2_ws/src'
+[0.139s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ignore', 'ignore_ament_install']
+[0.139s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore'
+[0.140s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore_ament_install'
+[0.140s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_pkg']
+[0.140s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_pkg'
+[0.140s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_meta']
+[0.140s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_meta'
+[0.140s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ros']
+[0.140s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ros'
+[0.146s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['cmake', 'python']
+[0.146s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'cmake'
+[0.147s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python'
+[0.147s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['python_setup_py']
+[0.147s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python_setup_py'
+[0.147s] Level 1:colcon.colcon_core.package_identification:_identify(a105_bringup) by extensions ['ignore', 'ignore_ament_install']
+[0.147s] Level 1:colcon.colcon_core.package_identification:_identify(a105_bringup) by extension 'ignore'
+[0.147s] Level 1:colcon.colcon_core.package_identification:_identify(a105_bringup) by extension 'ignore_ament_install'
+[0.147s] Level 1:colcon.colcon_core.package_identification:_identify(a105_bringup) by extensions ['colcon_pkg']
+[0.147s] Level 1:colcon.colcon_core.package_identification:_identify(a105_bringup) by extension 'colcon_pkg'
+[0.147s] Level 1:colcon.colcon_core.package_identification:_identify(a105_bringup) by extensions ['colcon_meta']
+[0.147s] Level 1:colcon.colcon_core.package_identification:_identify(a105_bringup) by extension 'colcon_meta'
+[0.147s] Level 1:colcon.colcon_core.package_identification:_identify(a105_bringup) by extensions ['ros']
+[0.147s] Level 1:colcon.colcon_core.package_identification:_identify(a105_bringup) by extension 'ros'
+[0.148s] DEBUG:colcon.colcon_core.package_identification:Package 'a105_bringup' with type 'ros.ament_cmake' and name 'a105_bringup'
+[0.148s] Level 1:colcon.colcon_core.package_identification:_identify(a105_controller) by extensions ['ignore', 'ignore_ament_install']
+[0.148s] Level 1:colcon.colcon_core.package_identification:_identify(a105_controller) by extension 'ignore'
+[0.148s] Level 1:colcon.colcon_core.package_identification:_identify(a105_controller) by extension 'ignore_ament_install'
+[0.148s] Level 1:colcon.colcon_core.package_identification:_identify(a105_controller) by extensions ['colcon_pkg']
+[0.148s] Level 1:colcon.colcon_core.package_identification:_identify(a105_controller) by extension 'colcon_pkg'
+[0.148s] Level 1:colcon.colcon_core.package_identification:_identify(a105_controller) by extensions ['colcon_meta']
+[0.149s] Level 1:colcon.colcon_core.package_identification:_identify(a105_controller) by extension 'colcon_meta'
+[0.149s] Level 1:colcon.colcon_core.package_identification:_identify(a105_controller) by extensions ['ros']
+[0.149s] Level 1:colcon.colcon_core.package_identification:_identify(a105_controller) by extension 'ros'
+[0.149s] DEBUG:colcon.colcon_core.package_identification:Package 'a105_controller' with type 'ros.ament_cmake' and name 'a105_controller'
+[0.149s] Level 1:colcon.colcon_core.package_identification:_identify(a105_custom_nav) by extensions ['ignore', 'ignore_ament_install']
+[0.149s] Level 1:colcon.colcon_core.package_identification:_identify(a105_custom_nav) by extension 'ignore'
+[0.149s] Level 1:colcon.colcon_core.package_identification:_identify(a105_custom_nav) by extension 'ignore_ament_install'
+[0.149s] Level 1:colcon.colcon_core.package_identification:_identify(a105_custom_nav) by extensions ['colcon_pkg']
+[0.149s] Level 1:colcon.colcon_core.package_identification:_identify(a105_custom_nav) by extension 'colcon_pkg'
+[0.149s] Level 1:colcon.colcon_core.package_identification:_identify(a105_custom_nav) by extensions ['colcon_meta']
+[0.149s] Level 1:colcon.colcon_core.package_identification:_identify(a105_custom_nav) by extension 'colcon_meta'
+[0.149s] Level 1:colcon.colcon_core.package_identification:_identify(a105_custom_nav) by extensions ['ros']
+[0.149s] Level 1:colcon.colcon_core.package_identification:_identify(a105_custom_nav) by extension 'ros'
+[0.149s] Level 1:colcon.colcon_core.package_identification:_identify(a105_custom_nav) by extensions ['cmake', 'python']
+[0.149s] Level 1:colcon.colcon_core.package_identification:_identify(a105_custom_nav) by extension 'cmake'
+[0.149s] Level 1:colcon.colcon_core.package_identification:_identify(a105_custom_nav) by extension 'python'
+[0.149s] Level 1:colcon.colcon_core.package_identification:_identify(a105_custom_nav) by extensions ['python_setup_py']
+[0.149s] Level 1:colcon.colcon_core.package_identification:_identify(a105_custom_nav) by extension 'python_setup_py'
+[0.149s] Level 1:colcon.colcon_core.package_identification:_identify(a105_custom_nav/include) by extensions ['ignore', 'ignore_ament_install']
+[0.149s] Level 1:colcon.colcon_core.package_identification:_identify(a105_custom_nav/include) by extension 'ignore'
+[0.149s] Level 1:colcon.colcon_core.package_identification:_identify(a105_custom_nav/include) by extension 'ignore_ament_install'
+[0.149s] Level 1:colcon.colcon_core.package_identification:_identify(a105_custom_nav/include) by extensions ['colcon_pkg']
+[0.149s] Level 1:colcon.colcon_core.package_identification:_identify(a105_custom_nav/include) by extension 'colcon_pkg'
+[0.149s] Level 1:colcon.colcon_core.package_identification:_identify(a105_custom_nav/include) by extensions ['colcon_meta']
+[0.149s] Level 1:colcon.colcon_core.package_identification:_identify(a105_custom_nav/include) by extension 'colcon_meta'
+[0.149s] Level 1:colcon.colcon_core.package_identification:_identify(a105_custom_nav/include) by extensions ['ros']
+[0.149s] Level 1:colcon.colcon_core.package_identification:_identify(a105_custom_nav/include) by extension 'ros'
+[0.149s] Level 1:colcon.colcon_core.package_identification:_identify(a105_custom_nav/include) by extensions ['cmake', 'python']
+[0.149s] Level 1:colcon.colcon_core.package_identification:_identify(a105_custom_nav/include) by extension 'cmake'
+[0.149s] Level 1:colcon.colcon_core.package_identification:_identify(a105_custom_nav/include) by extension 'python'
+[0.149s] Level 1:colcon.colcon_core.package_identification:_identify(a105_custom_nav/include) by extensions ['python_setup_py']
+[0.149s] Level 1:colcon.colcon_core.package_identification:_identify(a105_custom_nav/include) by extension 'python_setup_py'
+[0.150s] Level 1:colcon.colcon_core.package_identification:_identify(a105_custom_nav/include/a105_custom_nav) by extensions ['ignore', 'ignore_ament_install']
+[0.150s] Level 1:colcon.colcon_core.package_identification:_identify(a105_custom_nav/include/a105_custom_nav) by extension 'ignore'
+[0.150s] Level 1:colcon.colcon_core.package_identification:_identify(a105_custom_nav/include/a105_custom_nav) by extension 'ignore_ament_install'
+[0.150s] Level 1:colcon.colcon_core.package_identification:_identify(a105_custom_nav/include/a105_custom_nav) by extensions ['colcon_pkg']
+[0.150s] Level 1:colcon.colcon_core.package_identification:_identify(a105_custom_nav/include/a105_custom_nav) by extension 'colcon_pkg'
+[0.150s] Level 1:colcon.colcon_core.package_identification:_identify(a105_custom_nav/include/a105_custom_nav) by extensions ['colcon_meta']
+[0.150s] Level 1:colcon.colcon_core.package_identification:_identify(a105_custom_nav/include/a105_custom_nav) by extension 'colcon_meta'
+[0.150s] Level 1:colcon.colcon_core.package_identification:_identify(a105_custom_nav/include/a105_custom_nav) by extensions ['ros']
+[0.150s] Level 1:colcon.colcon_core.package_identification:_identify(a105_custom_nav/include/a105_custom_nav) by extension 'ros'
+[0.150s] Level 1:colcon.colcon_core.package_identification:_identify(a105_custom_nav/include/a105_custom_nav) by extensions ['cmake', 'python']
+[0.150s] Level 1:colcon.colcon_core.package_identification:_identify(a105_custom_nav/include/a105_custom_nav) by extension 'cmake'
+[0.150s] Level 1:colcon.colcon_core.package_identification:_identify(a105_custom_nav/include/a105_custom_nav) by extension 'python'
+[0.150s] Level 1:colcon.colcon_core.package_identification:_identify(a105_custom_nav/include/a105_custom_nav) by extensions ['python_setup_py']
+[0.150s] Level 1:colcon.colcon_core.package_identification:_identify(a105_custom_nav/include/a105_custom_nav) by extension 'python_setup_py'
+[0.150s] Level 1:colcon.colcon_core.package_identification:_identify(a105_custom_slam) by extensions ['ignore', 'ignore_ament_install']
+[0.150s] Level 1:colcon.colcon_core.package_identification:_identify(a105_custom_slam) by extension 'ignore'
+[0.150s] Level 1:colcon.colcon_core.package_identification:_identify(a105_custom_slam) by extension 'ignore_ament_install'
+[0.150s] Level 1:colcon.colcon_core.package_identification:_identify(a105_custom_slam) by extensions ['colcon_pkg']
+[0.150s] Level 1:colcon.colcon_core.package_identification:_identify(a105_custom_slam) by extension 'colcon_pkg'
+[0.150s] Level 1:colcon.colcon_core.package_identification:_identify(a105_custom_slam) by extensions ['colcon_meta']
+[0.150s] Level 1:colcon.colcon_core.package_identification:_identify(a105_custom_slam) by extension 'colcon_meta'
+[0.150s] Level 1:colcon.colcon_core.package_identification:_identify(a105_custom_slam) by extensions ['ros']
+[0.150s] Level 1:colcon.colcon_core.package_identification:_identify(a105_custom_slam) by extension 'ros'
+[0.150s] DEBUG:colcon.colcon_core.package_identification:Package 'a105_custom_slam' with type 'ros.ament_cmake' and name 'a105_custom_slam'
+[0.150s] Level 1:colcon.colcon_core.package_identification:_identify(a105_description) by extensions ['ignore', 'ignore_ament_install']
+[0.151s] Level 1:colcon.colcon_core.package_identification:_identify(a105_description) by extension 'ignore'
+[0.151s] Level 1:colcon.colcon_core.package_identification:_identify(a105_description) by extension 'ignore_ament_install'
+[0.151s] Level 1:colcon.colcon_core.package_identification:_identify(a105_description) by extensions ['colcon_pkg']
+[0.151s] Level 1:colcon.colcon_core.package_identification:_identify(a105_description) by extension 'colcon_pkg'
+[0.151s] Level 1:colcon.colcon_core.package_identification:_identify(a105_description) by extensions ['colcon_meta']
+[0.151s] Level 1:colcon.colcon_core.package_identification:_identify(a105_description) by extension 'colcon_meta'
+[0.151s] Level 1:colcon.colcon_core.package_identification:_identify(a105_description) by extensions ['ros']
+[0.151s] Level 1:colcon.colcon_core.package_identification:_identify(a105_description) by extension 'ros'
+[0.151s] DEBUG:colcon.colcon_core.package_identification:Package 'a105_description' with type 'ros.ament_cmake' and name 'a105_description'
+[0.151s] Level 1:colcon.colcon_core.package_identification:_identify(a105_navigation) by extensions ['ignore', 'ignore_ament_install']
+[0.151s] Level 1:colcon.colcon_core.package_identification:_identify(a105_navigation) by extension 'ignore'
+[0.151s] Level 1:colcon.colcon_core.package_identification:_identify(a105_navigation) by extension 'ignore_ament_install'
+[0.151s] Level 1:colcon.colcon_core.package_identification:_identify(a105_navigation) by extensions ['colcon_pkg']
+[0.151s] Level 1:colcon.colcon_core.package_identification:_identify(a105_navigation) by extension 'colcon_pkg'
+[0.151s] Level 1:colcon.colcon_core.package_identification:_identify(a105_navigation) by extensions ['colcon_meta']
+[0.151s] Level 1:colcon.colcon_core.package_identification:_identify(a105_navigation) by extension 'colcon_meta'
+[0.151s] Level 1:colcon.colcon_core.package_identification:_identify(a105_navigation) by extensions ['ros']
+[0.151s] Level 1:colcon.colcon_core.package_identification:_identify(a105_navigation) by extension 'ros'
+[0.151s] DEBUG:colcon.colcon_core.package_identification:Package 'a105_navigation' with type 'ros.ament_cmake' and name 'a105_navigation'
+[0.152s] Level 1:colcon.colcon_core.package_identification:_identify(a105_path_planner) by extensions ['ignore', 'ignore_ament_install']
+[0.152s] Level 1:colcon.colcon_core.package_identification:_identify(a105_path_planner) by extension 'ignore'
+[0.152s] Level 1:colcon.colcon_core.package_identification:_identify(a105_path_planner) by extension 'ignore_ament_install'
+[0.152s] Level 1:colcon.colcon_core.package_identification:_identify(a105_path_planner) by extensions ['colcon_pkg']
+[0.152s] Level 1:colcon.colcon_core.package_identification:_identify(a105_path_planner) by extension 'colcon_pkg'
+[0.152s] Level 1:colcon.colcon_core.package_identification:_identify(a105_path_planner) by extensions ['colcon_meta']
+[0.152s] Level 1:colcon.colcon_core.package_identification:_identify(a105_path_planner) by extension 'colcon_meta'
+[0.152s] Level 1:colcon.colcon_core.package_identification:_identify(a105_path_planner) by extensions ['ros']
+[0.152s] Level 1:colcon.colcon_core.package_identification:_identify(a105_path_planner) by extension 'ros'
+[0.152s] DEBUG:colcon.colcon_core.package_identification:Package 'a105_path_planner' with type 'ros.ament_cmake' and name 'a105_path_planner'
+[0.152s] Level 1:colcon.colcon_core.package_identification:_identify(a105_webots_bridge) by extensions ['ignore', 'ignore_ament_install']
+[0.152s] Level 1:colcon.colcon_core.package_identification:_identify(a105_webots_bridge) by extension 'ignore'
+[0.152s] Level 1:colcon.colcon_core.package_identification:_identify(a105_webots_bridge) by extension 'ignore_ament_install'
+[0.152s] Level 1:colcon.colcon_core.package_identification:_identify(a105_webots_bridge) by extensions ['colcon_pkg']
+[0.152s] Level 1:colcon.colcon_core.package_identification:_identify(a105_webots_bridge) by extension 'colcon_pkg'
+[0.152s] Level 1:colcon.colcon_core.package_identification:_identify(a105_webots_bridge) by extensions ['colcon_meta']
+[0.152s] Level 1:colcon.colcon_core.package_identification:_identify(a105_webots_bridge) by extension 'colcon_meta'
+[0.152s] Level 1:colcon.colcon_core.package_identification:_identify(a105_webots_bridge) by extensions ['ros']
+[0.152s] Level 1:colcon.colcon_core.package_identification:_identify(a105_webots_bridge) by extension 'ros'
+[0.153s] DEBUG:colcon.colcon_core.package_identification:Package 'a105_webots_bridge' with type 'ros.ament_cmake' and name 'a105_webots_bridge'
+[0.153s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extensions ['ignore', 'ignore_ament_install']
+[0.153s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extension 'ignore'
+[0.153s] Level 1:colcon.colcon_core.package_identification:_identify(build) ignored
+[0.153s] Level 1:colcon.colcon_core.package_identification:_identify(csm) by extensions ['ignore', 'ignore_ament_install']
+[0.153s] Level 1:colcon.colcon_core.package_identification:_identify(csm) by extension 'ignore'
+[0.153s] Level 1:colcon.colcon_core.package_identification:_identify(csm) by extension 'ignore_ament_install'
+[0.153s] Level 1:colcon.colcon_core.package_identification:_identify(csm) by extensions ['colcon_pkg']
+[0.153s] Level 1:colcon.colcon_core.package_identification:_identify(csm) by extension 'colcon_pkg'
+[0.153s] Level 1:colcon.colcon_core.package_identification:_identify(csm) by extensions ['colcon_meta']
+[0.153s] Level 1:colcon.colcon_core.package_identification:_identify(csm) by extension 'colcon_meta'
+[0.153s] Level 1:colcon.colcon_core.package_identification:_identify(csm) by extensions ['ros']
+[0.153s] Level 1:colcon.colcon_core.package_identification:_identify(csm) by extension 'ros'
+[0.153s] DEBUG:colcon.colcon_core.package_identification:Package 'csm' with type 'ros.ament_cmake' and name 'csm'
+[0.153s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extensions ['ignore', 'ignore_ament_install']
+[0.153s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extension 'ignore'
+[0.153s] Level 1:colcon.colcon_core.package_identification:_identify(install) ignored
+[0.153s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extensions ['ignore', 'ignore_ament_install']
+[0.154s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extension 'ignore'
+[0.154s] Level 1:colcon.colcon_core.package_identification:_identify(log) ignored
+[0.154s] Level 1:colcon.colcon_core.package_identification:_identify(ros2_laser_scan_matcher) by extensions ['ignore', 'ignore_ament_install']
+[0.154s] Level 1:colcon.colcon_core.package_identification:_identify(ros2_laser_scan_matcher) by extension 'ignore'
+[0.154s] Level 1:colcon.colcon_core.package_identification:_identify(ros2_laser_scan_matcher) by extension 'ignore_ament_install'
+[0.154s] Level 1:colcon.colcon_core.package_identification:_identify(ros2_laser_scan_matcher) by extensions ['colcon_pkg']
+[0.154s] Level 1:colcon.colcon_core.package_identification:_identify(ros2_laser_scan_matcher) by extension 'colcon_pkg'
+[0.154s] Level 1:colcon.colcon_core.package_identification:_identify(ros2_laser_scan_matcher) by extensions ['colcon_meta']
+[0.154s] Level 1:colcon.colcon_core.package_identification:_identify(ros2_laser_scan_matcher) by extension 'colcon_meta'
+[0.154s] Level 1:colcon.colcon_core.package_identification:_identify(ros2_laser_scan_matcher) by extensions ['ros']
+[0.154s] Level 1:colcon.colcon_core.package_identification:_identify(ros2_laser_scan_matcher) by extension 'ros'
+[0.154s] DEBUG:colcon.colcon_core.package_identification:Package 'ros2_laser_scan_matcher' with type 'ros.ament_cmake' and name 'ros2_laser_scan_matcher'
+[0.154s] Level 1:colcon.colcon_core.package_identification:_identify(runner_logs) by extensions ['ignore', 'ignore_ament_install']
+[0.154s] Level 1:colcon.colcon_core.package_identification:_identify(runner_logs) by extension 'ignore'
+[0.154s] Level 1:colcon.colcon_core.package_identification:_identify(runner_logs) by extension 'ignore_ament_install'
+[0.154s] Level 1:colcon.colcon_core.package_identification:_identify(runner_logs) by extensions ['colcon_pkg']
+[0.154s] Level 1:colcon.colcon_core.package_identification:_identify(runner_logs) by extension 'colcon_pkg'
+[0.154s] Level 1:colcon.colcon_core.package_identification:_identify(runner_logs) by extensions ['colcon_meta']
+[0.154s] Level 1:colcon.colcon_core.package_identification:_identify(runner_logs) by extension 'colcon_meta'
+[0.154s] Level 1:colcon.colcon_core.package_identification:_identify(runner_logs) by extensions ['ros']
+[0.154s] Level 1:colcon.colcon_core.package_identification:_identify(runner_logs) by extension 'ros'
+[0.154s] Level 1:colcon.colcon_core.package_identification:_identify(runner_logs) by extensions ['cmake', 'python']
+[0.154s] Level 1:colcon.colcon_core.package_identification:_identify(runner_logs) by extension 'cmake'
+[0.154s] Level 1:colcon.colcon_core.package_identification:_identify(runner_logs) by extension 'python'
+[0.154s] Level 1:colcon.colcon_core.package_identification:_identify(runner_logs) by extensions ['python_setup_py']
+[0.154s] Level 1:colcon.colcon_core.package_identification:_identify(runner_logs) by extension 'python_setup_py'
+[0.154s] Level 1:colcon.colcon_core.package_identification:_identify(segment_grid_localizer) by extensions ['ignore', 'ignore_ament_install']
+[0.155s] Level 1:colcon.colcon_core.package_identification:_identify(segment_grid_localizer) by extension 'ignore'
+[0.155s] Level 1:colcon.colcon_core.package_identification:_identify(segment_grid_localizer) by extension 'ignore_ament_install'
+[0.155s] Level 1:colcon.colcon_core.package_identification:_identify(segment_grid_localizer) by extensions ['colcon_pkg']
+[0.155s] Level 1:colcon.colcon_core.package_identification:_identify(segment_grid_localizer) by extension 'colcon_pkg'
+[0.155s] Level 1:colcon.colcon_core.package_identification:_identify(segment_grid_localizer) by extensions ['colcon_meta']
+[0.155s] Level 1:colcon.colcon_core.package_identification:_identify(segment_grid_localizer) by extension 'colcon_meta'
+[0.155s] Level 1:colcon.colcon_core.package_identification:_identify(segment_grid_localizer) by extensions ['ros']
+[0.155s] Level 1:colcon.colcon_core.package_identification:_identify(segment_grid_localizer) by extension 'ros'
+[0.155s] DEBUG:colcon.colcon_core.package_identification:Package 'segment_grid_localizer' with type 'ros.ament_cmake' and name 'segment_grid_localizer'
+[0.155s] Level 1:colcon.colcon_core.package_identification:_identify(udp_dich) by extensions ['ignore', 'ignore_ament_install']
+[0.155s] Level 1:colcon.colcon_core.package_identification:_identify(udp_dich) by extension 'ignore'
+[0.155s] Level 1:colcon.colcon_core.package_identification:_identify(udp_dich) by extension 'ignore_ament_install'
+[0.155s] Level 1:colcon.colcon_core.package_identification:_identify(udp_dich) by extensions ['colcon_pkg']
+[0.155s] Level 1:colcon.colcon_core.package_identification:_identify(udp_dich) by extension 'colcon_pkg'
+[0.155s] Level 1:colcon.colcon_core.package_identification:_identify(udp_dich) by extensions ['colcon_meta']
+[0.155s] Level 1:colcon.colcon_core.package_identification:_identify(udp_dich) by extension 'colcon_meta'
+[0.155s] Level 1:colcon.colcon_core.package_identification:_identify(udp_dich) by extensions ['ros']
+[0.155s] Level 1:colcon.colcon_core.package_identification:_identify(udp_dich) by extension 'ros'
+[0.155s] Level 1:colcon.colcon_core.package_identification:_identify(udp_dich) by extensions ['cmake', 'python']
+[0.155s] Level 1:colcon.colcon_core.package_identification:_identify(udp_dich) by extension 'cmake'
+[0.155s] Level 1:colcon.colcon_core.package_identification:_identify(udp_dich) by extension 'python'
+[0.155s] Level 1:colcon.colcon_core.package_identification:_identify(udp_dich) by extensions ['python_setup_py']
+[0.155s] Level 1:colcon.colcon_core.package_identification:_identify(udp_dich) by extension 'python_setup_py'
+[0.155s] Level 1:colcon.colcon_core.package_identification:_identify(watchonline3d) by extensions ['ignore', 'ignore_ament_install']
+[0.155s] Level 1:colcon.colcon_core.package_identification:_identify(watchonline3d) by extension 'ignore'
+[0.155s] Level 1:colcon.colcon_core.package_identification:_identify(watchonline3d) by extension 'ignore_ament_install'
+[0.156s] Level 1:colcon.colcon_core.package_identification:_identify(watchonline3d) by extensions ['colcon_pkg']
+[0.156s] Level 1:colcon.colcon_core.package_identification:_identify(watchonline3d) by extension 'colcon_pkg'
+[0.156s] Level 1:colcon.colcon_core.package_identification:_identify(watchonline3d) by extensions ['colcon_meta']
+[0.156s] Level 1:colcon.colcon_core.package_identification:_identify(watchonline3d) by extension 'colcon_meta'
+[0.156s] Level 1:colcon.colcon_core.package_identification:_identify(watchonline3d) by extensions ['ros']
+[0.156s] Level 1:colcon.colcon_core.package_identification:_identify(watchonline3d) by extension 'ros'
+[0.156s] Level 1:colcon.colcon_core.package_identification:_identify(watchonline3d) by extensions ['cmake', 'python']
+[0.156s] Level 1:colcon.colcon_core.package_identification:_identify(watchonline3d) by extension 'cmake'
+[0.156s] Level 1:colcon.colcon_core.package_identification:_identify(watchonline3d) by extension 'python'
+[0.156s] Level 1:colcon.colcon_core.package_identification:_identify(watchonline3d) by extensions ['python_setup_py']
+[0.156s] Level 1:colcon.colcon_core.package_identification:_identify(watchonline3d) by extension 'python_setup_py'
+[0.156s] Level 1:colcon.colcon_core.package_identification:_identify(watchonline3d/include) by extensions ['ignore', 'ignore_ament_install']
+[0.156s] Level 1:colcon.colcon_core.package_identification:_identify(watchonline3d/include) by extension 'ignore'
+[0.156s] Level 1:colcon.colcon_core.package_identification:_identify(watchonline3d/include) by extension 'ignore_ament_install'
+[0.156s] Level 1:colcon.colcon_core.package_identification:_identify(watchonline3d/include) by extensions ['colcon_pkg']
+[0.156s] Level 1:colcon.colcon_core.package_identification:_identify(watchonline3d/include) by extension 'colcon_pkg'
+[0.156s] Level 1:colcon.colcon_core.package_identification:_identify(watchonline3d/include) by extensions ['colcon_meta']
+[0.156s] Level 1:colcon.colcon_core.package_identification:_identify(watchonline3d/include) by extension 'colcon_meta'
+[0.156s] Level 1:colcon.colcon_core.package_identification:_identify(watchonline3d/include) by extensions ['ros']
+[0.156s] Level 1:colcon.colcon_core.package_identification:_identify(watchonline3d/include) by extension 'ros'
+[0.156s] Level 1:colcon.colcon_core.package_identification:_identify(watchonline3d/include) by extensions ['cmake', 'python']
+[0.156s] Level 1:colcon.colcon_core.package_identification:_identify(watchonline3d/include) by extension 'cmake'
+[0.156s] Level 1:colcon.colcon_core.package_identification:_identify(watchonline3d/include) by extension 'python'
+[0.156s] Level 1:colcon.colcon_core.package_identification:_identify(watchonline3d/include) by extensions ['python_setup_py']
+[0.156s] Level 1:colcon.colcon_core.package_identification:_identify(watchonline3d/include) by extension 'python_setup_py'
+[0.156s] Level 1:colcon.colcon_core.package_identification:_identify(watchonline3d/include/watchonline3d) by extensions ['ignore', 'ignore_ament_install']
+[0.156s] Level 1:colcon.colcon_core.package_identification:_identify(watchonline3d/include/watchonline3d) by extension 'ignore'
+[0.156s] Level 1:colcon.colcon_core.package_identification:_identify(watchonline3d/include/watchonline3d) by extension 'ignore_ament_install'
+[0.156s] Level 1:colcon.colcon_core.package_identification:_identify(watchonline3d/include/watchonline3d) by extensions ['colcon_pkg']
+[0.156s] Level 1:colcon.colcon_core.package_identification:_identify(watchonline3d/include/watchonline3d) by extension 'colcon_pkg'
+[0.156s] Level 1:colcon.colcon_core.package_identification:_identify(watchonline3d/include/watchonline3d) by extensions ['colcon_meta']
+[0.156s] Level 1:colcon.colcon_core.package_identification:_identify(watchonline3d/include/watchonline3d) by extension 'colcon_meta'
+[0.156s] Level 1:colcon.colcon_core.package_identification:_identify(watchonline3d/include/watchonline3d) by extensions ['ros']
+[0.156s] Level 1:colcon.colcon_core.package_identification:_identify(watchonline3d/include/watchonline3d) by extension 'ros'
+[0.156s] Level 1:colcon.colcon_core.package_identification:_identify(watchonline3d/include/watchonline3d) by extensions ['cmake', 'python']
+[0.156s] Level 1:colcon.colcon_core.package_identification:_identify(watchonline3d/include/watchonline3d) by extension 'cmake'
+[0.156s] Level 1:colcon.colcon_core.package_identification:_identify(watchonline3d/include/watchonline3d) by extension 'python'
+[0.156s] Level 1:colcon.colcon_core.package_identification:_identify(watchonline3d/include/watchonline3d) by extensions ['python_setup_py']
+[0.156s] Level 1:colcon.colcon_core.package_identification:_identify(watchonline3d/include/watchonline3d) by extension 'python_setup_py'
+[0.156s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults
+[0.156s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) discover
+[0.156s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) using defaults
+[0.156s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) discover
+[0.156s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) using defaults
+[0.168s] Level 5:colcon.colcon_core.verb:set package 'a105_bringup' build argument 'cmake_args' from command line to 'None'
+[0.168s] Level 5:colcon.colcon_core.verb:set package 'a105_bringup' build argument 'cmake_target' from command line to 'None'
+[0.168s] Level 5:colcon.colcon_core.verb:set package 'a105_bringup' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.168s] Level 5:colcon.colcon_core.verb:set package 'a105_bringup' build argument 'cmake_clean_cache' from command line to 'False'
+[0.168s] Level 5:colcon.colcon_core.verb:set package 'a105_bringup' build argument 'cmake_clean_first' from command line to 'False'
+[0.168s] Level 5:colcon.colcon_core.verb:set package 'a105_bringup' build argument 'cmake_force_configure' from command line to 'False'
+[0.168s] Level 5:colcon.colcon_core.verb:set package 'a105_bringup' build argument 'ament_cmake_args' from command line to 'None'
+[0.168s] Level 5:colcon.colcon_core.verb:set package 'a105_bringup' build argument 'catkin_cmake_args' from command line to 'None'
+[0.168s] Level 5:colcon.colcon_core.verb:set package 'a105_bringup' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.168s] DEBUG:colcon.colcon_core.verb:Building package 'a105_bringup' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/mobile/ros2_ws/src/build/a105_bringup', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/mobile/ros2_ws/src/install/a105_bringup', 'merge_install': False, 'path': '/home/mobile/ros2_ws/src/a105_bringup', 'symlink_install': False, 'test_result_base': None}
+[0.169s] Level 5:colcon.colcon_core.verb:set package 'a105_controller' build argument 'cmake_args' from command line to 'None'
+[0.169s] Level 5:colcon.colcon_core.verb:set package 'a105_controller' build argument 'cmake_target' from command line to 'None'
+[0.169s] Level 5:colcon.colcon_core.verb:set package 'a105_controller' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.169s] Level 5:colcon.colcon_core.verb:set package 'a105_controller' build argument 'cmake_clean_cache' from command line to 'False'
+[0.169s] Level 5:colcon.colcon_core.verb:set package 'a105_controller' build argument 'cmake_clean_first' from command line to 'False'
+[0.169s] Level 5:colcon.colcon_core.verb:set package 'a105_controller' build argument 'cmake_force_configure' from command line to 'False'
+[0.169s] Level 5:colcon.colcon_core.verb:set package 'a105_controller' build argument 'ament_cmake_args' from command line to 'None'
+[0.169s] Level 5:colcon.colcon_core.verb:set package 'a105_controller' build argument 'catkin_cmake_args' from command line to 'None'
+[0.169s] Level 5:colcon.colcon_core.verb:set package 'a105_controller' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.169s] DEBUG:colcon.colcon_core.verb:Building package 'a105_controller' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/mobile/ros2_ws/src/build/a105_controller', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/mobile/ros2_ws/src/install/a105_controller', 'merge_install': False, 'path': '/home/mobile/ros2_ws/src/a105_controller', 'symlink_install': False, 'test_result_base': None}
+[0.169s] Level 5:colcon.colcon_core.verb:set package 'a105_custom_slam' build argument 'cmake_args' from command line to 'None'
+[0.169s] Level 5:colcon.colcon_core.verb:set package 'a105_custom_slam' build argument 'cmake_target' from command line to 'None'
+[0.169s] Level 5:colcon.colcon_core.verb:set package 'a105_custom_slam' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.169s] Level 5:colcon.colcon_core.verb:set package 'a105_custom_slam' build argument 'cmake_clean_cache' from command line to 'False'
+[0.169s] Level 5:colcon.colcon_core.verb:set package 'a105_custom_slam' build argument 'cmake_clean_first' from command line to 'False'
+[0.169s] Level 5:colcon.colcon_core.verb:set package 'a105_custom_slam' build argument 'cmake_force_configure' from command line to 'False'
+[0.169s] Level 5:colcon.colcon_core.verb:set package 'a105_custom_slam' build argument 'ament_cmake_args' from command line to 'None'
+[0.169s] Level 5:colcon.colcon_core.verb:set package 'a105_custom_slam' build argument 'catkin_cmake_args' from command line to 'None'
+[0.169s] Level 5:colcon.colcon_core.verb:set package 'a105_custom_slam' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.169s] DEBUG:colcon.colcon_core.verb:Building package 'a105_custom_slam' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/mobile/ros2_ws/src/build/a105_custom_slam', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/mobile/ros2_ws/src/install/a105_custom_slam', 'merge_install': False, 'path': '/home/mobile/ros2_ws/src/a105_custom_slam', 'symlink_install': False, 'test_result_base': None}
+[0.169s] Level 5:colcon.colcon_core.verb:set package 'a105_description' build argument 'cmake_args' from command line to 'None'
+[0.169s] Level 5:colcon.colcon_core.verb:set package 'a105_description' build argument 'cmake_target' from command line to 'None'
+[0.169s] Level 5:colcon.colcon_core.verb:set package 'a105_description' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.169s] Level 5:colcon.colcon_core.verb:set package 'a105_description' build argument 'cmake_clean_cache' from command line to 'False'
+[0.169s] Level 5:colcon.colcon_core.verb:set package 'a105_description' build argument 'cmake_clean_first' from command line to 'False'
+[0.169s] Level 5:colcon.colcon_core.verb:set package 'a105_description' build argument 'cmake_force_configure' from command line to 'False'
+[0.169s] Level 5:colcon.colcon_core.verb:set package 'a105_description' build argument 'ament_cmake_args' from command line to 'None'
+[0.169s] Level 5:colcon.colcon_core.verb:set package 'a105_description' build argument 'catkin_cmake_args' from command line to 'None'
+[0.169s] Level 5:colcon.colcon_core.verb:set package 'a105_description' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.169s] DEBUG:colcon.colcon_core.verb:Building package 'a105_description' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/mobile/ros2_ws/src/build/a105_description', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/mobile/ros2_ws/src/install/a105_description', 'merge_install': False, 'path': '/home/mobile/ros2_ws/src/a105_description', 'symlink_install': False, 'test_result_base': None}
+[0.169s] Level 5:colcon.colcon_core.verb:set package 'a105_navigation' build argument 'cmake_args' from command line to 'None'
+[0.169s] Level 5:colcon.colcon_core.verb:set package 'a105_navigation' build argument 'cmake_target' from command line to 'None'
+[0.169s] Level 5:colcon.colcon_core.verb:set package 'a105_navigation' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.169s] Level 5:colcon.colcon_core.verb:set package 'a105_navigation' build argument 'cmake_clean_cache' from command line to 'False'
+[0.169s] Level 5:colcon.colcon_core.verb:set package 'a105_navigation' build argument 'cmake_clean_first' from command line to 'False'
+[0.169s] Level 5:colcon.colcon_core.verb:set package 'a105_navigation' build argument 'cmake_force_configure' from command line to 'False'
+[0.169s] Level 5:colcon.colcon_core.verb:set package 'a105_navigation' build argument 'ament_cmake_args' from command line to 'None'
+[0.170s] Level 5:colcon.colcon_core.verb:set package 'a105_navigation' build argument 'catkin_cmake_args' from command line to 'None'
+[0.170s] Level 5:colcon.colcon_core.verb:set package 'a105_navigation' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.170s] DEBUG:colcon.colcon_core.verb:Building package 'a105_navigation' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/mobile/ros2_ws/src/build/a105_navigation', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/mobile/ros2_ws/src/install/a105_navigation', 'merge_install': False, 'path': '/home/mobile/ros2_ws/src/a105_navigation', 'symlink_install': False, 'test_result_base': None}
+[0.170s] Level 5:colcon.colcon_core.verb:set package 'a105_path_planner' build argument 'cmake_args' from command line to 'None'
+[0.170s] Level 5:colcon.colcon_core.verb:set package 'a105_path_planner' build argument 'cmake_target' from command line to 'None'
+[0.170s] Level 5:colcon.colcon_core.verb:set package 'a105_path_planner' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.170s] Level 5:colcon.colcon_core.verb:set package 'a105_path_planner' build argument 'cmake_clean_cache' from command line to 'False'
+[0.170s] Level 5:colcon.colcon_core.verb:set package 'a105_path_planner' build argument 'cmake_clean_first' from command line to 'False'
+[0.170s] Level 5:colcon.colcon_core.verb:set package 'a105_path_planner' build argument 'cmake_force_configure' from command line to 'False'
+[0.170s] Level 5:colcon.colcon_core.verb:set package 'a105_path_planner' build argument 'ament_cmake_args' from command line to 'None'
+[0.170s] Level 5:colcon.colcon_core.verb:set package 'a105_path_planner' build argument 'catkin_cmake_args' from command line to 'None'
+[0.170s] Level 5:colcon.colcon_core.verb:set package 'a105_path_planner' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.170s] DEBUG:colcon.colcon_core.verb:Building package 'a105_path_planner' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/mobile/ros2_ws/src/build/a105_path_planner', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/mobile/ros2_ws/src/install/a105_path_planner', 'merge_install': False, 'path': '/home/mobile/ros2_ws/src/a105_path_planner', 'symlink_install': False, 'test_result_base': None}
+[0.170s] Level 5:colcon.colcon_core.verb:set package 'a105_webots_bridge' build argument 'cmake_args' from command line to 'None'
+[0.170s] Level 5:colcon.colcon_core.verb:set package 'a105_webots_bridge' build argument 'cmake_target' from command line to 'None'
+[0.170s] Level 5:colcon.colcon_core.verb:set package 'a105_webots_bridge' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.170s] Level 5:colcon.colcon_core.verb:set package 'a105_webots_bridge' build argument 'cmake_clean_cache' from command line to 'False'
+[0.170s] Level 5:colcon.colcon_core.verb:set package 'a105_webots_bridge' build argument 'cmake_clean_first' from command line to 'False'
+[0.170s] Level 5:colcon.colcon_core.verb:set package 'a105_webots_bridge' build argument 'cmake_force_configure' from command line to 'False'
+[0.170s] Level 5:colcon.colcon_core.verb:set package 'a105_webots_bridge' build argument 'ament_cmake_args' from command line to 'None'
+[0.170s] Level 5:colcon.colcon_core.verb:set package 'a105_webots_bridge' build argument 'catkin_cmake_args' from command line to 'None'
+[0.170s] Level 5:colcon.colcon_core.verb:set package 'a105_webots_bridge' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.170s] DEBUG:colcon.colcon_core.verb:Building package 'a105_webots_bridge' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/mobile/ros2_ws/src/build/a105_webots_bridge', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/mobile/ros2_ws/src/install/a105_webots_bridge', 'merge_install': False, 'path': '/home/mobile/ros2_ws/src/a105_webots_bridge', 'symlink_install': False, 'test_result_base': None}
+[0.170s] Level 5:colcon.colcon_core.verb:set package 'csm' build argument 'cmake_args' from command line to 'None'
+[0.170s] Level 5:colcon.colcon_core.verb:set package 'csm' build argument 'cmake_target' from command line to 'None'
+[0.170s] Level 5:colcon.colcon_core.verb:set package 'csm' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.170s] Level 5:colcon.colcon_core.verb:set package 'csm' build argument 'cmake_clean_cache' from command line to 'False'
+[0.170s] Level 5:colcon.colcon_core.verb:set package 'csm' build argument 'cmake_clean_first' from command line to 'False'
+[0.170s] Level 5:colcon.colcon_core.verb:set package 'csm' build argument 'cmake_force_configure' from command line to 'False'
+[0.170s] Level 5:colcon.colcon_core.verb:set package 'csm' build argument 'ament_cmake_args' from command line to 'None'
+[0.170s] Level 5:colcon.colcon_core.verb:set package 'csm' build argument 'catkin_cmake_args' from command line to 'None'
+[0.170s] Level 5:colcon.colcon_core.verb:set package 'csm' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.170s] DEBUG:colcon.colcon_core.verb:Building package 'csm' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/mobile/ros2_ws/src/build/csm', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/mobile/ros2_ws/src/install/csm', 'merge_install': False, 'path': '/home/mobile/ros2_ws/src/csm', 'symlink_install': False, 'test_result_base': None}
+[0.170s] Level 5:colcon.colcon_core.verb:set package 'segment_grid_localizer' build argument 'cmake_args' from command line to 'None'
+[0.170s] Level 5:colcon.colcon_core.verb:set package 'segment_grid_localizer' build argument 'cmake_target' from command line to 'None'
+[0.170s] Level 5:colcon.colcon_core.verb:set package 'segment_grid_localizer' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.170s] Level 5:colcon.colcon_core.verb:set package 'segment_grid_localizer' build argument 'cmake_clean_cache' from command line to 'False'
+[0.170s] Level 5:colcon.colcon_core.verb:set package 'segment_grid_localizer' build argument 'cmake_clean_first' from command line to 'False'
+[0.171s] Level 5:colcon.colcon_core.verb:set package 'segment_grid_localizer' build argument 'cmake_force_configure' from command line to 'False'
+[0.171s] Level 5:colcon.colcon_core.verb:set package 'segment_grid_localizer' build argument 'ament_cmake_args' from command line to 'None'
+[0.171s] Level 5:colcon.colcon_core.verb:set package 'segment_grid_localizer' build argument 'catkin_cmake_args' from command line to 'None'
+[0.171s] Level 5:colcon.colcon_core.verb:set package 'segment_grid_localizer' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.171s] DEBUG:colcon.colcon_core.verb:Building package 'segment_grid_localizer' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/mobile/ros2_ws/src/build/segment_grid_localizer', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/mobile/ros2_ws/src/install/segment_grid_localizer', 'merge_install': False, 'path': '/home/mobile/ros2_ws/src/segment_grid_localizer', 'symlink_install': False, 'test_result_base': None}
+[0.171s] Level 5:colcon.colcon_core.verb:set package 'ros2_laser_scan_matcher' build argument 'cmake_args' from command line to 'None'
+[0.171s] Level 5:colcon.colcon_core.verb:set package 'ros2_laser_scan_matcher' build argument 'cmake_target' from command line to 'None'
+[0.171s] Level 5:colcon.colcon_core.verb:set package 'ros2_laser_scan_matcher' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.171s] Level 5:colcon.colcon_core.verb:set package 'ros2_laser_scan_matcher' build argument 'cmake_clean_cache' from command line to 'False'
+[0.171s] Level 5:colcon.colcon_core.verb:set package 'ros2_laser_scan_matcher' build argument 'cmake_clean_first' from command line to 'False'
+[0.171s] Level 5:colcon.colcon_core.verb:set package 'ros2_laser_scan_matcher' build argument 'cmake_force_configure' from command line to 'False'
+[0.171s] Level 5:colcon.colcon_core.verb:set package 'ros2_laser_scan_matcher' build argument 'ament_cmake_args' from command line to 'None'
+[0.171s] Level 5:colcon.colcon_core.verb:set package 'ros2_laser_scan_matcher' build argument 'catkin_cmake_args' from command line to 'None'
+[0.171s] Level 5:colcon.colcon_core.verb:set package 'ros2_laser_scan_matcher' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.171s] DEBUG:colcon.colcon_core.verb:Building package 'ros2_laser_scan_matcher' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/mobile/ros2_ws/src/build/ros2_laser_scan_matcher', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/mobile/ros2_ws/src/install/ros2_laser_scan_matcher', 'merge_install': False, 'path': '/home/mobile/ros2_ws/src/ros2_laser_scan_matcher', 'symlink_install': False, 'test_result_base': None}
+[0.171s] INFO:colcon.colcon_core.executor:Executing jobs using 'parallel' executor
+[0.172s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete
+[0.172s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/mobile/ros2_ws/src/csm' with build type 'ament_cmake'
+[0.172s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/mobile/ros2_ws/src/csm'
+[0.174s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[0.174s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.174s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.177s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/mobile/ros2_ws/src/a105_bringup' with build type 'ament_cmake'
+[0.177s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/mobile/ros2_ws/src/a105_bringup'
+[0.177s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.177s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.179s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/mobile/ros2_ws/src/a105_controller' with build type 'ament_cmake'
+[0.179s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/mobile/ros2_ws/src/a105_controller'
+[0.179s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.179s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.182s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/mobile/ros2_ws/src/a105_custom_slam' with build type 'ament_cmake'
+[0.182s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/mobile/ros2_ws/src/a105_custom_slam'
+[0.182s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.182s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.184s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/mobile/ros2_ws/src/a105_description' with build type 'ament_cmake'
+[0.184s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/mobile/ros2_ws/src/a105_description'
+[0.184s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.184s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.192s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/mobile/ros2_ws/src/a105_navigation' with build type 'ament_cmake'
+[0.192s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/mobile/ros2_ws/src/a105_navigation'
+[0.192s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.193s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.195s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/mobile/ros2_ws/src/a105_path_planner' with build type 'ament_cmake'
+[0.195s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/mobile/ros2_ws/src/a105_path_planner'
+[0.195s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.195s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.197s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/mobile/ros2_ws/src/a105_webots_bridge' with build type 'ament_cmake'
+[0.197s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/mobile/ros2_ws/src/a105_webots_bridge'
+[0.197s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.197s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.199s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/mobile/ros2_ws/src/segment_grid_localizer' with build type 'ament_cmake'
+[0.199s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/mobile/ros2_ws/src/segment_grid_localizer'
+[0.199s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.199s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.204s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/mobile/ros2_ws/src/build/csm': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /home/mobile/ros2_ws/src/csm -DCMAKE_INSTALL_PREFIX=/home/mobile/ros2_ws/src/install/csm
+[0.205s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/mobile/ros2_ws/src/build/a105_bringup': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /home/mobile/ros2_ws/src/a105_bringup -DCMAKE_INSTALL_PREFIX=/home/mobile/ros2_ws/src/install/a105_bringup
+[0.207s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/mobile/ros2_ws/src/build/a105_controller': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /home/mobile/ros2_ws/src/a105_controller -DCMAKE_INSTALL_PREFIX=/home/mobile/ros2_ws/src/install/a105_controller
+[0.208s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/mobile/ros2_ws/src/build/a105_custom_slam': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /home/mobile/ros2_ws/src/a105_custom_slam -DCMAKE_INSTALL_PREFIX=/home/mobile/ros2_ws/src/install/a105_custom_slam
+[0.209s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/mobile/ros2_ws/src/build/a105_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /home/mobile/ros2_ws/src/a105_description -DCMAKE_INSTALL_PREFIX=/home/mobile/ros2_ws/src/install/a105_description
+[0.211s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/mobile/ros2_ws/src/build/a105_navigation': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /home/mobile/ros2_ws/src/a105_navigation -DCMAKE_INSTALL_PREFIX=/home/mobile/ros2_ws/src/install/a105_navigation
+[0.213s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/mobile/ros2_ws/src/build/a105_path_planner': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /home/mobile/ros2_ws/src/a105_path_planner -DCMAKE_INSTALL_PREFIX=/home/mobile/ros2_ws/src/install/a105_path_planner
+[0.216s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/mobile/ros2_ws/src/build/a105_webots_bridge': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /home/mobile/ros2_ws/src/a105_webots_bridge -DCMAKE_INSTALL_PREFIX=/home/mobile/ros2_ws/src/install/a105_webots_bridge
+[0.221s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/mobile/ros2_ws/src/build/segment_grid_localizer': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /home/mobile/ros2_ws/src/segment_grid_localizer -DCMAKE_INSTALL_PREFIX=/home/mobile/ros2_ws/src/install/segment_grid_localizer
+[0.766s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/mobile/ros2_ws/src/build/a105_navigation' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /home/mobile/ros2_ws/src/a105_navigation -DCMAKE_INSTALL_PREFIX=/home/mobile/ros2_ws/src/install/a105_navigation
+[0.768s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/mobile/ros2_ws/src/build/a105_navigation': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/mobile/ros2_ws/src/build/a105_navigation -- -j16 -l16
+[0.796s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/mobile/ros2_ws/src/build/a105_navigation' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/mobile/ros2_ws/src/build/a105_navigation -- -j16 -l16
+[0.803s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/mobile/ros2_ws/src/build/a105_navigation': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/mobile/ros2_ws/src/build/a105_navigation
+[0.810s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(a105_navigation)
+[0.810s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/mobile/ros2_ws/src/build/a105_navigation' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/mobile/ros2_ws/src/build/a105_navigation
+[0.812s] Level 1:colcon.colcon_core.environment:checking '/home/mobile/ros2_ws/src/install/a105_navigation' for CMake module files
+[0.813s] Level 1:colcon.colcon_core.environment:checking '/home/mobile/ros2_ws/src/install/a105_navigation' for CMake config files
+[0.813s] Level 1:colcon.colcon_core.shell:create_environment_hook('a105_navigation', 'cmake_prefix_path')
+[0.813s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/mobile/ros2_ws/src/install/a105_navigation/share/a105_navigation/hook/cmake_prefix_path.ps1'
+[0.813s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/mobile/ros2_ws/src/install/a105_navigation/share/a105_navigation/hook/cmake_prefix_path.dsv'
+[0.814s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/mobile/ros2_ws/src/install/a105_navigation/share/a105_navigation/hook/cmake_prefix_path.sh'
+[0.814s] Level 1:colcon.colcon_core.environment:checking '/home/mobile/ros2_ws/src/install/a105_navigation/bin'
+[0.814s] Level 1:colcon.colcon_core.environment:checking '/home/mobile/ros2_ws/src/install/a105_navigation/lib/pkgconfig/a105_navigation.pc'
+[0.815s] Level 1:colcon.colcon_core.environment:checking '/home/mobile/ros2_ws/src/install/a105_navigation/lib/python3.10/site-packages'
+[0.815s] Level 1:colcon.colcon_core.environment:checking '/home/mobile/ros2_ws/src/install/a105_navigation/bin'
+[0.816s] INFO:colcon.colcon_core.shell:Creating package script '/home/mobile/ros2_ws/src/install/a105_navigation/share/a105_navigation/package.ps1'
+[0.816s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/mobile/ros2_ws/src/install/a105_navigation/share/a105_navigation/package.dsv'
+[0.816s] INFO:colcon.colcon_core.shell:Creating package script '/home/mobile/ros2_ws/src/install/a105_navigation/share/a105_navigation/package.sh'
+[0.817s] INFO:colcon.colcon_core.shell:Creating package script '/home/mobile/ros2_ws/src/install/a105_navigation/share/a105_navigation/package.bash'
+[0.817s] INFO:colcon.colcon_core.shell:Creating package script '/home/mobile/ros2_ws/src/install/a105_navigation/share/a105_navigation/package.zsh'
+[0.817s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/mobile/ros2_ws/src/install/a105_navigation/share/colcon-core/packages/a105_navigation)
+[0.818s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(a105_navigation)
+[0.818s] Level 1:colcon.colcon_core.environment:checking '/home/mobile/ros2_ws/src/install/a105_navigation' for CMake module files
+[0.818s] Level 1:colcon.colcon_core.environment:checking '/home/mobile/ros2_ws/src/install/a105_navigation' for CMake config files
+[0.818s] Level 1:colcon.colcon_core.shell:create_environment_hook('a105_navigation', 'cmake_prefix_path')
+[0.818s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/mobile/ros2_ws/src/install/a105_navigation/share/a105_navigation/hook/cmake_prefix_path.ps1'
+[0.819s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/mobile/ros2_ws/src/install/a105_navigation/share/a105_navigation/hook/cmake_prefix_path.dsv'
+[0.819s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/mobile/ros2_ws/src/install/a105_navigation/share/a105_navigation/hook/cmake_prefix_path.sh'
+[0.819s] Level 1:colcon.colcon_core.environment:checking '/home/mobile/ros2_ws/src/install/a105_navigation/bin'
+[0.819s] Level 1:colcon.colcon_core.environment:checking '/home/mobile/ros2_ws/src/install/a105_navigation/lib/pkgconfig/a105_navigation.pc'
+[0.819s] Level 1:colcon.colcon_core.environment:checking '/home/mobile/ros2_ws/src/install/a105_navigation/lib/python3.10/site-packages'
+[0.819s] Level 1:colcon.colcon_core.environment:checking '/home/mobile/ros2_ws/src/install/a105_navigation/bin'
+[0.820s] INFO:colcon.colcon_core.shell:Creating package script '/home/mobile/ros2_ws/src/install/a105_navigation/share/a105_navigation/package.ps1'
+[0.820s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/mobile/ros2_ws/src/install/a105_navigation/share/a105_navigation/package.dsv'
+[0.820s] INFO:colcon.colcon_core.shell:Creating package script '/home/mobile/ros2_ws/src/install/a105_navigation/share/a105_navigation/package.sh'
+[0.820s] INFO:colcon.colcon_core.shell:Creating package script '/home/mobile/ros2_ws/src/install/a105_navigation/share/a105_navigation/package.bash'
+[0.821s] INFO:colcon.colcon_core.shell:Creating package script '/home/mobile/ros2_ws/src/install/a105_navigation/share/a105_navigation/package.zsh'
+[0.821s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/mobile/ros2_ws/src/install/a105_navigation/share/colcon-core/packages/a105_navigation)
+[1.207s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/mobile/ros2_ws/src/build/a105_controller' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /home/mobile/ros2_ws/src/a105_controller -DCMAKE_INSTALL_PREFIX=/home/mobile/ros2_ws/src/install/a105_controller
+[1.208s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/mobile/ros2_ws/src/build/a105_controller': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/mobile/ros2_ws/src/build/a105_controller -- -j16 -l16
+[1.233s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/mobile/ros2_ws/src/build/csm' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /home/mobile/ros2_ws/src/csm -DCMAKE_INSTALL_PREFIX=/home/mobile/ros2_ws/src/install/csm
+[1.234s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/mobile/ros2_ws/src/build/csm': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/mobile/ros2_ws/src/build/csm -- -j16 -l16
+[1.252s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/mobile/ros2_ws/src/build/a105_bringup' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /home/mobile/ros2_ws/src/a105_bringup -DCMAKE_INSTALL_PREFIX=/home/mobile/ros2_ws/src/install/a105_bringup
+[1.254s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/mobile/ros2_ws/src/build/a105_bringup': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/mobile/ros2_ws/src/build/a105_bringup -- -j16 -l16
+[1.318s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/mobile/ros2_ws/src/build/a105_bringup' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/mobile/ros2_ws/src/build/a105_bringup -- -j16 -l16
+[1.327s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/mobile/ros2_ws/src/build/a105_bringup': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/mobile/ros2_ws/src/build/a105_bringup
+[1.341s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(a105_bringup)
+[1.342s] Level 1:colcon.colcon_core.environment:checking '/home/mobile/ros2_ws/src/install/a105_bringup' for CMake module files
+[1.342s] Level 1:colcon.colcon_core.environment:checking '/home/mobile/ros2_ws/src/install/a105_bringup' for CMake config files
+[1.342s] Level 1:colcon.colcon_core.shell:create_environment_hook('a105_bringup', 'cmake_prefix_path')
+[1.343s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/mobile/ros2_ws/src/install/a105_bringup/share/a105_bringup/hook/cmake_prefix_path.ps1'
+[1.343s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/mobile/ros2_ws/src/install/a105_bringup/share/a105_bringup/hook/cmake_prefix_path.dsv'
+[1.344s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/mobile/ros2_ws/src/install/a105_bringup/share/a105_bringup/hook/cmake_prefix_path.sh'
+[1.344s] Level 1:colcon.colcon_core.environment:checking '/home/mobile/ros2_ws/src/install/a105_bringup/bin'
+[1.345s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/mobile/ros2_ws/src/build/a105_bringup' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/mobile/ros2_ws/src/build/a105_bringup
+[1.345s] Level 1:colcon.colcon_core.environment:checking '/home/mobile/ros2_ws/src/install/a105_bringup/lib/pkgconfig/a105_bringup.pc'
+[1.345s] Level 1:colcon.colcon_core.environment:checking '/home/mobile/ros2_ws/src/install/a105_bringup/lib/python3.10/site-packages'
+[1.345s] Level 1:colcon.colcon_core.environment:checking '/home/mobile/ros2_ws/src/install/a105_bringup/bin'
+[1.346s] INFO:colcon.colcon_core.shell:Creating package script '/home/mobile/ros2_ws/src/install/a105_bringup/share/a105_bringup/package.ps1'
+[1.347s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/mobile/ros2_ws/src/install/a105_bringup/share/a105_bringup/package.dsv'
+[1.347s] INFO:colcon.colcon_core.shell:Creating package script '/home/mobile/ros2_ws/src/install/a105_bringup/share/a105_bringup/package.sh'
+[1.348s] INFO:colcon.colcon_core.shell:Creating package script '/home/mobile/ros2_ws/src/install/a105_bringup/share/a105_bringup/package.bash'
+[1.348s] INFO:colcon.colcon_core.shell:Creating package script '/home/mobile/ros2_ws/src/install/a105_bringup/share/a105_bringup/package.zsh'
+[1.348s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/mobile/ros2_ws/src/install/a105_bringup/share/colcon-core/packages/a105_bringup)
+[1.349s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(a105_bringup)
+[1.349s] Level 1:colcon.colcon_core.environment:checking '/home/mobile/ros2_ws/src/install/a105_bringup' for CMake module files
+[1.350s] Level 1:colcon.colcon_core.environment:checking '/home/mobile/ros2_ws/src/install/a105_bringup' for CMake config files
+[1.350s] Level 1:colcon.colcon_core.shell:create_environment_hook('a105_bringup', 'cmake_prefix_path')
+[1.350s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/mobile/ros2_ws/src/install/a105_bringup/share/a105_bringup/hook/cmake_prefix_path.ps1'
+[1.351s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/mobile/ros2_ws/src/install/a105_bringup/share/a105_bringup/hook/cmake_prefix_path.dsv'
+[1.351s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/mobile/ros2_ws/src/install/a105_bringup/share/a105_bringup/hook/cmake_prefix_path.sh'
+[1.355s] Level 1:colcon.colcon_core.environment:checking '/home/mobile/ros2_ws/src/install/a105_bringup/bin'
+[1.356s] Level 1:colcon.colcon_core.environment:checking '/home/mobile/ros2_ws/src/install/a105_bringup/lib/pkgconfig/a105_bringup.pc'
+[1.356s] Level 1:colcon.colcon_core.environment:checking '/home/mobile/ros2_ws/src/install/a105_bringup/lib/python3.10/site-packages'
+[1.356s] Level 1:colcon.colcon_core.environment:checking '/home/mobile/ros2_ws/src/install/a105_bringup/bin'
+[1.357s] INFO:colcon.colcon_core.shell:Creating package script '/home/mobile/ros2_ws/src/install/a105_bringup/share/a105_bringup/package.ps1'
+[1.357s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/mobile/ros2_ws/src/install/a105_bringup/share/a105_bringup/package.dsv'
+[1.358s] INFO:colcon.colcon_core.shell:Creating package script '/home/mobile/ros2_ws/src/install/a105_bringup/share/a105_bringup/package.sh'
+[1.358s] INFO:colcon.colcon_core.shell:Creating package script '/home/mobile/ros2_ws/src/install/a105_bringup/share/a105_bringup/package.bash'
+[1.359s] INFO:colcon.colcon_core.shell:Creating package script '/home/mobile/ros2_ws/src/install/a105_bringup/share/a105_bringup/package.zsh'
+[1.364s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/mobile/ros2_ws/src/install/a105_bringup/share/colcon-core/packages/a105_bringup)
+[1.433s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/mobile/ros2_ws/src/build/a105_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /home/mobile/ros2_ws/src/a105_description -DCMAKE_INSTALL_PREFIX=/home/mobile/ros2_ws/src/install/a105_description
+[1.433s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/mobile/ros2_ws/src/build/a105_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/mobile/ros2_ws/src/build/a105_description -- -j16 -l16
+[1.442s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/mobile/ros2_ws/src/build/a105_path_planner' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /home/mobile/ros2_ws/src/a105_path_planner -DCMAKE_INSTALL_PREFIX=/home/mobile/ros2_ws/src/install/a105_path_planner
+[1.442s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/mobile/ros2_ws/src/build/a105_path_planner': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/mobile/ros2_ws/src/build/a105_path_planner -- -j16 -l16
+[1.659s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/mobile/ros2_ws/src/build/a105_webots_bridge' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /home/mobile/ros2_ws/src/a105_webots_bridge -DCMAKE_INSTALL_PREFIX=/home/mobile/ros2_ws/src/install/a105_webots_bridge
+[1.660s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/mobile/ros2_ws/src/build/a105_webots_bridge': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/mobile/ros2_ws/src/build/a105_webots_bridge -- -j16 -l16
+[1.717s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/mobile/ros2_ws/src/build/a105_custom_slam' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /home/mobile/ros2_ws/src/a105_custom_slam -DCMAKE_INSTALL_PREFIX=/home/mobile/ros2_ws/src/install/a105_custom_slam
+[1.723s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/mobile/ros2_ws/src/build/a105_custom_slam': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/mobile/ros2_ws/src/build/a105_custom_slam -- -j16 -l16
+[1.795s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/mobile/ros2_ws/src/build/segment_grid_localizer' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /home/mobile/ros2_ws/src/segment_grid_localizer -DCMAKE_INSTALL_PREFIX=/home/mobile/ros2_ws/src/install/segment_grid_localizer
+[1.800s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/mobile/ros2_ws/src/build/segment_grid_localizer': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/mobile/ros2_ws/src/build/segment_grid_localizer -- -j16 -l16
+[6.260s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/mobile/ros2_ws/src/build/a105_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/mobile/ros2_ws/src/build/a105_description -- -j16 -l16
+[6.261s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/mobile/ros2_ws/src/build/a105_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/mobile/ros2_ws/src/build/a105_description
+[6.274s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(a105_description)
+[6.275s] Level 1:colcon.colcon_core.environment:checking '/home/mobile/ros2_ws/src/install/a105_description' for CMake module files
+[6.275s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/mobile/ros2_ws/src/build/a105_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/mobile/ros2_ws/src/build/a105_description
+[6.276s] Level 1:colcon.colcon_core.environment:checking '/home/mobile/ros2_ws/src/install/a105_description' for CMake config files
+[6.276s] Level 1:colcon.colcon_core.shell:create_environment_hook('a105_description', 'cmake_prefix_path')
+[6.276s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/mobile/ros2_ws/src/install/a105_description/share/a105_description/hook/cmake_prefix_path.ps1'
+[6.277s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/mobile/ros2_ws/src/install/a105_description/share/a105_description/hook/cmake_prefix_path.dsv'
+[6.277s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/mobile/ros2_ws/src/install/a105_description/share/a105_description/hook/cmake_prefix_path.sh'
+[6.278s] Level 1:colcon.colcon_core.environment:checking '/home/mobile/ros2_ws/src/install/a105_description/lib'
+[6.278s] Level 1:colcon.colcon_core.environment:checking '/home/mobile/ros2_ws/src/install/a105_description/bin'
+[6.278s] Level 1:colcon.colcon_core.environment:checking '/home/mobile/ros2_ws/src/install/a105_description/lib/pkgconfig/a105_description.pc'
+[6.278s] Level 1:colcon.colcon_core.environment:checking '/home/mobile/ros2_ws/src/install/a105_description/lib/python3.10/site-packages'
+[6.279s] Level 1:colcon.colcon_core.environment:checking '/home/mobile/ros2_ws/src/install/a105_description/bin'
+[6.279s] INFO:colcon.colcon_core.shell:Creating package script '/home/mobile/ros2_ws/src/install/a105_description/share/a105_description/package.ps1'
+[6.280s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/mobile/ros2_ws/src/install/a105_description/share/a105_description/package.dsv'
+[6.280s] INFO:colcon.colcon_core.shell:Creating package script '/home/mobile/ros2_ws/src/install/a105_description/share/a105_description/package.sh'
+[6.281s] INFO:colcon.colcon_core.shell:Creating package script '/home/mobile/ros2_ws/src/install/a105_description/share/a105_description/package.bash'
+[6.281s] INFO:colcon.colcon_core.shell:Creating package script '/home/mobile/ros2_ws/src/install/a105_description/share/a105_description/package.zsh'
+[6.281s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/mobile/ros2_ws/src/install/a105_description/share/colcon-core/packages/a105_description)
+[6.282s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(a105_description)
+[6.282s] Level 1:colcon.colcon_core.environment:checking '/home/mobile/ros2_ws/src/install/a105_description' for CMake module files
+[6.283s] Level 1:colcon.colcon_core.environment:checking '/home/mobile/ros2_ws/src/install/a105_description' for CMake config files
+[6.283s] Level 1:colcon.colcon_core.shell:create_environment_hook('a105_description', 'cmake_prefix_path')
+[6.283s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/mobile/ros2_ws/src/install/a105_description/share/a105_description/hook/cmake_prefix_path.ps1'
+[6.284s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/mobile/ros2_ws/src/install/a105_description/share/a105_description/hook/cmake_prefix_path.dsv'
+[6.284s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/mobile/ros2_ws/src/install/a105_description/share/a105_description/hook/cmake_prefix_path.sh'
+[6.285s] Level 1:colcon.colcon_core.environment:checking '/home/mobile/ros2_ws/src/install/a105_description/lib'
+[6.285s] Level 1:colcon.colcon_core.environment:checking '/home/mobile/ros2_ws/src/install/a105_description/bin'
+[6.285s] Level 1:colcon.colcon_core.environment:checking '/home/mobile/ros2_ws/src/install/a105_description/lib/pkgconfig/a105_description.pc'
+[6.285s] Level 1:colcon.colcon_core.environment:checking '/home/mobile/ros2_ws/src/install/a105_description/lib/python3.10/site-packages'
+[6.286s] Level 1:colcon.colcon_core.environment:checking '/home/mobile/ros2_ws/src/install/a105_description/bin'
+[6.286s] INFO:colcon.colcon_core.shell:Creating package script '/home/mobile/ros2_ws/src/install/a105_description/share/a105_description/package.ps1'
+[6.286s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/mobile/ros2_ws/src/install/a105_description/share/a105_description/package.dsv'
+[6.287s] INFO:colcon.colcon_core.shell:Creating package script '/home/mobile/ros2_ws/src/install/a105_description/share/a105_description/package.sh'
+[6.287s] INFO:colcon.colcon_core.shell:Creating package script '/home/mobile/ros2_ws/src/install/a105_description/share/a105_description/package.bash'
+[6.288s] INFO:colcon.colcon_core.shell:Creating package script '/home/mobile/ros2_ws/src/install/a105_description/share/a105_description/package.zsh'
+[6.288s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/mobile/ros2_ws/src/install/a105_description/share/colcon-core/packages/a105_description)
+[6.576s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/mobile/ros2_ws/src/build/a105_path_planner' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/mobile/ros2_ws/src/build/a105_path_planner -- -j16 -l16
+[6.577s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/mobile/ros2_ws/src/build/a105_path_planner': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/mobile/ros2_ws/src/build/a105_path_planner
+[6.591s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(a105_path_planner)
+[6.591s] Level 1:colcon.colcon_core.environment:checking '/home/mobile/ros2_ws/src/install/a105_path_planner' for CMake module files
+[6.592s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/mobile/ros2_ws/src/build/a105_path_planner' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/mobile/ros2_ws/src/build/a105_path_planner
+[6.592s] Level 1:colcon.colcon_core.environment:checking '/home/mobile/ros2_ws/src/install/a105_path_planner' for CMake config files
+[6.592s] Level 1:colcon.colcon_core.shell:create_environment_hook('a105_path_planner', 'cmake_prefix_path')
+[6.593s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/mobile/ros2_ws/src/install/a105_path_planner/share/a105_path_planner/hook/cmake_prefix_path.ps1'
+[6.593s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/mobile/ros2_ws/src/install/a105_path_planner/share/a105_path_planner/hook/cmake_prefix_path.dsv'
+[6.594s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/mobile/ros2_ws/src/install/a105_path_planner/share/a105_path_planner/hook/cmake_prefix_path.sh'
+[6.594s] Level 1:colcon.colcon_core.environment:checking '/home/mobile/ros2_ws/src/install/a105_path_planner/lib'
+[6.594s] Level 1:colcon.colcon_core.environment:checking '/home/mobile/ros2_ws/src/install/a105_path_planner/bin'
+[6.594s] Level 1:colcon.colcon_core.environment:checking '/home/mobile/ros2_ws/src/install/a105_path_planner/lib/pkgconfig/a105_path_planner.pc'
+[6.595s] Level 1:colcon.colcon_core.environment:checking '/home/mobile/ros2_ws/src/install/a105_path_planner/lib/python3.10/site-packages'
+[6.595s] Level 1:colcon.colcon_core.environment:checking '/home/mobile/ros2_ws/src/install/a105_path_planner/bin'
+[6.596s] INFO:colcon.colcon_core.shell:Creating package script '/home/mobile/ros2_ws/src/install/a105_path_planner/share/a105_path_planner/package.ps1'
+[6.596s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/mobile/ros2_ws/src/install/a105_path_planner/share/a105_path_planner/package.dsv'
+[6.597s] INFO:colcon.colcon_core.shell:Creating package script '/home/mobile/ros2_ws/src/install/a105_path_planner/share/a105_path_planner/package.sh'
+[6.597s] INFO:colcon.colcon_core.shell:Creating package script '/home/mobile/ros2_ws/src/install/a105_path_planner/share/a105_path_planner/package.bash'
+[6.597s] INFO:colcon.colcon_core.shell:Creating package script '/home/mobile/ros2_ws/src/install/a105_path_planner/share/a105_path_planner/package.zsh'
+[6.598s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/mobile/ros2_ws/src/install/a105_path_planner/share/colcon-core/packages/a105_path_planner)
+[6.598s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(a105_path_planner)
+[6.599s] Level 1:colcon.colcon_core.environment:checking '/home/mobile/ros2_ws/src/install/a105_path_planner' for CMake module files
+[6.599s] Level 1:colcon.colcon_core.environment:checking '/home/mobile/ros2_ws/src/install/a105_path_planner' for CMake config files
+[6.599s] Level 1:colcon.colcon_core.shell:create_environment_hook('a105_path_planner', 'cmake_prefix_path')
+[6.599s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/mobile/ros2_ws/src/install/a105_path_planner/share/a105_path_planner/hook/cmake_prefix_path.ps1'
+[6.600s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/mobile/ros2_ws/src/install/a105_path_planner/share/a105_path_planner/hook/cmake_prefix_path.dsv'
+[6.600s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/mobile/ros2_ws/src/install/a105_path_planner/share/a105_path_planner/hook/cmake_prefix_path.sh'
+[6.601s] Level 1:colcon.colcon_core.environment:checking '/home/mobile/ros2_ws/src/install/a105_path_planner/lib'
+[6.601s] Level 1:colcon.colcon_core.environment:checking '/home/mobile/ros2_ws/src/install/a105_path_planner/bin'
+[6.601s] Level 1:colcon.colcon_core.environment:checking '/home/mobile/ros2_ws/src/install/a105_path_planner/lib/pkgconfig/a105_path_planner.pc'
+[6.601s] Level 1:colcon.colcon_core.environment:checking '/home/mobile/ros2_ws/src/install/a105_path_planner/lib/python3.10/site-packages'
+[6.602s] Level 1:colcon.colcon_core.environment:checking '/home/mobile/ros2_ws/src/install/a105_path_planner/bin'
+[6.602s] INFO:colcon.colcon_core.shell:Creating package script '/home/mobile/ros2_ws/src/install/a105_path_planner/share/a105_path_planner/package.ps1'
+[6.602s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/mobile/ros2_ws/src/install/a105_path_planner/share/a105_path_planner/package.dsv'
+[6.603s] INFO:colcon.colcon_core.shell:Creating package script '/home/mobile/ros2_ws/src/install/a105_path_planner/share/a105_path_planner/package.sh'
+[6.603s] INFO:colcon.colcon_core.shell:Creating package script '/home/mobile/ros2_ws/src/install/a105_path_planner/share/a105_path_planner/package.bash'
+[6.604s] INFO:colcon.colcon_core.shell:Creating package script '/home/mobile/ros2_ws/src/install/a105_path_planner/share/a105_path_planner/package.zsh'
+[6.604s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/mobile/ros2_ws/src/install/a105_path_planner/share/colcon-core/packages/a105_path_planner)
+[9.244s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/mobile/ros2_ws/src/build/a105_controller' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/mobile/ros2_ws/src/build/a105_controller -- -j16 -l16
+[9.246s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/mobile/ros2_ws/src/build/a105_controller': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/mobile/ros2_ws/src/build/a105_controller
+[9.259s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(a105_controller)
+[9.260s] Level 1:colcon.colcon_core.environment:checking '/home/mobile/ros2_ws/src/install/a105_controller' for CMake module files
+[9.260s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/mobile/ros2_ws/src/build/a105_controller' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/mobile/ros2_ws/src/build/a105_controller
+[9.260s] Level 1:colcon.colcon_core.environment:checking '/home/mobile/ros2_ws/src/install/a105_controller' for CMake config files
+[9.261s] Level 1:colcon.colcon_core.shell:create_environment_hook('a105_controller', 'cmake_prefix_path')
+[9.261s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/mobile/ros2_ws/src/install/a105_controller/share/a105_controller/hook/cmake_prefix_path.ps1'
+[9.261s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/mobile/ros2_ws/src/install/a105_controller/share/a105_controller/hook/cmake_prefix_path.dsv'
+[9.262s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/mobile/ros2_ws/src/install/a105_controller/share/a105_controller/hook/cmake_prefix_path.sh'
+[9.262s] Level 1:colcon.colcon_core.environment:checking '/home/mobile/ros2_ws/src/install/a105_controller/lib'
+[9.263s] Level 1:colcon.colcon_core.environment:checking '/home/mobile/ros2_ws/src/install/a105_controller/bin'
+[9.263s] Level 1:colcon.colcon_core.environment:checking '/home/mobile/ros2_ws/src/install/a105_controller/lib/pkgconfig/a105_controller.pc'
+[9.263s] Level 1:colcon.colcon_core.environment:checking '/home/mobile/ros2_ws/src/install/a105_controller/lib/python3.10/site-packages'
+[9.263s] Level 1:colcon.colcon_core.environment:checking '/home/mobile/ros2_ws/src/install/a105_controller/bin'
+[9.264s] INFO:colcon.colcon_core.shell:Creating package script '/home/mobile/ros2_ws/src/install/a105_controller/share/a105_controller/package.ps1'
+[9.264s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/mobile/ros2_ws/src/install/a105_controller/share/a105_controller/package.dsv'
+[9.264s] INFO:colcon.colcon_core.shell:Creating package script '/home/mobile/ros2_ws/src/install/a105_controller/share/a105_controller/package.sh'
+[9.265s] INFO:colcon.colcon_core.shell:Creating package script '/home/mobile/ros2_ws/src/install/a105_controller/share/a105_controller/package.bash'
+[9.265s] INFO:colcon.colcon_core.shell:Creating package script '/home/mobile/ros2_ws/src/install/a105_controller/share/a105_controller/package.zsh'
+[9.266s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/mobile/ros2_ws/src/install/a105_controller/share/colcon-core/packages/a105_controller)
+[9.266s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(a105_controller)
+[9.266s] Level 1:colcon.colcon_core.environment:checking '/home/mobile/ros2_ws/src/install/a105_controller' for CMake module files
+[9.267s] Level 1:colcon.colcon_core.environment:checking '/home/mobile/ros2_ws/src/install/a105_controller' for CMake config files
+[9.267s] Level 1:colcon.colcon_core.shell:create_environment_hook('a105_controller', 'cmake_prefix_path')
+[9.268s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/mobile/ros2_ws/src/install/a105_controller/share/a105_controller/hook/cmake_prefix_path.ps1'
+[9.268s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/mobile/ros2_ws/src/install/a105_controller/share/a105_controller/hook/cmake_prefix_path.dsv'
+[9.268s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/mobile/ros2_ws/src/install/a105_controller/share/a105_controller/hook/cmake_prefix_path.sh'
+[9.269s] Level 1:colcon.colcon_core.environment:checking '/home/mobile/ros2_ws/src/install/a105_controller/lib'
+[9.269s] Level 1:colcon.colcon_core.environment:checking '/home/mobile/ros2_ws/src/install/a105_controller/bin'
+[9.269s] Level 1:colcon.colcon_core.environment:checking '/home/mobile/ros2_ws/src/install/a105_controller/lib/pkgconfig/a105_controller.pc'
+[9.269s] Level 1:colcon.colcon_core.environment:checking '/home/mobile/ros2_ws/src/install/a105_controller/lib/python3.10/site-packages'
+[9.270s] Level 1:colcon.colcon_core.environment:checking '/home/mobile/ros2_ws/src/install/a105_controller/bin'
+[9.270s] INFO:colcon.colcon_core.shell:Creating package script '/home/mobile/ros2_ws/src/install/a105_controller/share/a105_controller/package.ps1'
+[9.271s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/mobile/ros2_ws/src/install/a105_controller/share/a105_controller/package.dsv'
+[9.272s] INFO:colcon.colcon_core.shell:Creating package script '/home/mobile/ros2_ws/src/install/a105_controller/share/a105_controller/package.sh'
+[9.272s] INFO:colcon.colcon_core.shell:Creating package script '/home/mobile/ros2_ws/src/install/a105_controller/share/a105_controller/package.bash'
+[9.272s] INFO:colcon.colcon_core.shell:Creating package script '/home/mobile/ros2_ws/src/install/a105_controller/share/a105_controller/package.zsh'
+[9.273s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/mobile/ros2_ws/src/install/a105_controller/share/colcon-core/packages/a105_controller)
+[9.294s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/mobile/ros2_ws/src/build/a105_webots_bridge' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/mobile/ros2_ws/src/build/a105_webots_bridge -- -j16 -l16
+[9.295s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/mobile/ros2_ws/src/build/a105_webots_bridge': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/mobile/ros2_ws/src/build/a105_webots_bridge
+[9.309s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(a105_webots_bridge)
+[9.309s] Level 1:colcon.colcon_core.environment:checking '/home/mobile/ros2_ws/src/install/a105_webots_bridge' for CMake module files
+[9.309s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/mobile/ros2_ws/src/build/a105_webots_bridge' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/mobile/ros2_ws/src/build/a105_webots_bridge
+[9.310s] Level 1:colcon.colcon_core.environment:checking '/home/mobile/ros2_ws/src/install/a105_webots_bridge' for CMake config files
+[9.310s] Level 1:colcon.colcon_core.shell:create_environment_hook('a105_webots_bridge', 'cmake_prefix_path')
+[9.310s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/mobile/ros2_ws/src/install/a105_webots_bridge/share/a105_webots_bridge/hook/cmake_prefix_path.ps1'
+[9.311s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/mobile/ros2_ws/src/install/a105_webots_bridge/share/a105_webots_bridge/hook/cmake_prefix_path.dsv'
+[9.311s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/mobile/ros2_ws/src/install/a105_webots_bridge/share/a105_webots_bridge/hook/cmake_prefix_path.sh'
+[9.311s] Level 1:colcon.colcon_core.environment:checking '/home/mobile/ros2_ws/src/install/a105_webots_bridge/lib'
+[9.311s] Level 1:colcon.colcon_core.environment:checking '/home/mobile/ros2_ws/src/install/a105_webots_bridge/bin'
+[9.311s] Level 1:colcon.colcon_core.environment:checking '/home/mobile/ros2_ws/src/install/a105_webots_bridge/lib/pkgconfig/a105_webots_bridge.pc'
+[9.311s] Level 1:colcon.colcon_core.environment:checking '/home/mobile/ros2_ws/src/install/a105_webots_bridge/lib/python3.10/site-packages'
+[9.312s] Level 1:colcon.colcon_core.environment:checking '/home/mobile/ros2_ws/src/install/a105_webots_bridge/bin'
+[9.312s] INFO:colcon.colcon_core.shell:Creating package script '/home/mobile/ros2_ws/src/install/a105_webots_bridge/share/a105_webots_bridge/package.ps1'
+[9.312s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/mobile/ros2_ws/src/install/a105_webots_bridge/share/a105_webots_bridge/package.dsv'
+[9.312s] INFO:colcon.colcon_core.shell:Creating package script '/home/mobile/ros2_ws/src/install/a105_webots_bridge/share/a105_webots_bridge/package.sh'
+[9.313s] INFO:colcon.colcon_core.shell:Creating package script '/home/mobile/ros2_ws/src/install/a105_webots_bridge/share/a105_webots_bridge/package.bash'
+[9.313s] INFO:colcon.colcon_core.shell:Creating package script '/home/mobile/ros2_ws/src/install/a105_webots_bridge/share/a105_webots_bridge/package.zsh'
+[9.313s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/mobile/ros2_ws/src/install/a105_webots_bridge/share/colcon-core/packages/a105_webots_bridge)
+[9.313s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(a105_webots_bridge)
+[9.313s] Level 1:colcon.colcon_core.environment:checking '/home/mobile/ros2_ws/src/install/a105_webots_bridge' for CMake module files
+[9.314s] Level 1:colcon.colcon_core.environment:checking '/home/mobile/ros2_ws/src/install/a105_webots_bridge' for CMake config files
+[9.314s] Level 1:colcon.colcon_core.shell:create_environment_hook('a105_webots_bridge', 'cmake_prefix_path')
+[9.314s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/mobile/ros2_ws/src/install/a105_webots_bridge/share/a105_webots_bridge/hook/cmake_prefix_path.ps1'
+[9.314s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/mobile/ros2_ws/src/install/a105_webots_bridge/share/a105_webots_bridge/hook/cmake_prefix_path.dsv'
+[9.314s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/mobile/ros2_ws/src/install/a105_webots_bridge/share/a105_webots_bridge/hook/cmake_prefix_path.sh'
+[9.315s] Level 1:colcon.colcon_core.environment:checking '/home/mobile/ros2_ws/src/install/a105_webots_bridge/lib'
+[9.315s] Level 1:colcon.colcon_core.environment:checking '/home/mobile/ros2_ws/src/install/a105_webots_bridge/bin'
+[9.315s] Level 1:colcon.colcon_core.environment:checking '/home/mobile/ros2_ws/src/install/a105_webots_bridge/lib/pkgconfig/a105_webots_bridge.pc'
+[9.315s] Level 1:colcon.colcon_core.environment:checking '/home/mobile/ros2_ws/src/install/a105_webots_bridge/lib/python3.10/site-packages'
+[9.315s] Level 1:colcon.colcon_core.environment:checking '/home/mobile/ros2_ws/src/install/a105_webots_bridge/bin'
+[9.315s] INFO:colcon.colcon_core.shell:Creating package script '/home/mobile/ros2_ws/src/install/a105_webots_bridge/share/a105_webots_bridge/package.ps1'
+[9.316s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/mobile/ros2_ws/src/install/a105_webots_bridge/share/a105_webots_bridge/package.dsv'
+[9.316s] INFO:colcon.colcon_core.shell:Creating package script '/home/mobile/ros2_ws/src/install/a105_webots_bridge/share/a105_webots_bridge/package.sh'
+[9.316s] INFO:colcon.colcon_core.shell:Creating package script '/home/mobile/ros2_ws/src/install/a105_webots_bridge/share/a105_webots_bridge/package.bash'
+[9.316s] INFO:colcon.colcon_core.shell:Creating package script '/home/mobile/ros2_ws/src/install/a105_webots_bridge/share/a105_webots_bridge/package.zsh'
+[9.316s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/mobile/ros2_ws/src/install/a105_webots_bridge/share/colcon-core/packages/a105_webots_bridge)
+[9.419s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/mobile/ros2_ws/src/build/segment_grid_localizer' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/mobile/ros2_ws/src/build/segment_grid_localizer -- -j16 -l16
+[9.420s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(segment_grid_localizer)
+[9.420s] Level 1:colcon.colcon_core.environment:checking '/home/mobile/ros2_ws/src/install/segment_grid_localizer' for CMake module files
+[9.420s] Level 1:colcon.colcon_core.environment:checking '/home/mobile/ros2_ws/src/install/segment_grid_localizer' for CMake config files
+[9.420s] Level 1:colcon.colcon_core.environment:checking '/home/mobile/ros2_ws/src/install/segment_grid_localizer/bin'
+[9.421s] Level 1:colcon.colcon_core.environment:checking '/home/mobile/ros2_ws/src/install/segment_grid_localizer/lib/pkgconfig/segment_grid_localizer.pc'
+[9.421s] Level 1:colcon.colcon_core.environment:checking '/home/mobile/ros2_ws/src/install/segment_grid_localizer/lib/python3.10/site-packages'
+[9.421s] Level 1:colcon.colcon_core.environment:checking '/home/mobile/ros2_ws/src/install/segment_grid_localizer/bin'
+[9.421s] INFO:colcon.colcon_core.shell:Creating package script '/home/mobile/ros2_ws/src/install/segment_grid_localizer/share/segment_grid_localizer/package.ps1'
+[9.422s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/mobile/ros2_ws/src/install/segment_grid_localizer/share/segment_grid_localizer/package.dsv'
+[9.422s] INFO:colcon.colcon_core.shell:Creating package script '/home/mobile/ros2_ws/src/install/segment_grid_localizer/share/segment_grid_localizer/package.sh'
+[9.423s] INFO:colcon.colcon_core.shell:Creating package script '/home/mobile/ros2_ws/src/install/segment_grid_localizer/share/segment_grid_localizer/package.bash'
+[9.423s] INFO:colcon.colcon_core.shell:Creating package script '/home/mobile/ros2_ws/src/install/segment_grid_localizer/share/segment_grid_localizer/package.zsh'
+[9.424s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/mobile/ros2_ws/src/install/segment_grid_localizer/share/colcon-core/packages/segment_grid_localizer)
+[12.010s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:closing loop
+[12.011s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:loop closed
+[12.011s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete finished with '2'
+[12.011s] DEBUG:colcon.colcon_core.event_reactor:joining thread
+[12.019s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.notify_send': Could not find 'notify-send'
+[12.019s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.terminal_notifier': Not used on non-Darwin systems
+[12.019s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.win32': Not used on non-Windows systems
+[12.019s] INFO:colcon.colcon_notification.desktop_notification:Sending desktop notification using 'notify2'
+[12.021s] DEBUG:colcon.colcon_notification.desktop_notification.notify2:Failed to initialize notify2: org.freedesktop.DBus.Error.Spawn.ExecFailed: /usr/bin/dbus-launch terminated abnormally without any error message
+[12.022s] DEBUG:colcon.colcon_core.event_reactor:joined thread
+[12.022s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/mobile/ros2_ws/src/install/local_setup.ps1'
+[12.023s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/mobile/ros2_ws/src/install/_local_setup_util_ps1.py'
+[12.024s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/mobile/ros2_ws/src/install/setup.ps1'
+[12.024s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/mobile/ros2_ws/src/install/local_setup.sh'
+[12.025s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/mobile/ros2_ws/src/install/_local_setup_util_sh.py'
+[12.025s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/mobile/ros2_ws/src/install/setup.sh'
+[12.026s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/mobile/ros2_ws/src/install/local_setup.bash'
+[12.026s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/mobile/ros2_ws/src/install/setup.bash'
+[12.027s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/mobile/ros2_ws/src/install/local_setup.zsh'
+[12.027s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/mobile/ros2_ws/src/install/setup.zsh'

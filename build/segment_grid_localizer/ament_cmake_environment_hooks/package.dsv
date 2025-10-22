@@ -1,0 +1,4 @@
+source;share/segment_grid_localizer/local_setup.bash
+source;share/segment_grid_localizer/local_setup.dsv
+source;share/segment_grid_localizer/local_setup.sh
+source;share/segment_grid_localizer/local_setup.zsh

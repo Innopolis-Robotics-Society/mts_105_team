@@ -1,0 +1,76 @@
+-- The C compiler identification is GNU 11.4.0
+-- The CXX compiler identification is GNU 11.4.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Found ament_cmake: 1.3.12 (/opt/ros/humble/share/ament_cmake/cmake)
+-- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+-- Found rclcpp: 16.0.15 (/opt/ros/humble/share/rclcpp/cmake)
+-- Found rosidl_generator_c: 3.1.7 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+-- Found rosidl_adapter: 3.1.7 (/opt/ros/humble/share/rosidl_adapter/cmake)
+-- Found rosidl_generator_cpp: 3.1.7 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+-- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+-- Found rmw_fastrtps_cpp: 6.2.8 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+-- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.2")  
+-- Found FastRTPS: /opt/ros/humble/include  
+-- Using RMW implementation 'rmw_fastrtps_cpp' as default
+-- Looking for pthread.h
+-- Looking for pthread.h - found
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+-- Found Threads: TRUE  
+-- Found nav2_bringup: 1.1.18 (/opt/ros/humble/share/nav2_bringup/cmake)
+-- Found rclcpp_action: 16.0.15 (/opt/ros/humble/share/rclcpp_action/cmake)
+-- Found geometry_msgs: 4.9.0 (/opt/ros/humble/share/geometry_msgs/cmake)
+-- Found nav2_msgs: 1.1.18 (/opt/ros/humble/share/nav2_msgs/cmake)
+-- Found lifecycle_msgs: 1.2.2 (/opt/ros/humble/share/lifecycle_msgs/cmake)
+-- Found ament_lint_auto: 0.12.14 (/opt/ros/humble/share/ament_lint_auto/cmake)
+-- Added test 'cppcheck' to perform static code analysis on C / C++ code
+-- Configured cppcheck include dirs: 
+-- Configured cppcheck exclude dirs and/or files: 
+-- Added test 'flake8' to check Python code syntax and style conventions
+-- Added test 'lint_cmake' to check CMake code style
+-- Added test 'pep257' to check Python code against some of the docstring style conventions in PEP 257
+-- Added test 'uncrustify' to check C / C++ code style
+-- Configured uncrustify additional arguments: 
+-- Added test 'xmllint' to check XML markup files
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/mobile/ros2_ws/src/build/a105_path_planner
+[ 50%] [32mBuilding CXX object CMakeFiles/nav2_goal_client.dir/src/nav2_goal_client.cpp.o[0m
+[100%] [32m[1mLinking CXX executable nav2_goal_client[0m
+[100%] Built target nav2_goal_client
+-- Install configuration: ""
+-- Installing: /home/mobile/ros2_ws/src/install/a105_path_planner/share/a105_path_planner//launch
+-- Installing: /home/mobile/ros2_ws/src/install/a105_path_planner/share/a105_path_planner//launch/path_planner_nav2.launch.py
+-- Installing: /home/mobile/ros2_ws/src/install/a105_path_planner/share/a105_path_planner//launch/go.launch.py
+-- Installing: /home/mobile/ros2_ws/src/install/a105_path_planner/share/a105_path_planner//config
+-- Installing: /home/mobile/ros2_ws/src/install/a105_path_planner/share/a105_path_planner//config/nav2_middle_age.yaml
+-- Installing: /home/mobile/ros2_ws/src/install/a105_path_planner/share/a105_path_planner//config/nav2_params.yaml
+-- Installing: /home/mobile/ros2_ws/src/install/a105_path_planner/share/a105_path_planner//config/nav2_old.yaml
+-- Installing: /home/mobile/ros2_ws/src/install/a105_path_planner/lib/a105_path_planner/nav2_goal_client
+-- Set runtime path of "/home/mobile/ros2_ws/src/install/a105_path_planner/lib/a105_path_planner/nav2_goal_client" to ""
+-- Installing: /home/mobile/ros2_ws/src/install/a105_path_planner/share/ament_index/resource_index/package_run_dependencies/a105_path_planner
+-- Installing: /home/mobile/ros2_ws/src/install/a105_path_planner/share/ament_index/resource_index/parent_prefix_path/a105_path_planner
+-- Installing: /home/mobile/ros2_ws/src/install/a105_path_planner/share/a105_path_planner/environment/ament_prefix_path.sh
+-- Installing: /home/mobile/ros2_ws/src/install/a105_path_planner/share/a105_path_planner/environment/ament_prefix_path.dsv
+-- Installing: /home/mobile/ros2_ws/src/install/a105_path_planner/share/a105_path_planner/environment/path.sh
+-- Installing: /home/mobile/ros2_ws/src/install/a105_path_planner/share/a105_path_planner/environment/path.dsv
+-- Installing: /home/mobile/ros2_ws/src/install/a105_path_planner/share/a105_path_planner/local_setup.bash
+-- Installing: /home/mobile/ros2_ws/src/install/a105_path_planner/share/a105_path_planner/local_setup.sh
+-- Installing: /home/mobile/ros2_ws/src/install/a105_path_planner/share/a105_path_planner/local_setup.zsh
+-- Installing: /home/mobile/ros2_ws/src/install/a105_path_planner/share/a105_path_planner/local_setup.dsv
+-- Installing: /home/mobile/ros2_ws/src/install/a105_path_planner/share/a105_path_planner/package.dsv
+-- Installing: /home/mobile/ros2_ws/src/install/a105_path_planner/share/ament_index/resource_index/packages/a105_path_planner
+-- Installing: /home/mobile/ros2_ws/src/install/a105_path_planner/share/a105_path_planner/cmake/a105_path_plannerConfig.cmake
+-- Installing: /home/mobile/ros2_ws/src/install/a105_path_planner/share/a105_path_planner/cmake/a105_path_plannerConfig-version.cmake
+-- Installing: /home/mobile/ros2_ws/src/install/a105_path_planner/share/a105_path_planner/package.xml

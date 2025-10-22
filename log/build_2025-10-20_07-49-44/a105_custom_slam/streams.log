@@ -1,0 +1,26 @@
+[0.035s] Invoking command in '/home/mobile/ros2_ws/src/build/a105_custom_slam': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/mobile/ros2_ws/src/build/a105_custom_slam -- -j16 -l16
+[0.085s] [ 50%] Built target ekf_navigator
+[0.088s] [100%] Built target segment_grid_mapper
+[0.118s] Invoked command in '/home/mobile/ros2_ws/src/build/a105_custom_slam' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/mobile/ros2_ws/src/build/a105_custom_slam -- -j16 -l16
+[0.119s] Invoking command in '/home/mobile/ros2_ws/src/build/a105_custom_slam': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/mobile/ros2_ws/src/build/a105_custom_slam
+[0.130s] -- Install configuration: ""
+[0.130s] -- Up-to-date: /home/mobile/ros2_ws/src/install/a105_custom_slam/lib/a105_custom_slam/segment_grid_mapper
+[0.130s] -- Up-to-date: /home/mobile/ros2_ws/src/install/a105_custom_slam/lib/a105_custom_slam/ekf_navigator
+[0.130s] -- Up-to-date: /home/mobile/ros2_ws/src/install/a105_custom_slam/share/a105_custom_slam/config
+[0.130s] -- Up-to-date: /home/mobile/ros2_ws/src/install/a105_custom_slam/share/a105_custom_slam/config/segment_grid_mapper.yaml
+[0.130s] -- Up-to-date: /home/mobile/ros2_ws/src/install/a105_custom_slam/share/ament_index/resource_index/package_run_dependencies/a105_custom_slam
+[0.130s] -- Up-to-date: /home/mobile/ros2_ws/src/install/a105_custom_slam/share/ament_index/resource_index/parent_prefix_path/a105_custom_slam
+[0.130s] -- Up-to-date: /home/mobile/ros2_ws/src/install/a105_custom_slam/share/a105_custom_slam/environment/ament_prefix_path.sh
+[0.130s] -- Up-to-date: /home/mobile/ros2_ws/src/install/a105_custom_slam/share/a105_custom_slam/environment/ament_prefix_path.dsv
+[0.130s] -- Up-to-date: /home/mobile/ros2_ws/src/install/a105_custom_slam/share/a105_custom_slam/environment/path.sh
+[0.130s] -- Up-to-date: /home/mobile/ros2_ws/src/install/a105_custom_slam/share/a105_custom_slam/environment/path.dsv
+[0.130s] -- Up-to-date: /home/mobile/ros2_ws/src/install/a105_custom_slam/share/a105_custom_slam/local_setup.bash
+[0.130s] -- Up-to-date: /home/mobile/ros2_ws/src/install/a105_custom_slam/share/a105_custom_slam/local_setup.sh
+[0.130s] -- Up-to-date: /home/mobile/ros2_ws/src/install/a105_custom_slam/share/a105_custom_slam/local_setup.zsh
+[0.130s] -- Up-to-date: /home/mobile/ros2_ws/src/install/a105_custom_slam/share/a105_custom_slam/local_setup.dsv
+[0.130s] -- Installing: /home/mobile/ros2_ws/src/install/a105_custom_slam/share/a105_custom_slam/package.dsv
+[0.130s] -- Up-to-date: /home/mobile/ros2_ws/src/install/a105_custom_slam/share/ament_index/resource_index/packages/a105_custom_slam
+[0.130s] -- Up-to-date: /home/mobile/ros2_ws/src/install/a105_custom_slam/share/a105_custom_slam/cmake/a105_custom_slamConfig.cmake
+[0.130s] -- Up-to-date: /home/mobile/ros2_ws/src/install/a105_custom_slam/share/a105_custom_slam/cmake/a105_custom_slamConfig-version.cmake
+[0.130s] -- Up-to-date: /home/mobile/ros2_ws/src/install/a105_custom_slam/share/a105_custom_slam/package.xml
+[0.154s] Invoked command in '/home/mobile/ros2_ws/src/build/a105_custom_slam' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/mobile/ros2_ws/src/build/a105_custom_slam

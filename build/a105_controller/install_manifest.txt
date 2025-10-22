@@ -1,0 +1,17 @@
+/home/mobile/ros2_ws/src/install/a105_controller/lib/a105_controller/sender
+/home/mobile/ros2_ws/src/install/a105_controller/share/a105_controller//launch/controller_105.launch.py
+/home/mobile/ros2_ws/src/install/a105_controller/share/ament_index/resource_index/package_run_dependencies/a105_controller
+/home/mobile/ros2_ws/src/install/a105_controller/share/ament_index/resource_index/parent_prefix_path/a105_controller
+/home/mobile/ros2_ws/src/install/a105_controller/share/a105_controller/environment/ament_prefix_path.sh
+/home/mobile/ros2_ws/src/install/a105_controller/share/a105_controller/environment/ament_prefix_path.dsv
+/home/mobile/ros2_ws/src/install/a105_controller/share/a105_controller/environment/path.sh
+/home/mobile/ros2_ws/src/install/a105_controller/share/a105_controller/environment/path.dsv
+/home/mobile/ros2_ws/src/install/a105_controller/share/a105_controller/local_setup.bash
+/home/mobile/ros2_ws/src/install/a105_controller/share/a105_controller/local_setup.sh
+/home/mobile/ros2_ws/src/install/a105_controller/share/a105_controller/local_setup.zsh
+/home/mobile/ros2_ws/src/install/a105_controller/share/a105_controller/local_setup.dsv
+/home/mobile/ros2_ws/src/install/a105_controller/share/a105_controller/package.dsv
+/home/mobile/ros2_ws/src/install/a105_controller/share/ament_index/resource_index/packages/a105_controller
+/home/mobile/ros2_ws/src/install/a105_controller/share/a105_controller/cmake/a105_controllerConfig.cmake
+/home/mobile/ros2_ws/src/install/a105_controller/share/a105_controller/cmake/a105_controllerConfig-version.cmake
+/home/mobile/ros2_ws/src/install/a105_controller/share/a105_controller/package.xml

@@ -1,0 +1,24 @@
+[0.020s] Invoking command in '/home/mobile/ros2_ws/src/build/a105_navigation': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/mobile/ros2_ws/src/build/a105_navigation -- -j16 -l16
+[0.043s] Invoked command in '/home/mobile/ros2_ws/src/build/a105_navigation' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/mobile/ros2_ws/src/build/a105_navigation -- -j16 -l16
+[0.049s] Invoking command in '/home/mobile/ros2_ws/src/build/a105_navigation': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/mobile/ros2_ws/src/build/a105_navigation
+[0.056s] -- Install configuration: ""
+[0.056s] -- Up-to-date: /home/mobile/ros2_ws/src/install/a105_navigation/share/a105_navigation//launch
+[0.056s] -- Up-to-date: /home/mobile/ros2_ws/src/install/a105_navigation/share/a105_navigation//launch/ekf.launch.py
+[0.056s] -- Up-to-date: /home/mobile/ros2_ws/src/install/a105_navigation/share/a105_navigation//config
+[0.056s] -- Up-to-date: /home/mobile/ros2_ws/src/install/a105_navigation/share/a105_navigation//config/ekf_params.yaml
+[0.056s] -- Up-to-date: /home/mobile/ros2_ws/src/install/a105_navigation/share/ament_index/resource_index/package_run_dependencies/a105_navigation
+[0.056s] -- Up-to-date: /home/mobile/ros2_ws/src/install/a105_navigation/share/ament_index/resource_index/parent_prefix_path/a105_navigation
+[0.056s] -- Up-to-date: /home/mobile/ros2_ws/src/install/a105_navigation/share/a105_navigation/environment/ament_prefix_path.sh
+[0.056s] -- Up-to-date: /home/mobile/ros2_ws/src/install/a105_navigation/share/a105_navigation/environment/ament_prefix_path.dsv
+[0.056s] -- Up-to-date: /home/mobile/ros2_ws/src/install/a105_navigation/share/a105_navigation/environment/path.sh
+[0.056s] -- Up-to-date: /home/mobile/ros2_ws/src/install/a105_navigation/share/a105_navigation/environment/path.dsv
+[0.056s] -- Up-to-date: /home/mobile/ros2_ws/src/install/a105_navigation/share/a105_navigation/local_setup.bash
+[0.057s] -- Up-to-date: /home/mobile/ros2_ws/src/install/a105_navigation/share/a105_navigation/local_setup.sh
+[0.057s] -- Up-to-date: /home/mobile/ros2_ws/src/install/a105_navigation/share/a105_navigation/local_setup.zsh
+[0.057s] -- Up-to-date: /home/mobile/ros2_ws/src/install/a105_navigation/share/a105_navigation/local_setup.dsv
+[0.057s] -- Up-to-date: /home/mobile/ros2_ws/src/install/a105_navigation/share/a105_navigation/package.dsv
+[0.059s] -- Up-to-date: /home/mobile/ros2_ws/src/install/a105_navigation/share/ament_index/resource_index/packages/a105_navigation
+[0.059s] -- Up-to-date: /home/mobile/ros2_ws/src/install/a105_navigation/share/a105_navigation/cmake/a105_navigationConfig.cmake
+[0.059s] -- Up-to-date: /home/mobile/ros2_ws/src/install/a105_navigation/share/a105_navigation/cmake/a105_navigationConfig-version.cmake
+[0.059s] -- Up-to-date: /home/mobile/ros2_ws/src/install/a105_navigation/share/a105_navigation/package.xml
+[0.079s] Invoked command in '/home/mobile/ros2_ws/src/build/a105_navigation' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/mobile/ros2_ws/src/build/a105_navigation

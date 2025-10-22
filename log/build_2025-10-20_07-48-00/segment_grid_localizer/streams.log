@@ -1,0 +1,77 @@
+[0.021s] Invoking command in '/home/mobile/ros2_ws/src/build/segment_grid_localizer': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /home/mobile/ros2_ws/src/segment_grid_localizer -DCMAKE_INSTALL_PREFIX=/home/mobile/ros2_ws/src/install/segment_grid_localizer
+[0.064s] -- The C compiler identification is GNU 11.4.0
+[0.118s] -- The CXX compiler identification is GNU 11.4.0
+[0.125s] -- Detecting C compiler ABI info
+[0.179s] -- Detecting C compiler ABI info - done
+[0.187s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.187s] -- Detecting C compile features
+[0.188s] -- Detecting C compile features - done
+[0.191s] -- Detecting CXX compiler ABI info
+[0.262s] -- Detecting CXX compiler ABI info - done
+[0.266s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.266s] -- Detecting CXX compile features
+[0.267s] -- Detecting CXX compile features - done
+[0.269s] -- Found ament_cmake: 1.3.12 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.368s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[0.470s] -- Found rclcpp: 16.0.15 (/opt/ros/humble/share/rclcpp/cmake)
+[0.537s] -- Found rosidl_generator_c: 3.1.7 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[0.544s] -- Found rosidl_adapter: 3.1.7 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[0.555s] -- Found rosidl_generator_cpp: 3.1.7 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[0.571s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.587s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.628s] -- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[0.631s] -- Found rmw_fastrtps_cpp: 6.2.8 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[0.714s] -- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.2")  
+[0.738s] -- Found FastRTPS: /opt/ros/humble/include  
+[0.781s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[0.790s] -- Looking for pthread.h
+[0.840s] -- Looking for pthread.h - found
+[0.840s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+[0.897s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+[0.898s] -- Found Threads: TRUE  
+[0.955s] -- Found sensor_msgs: 4.9.0 (/opt/ros/humble/share/sensor_msgs/cmake)
+[0.993s] -- Found nav_msgs: 4.9.0 (/opt/ros/humble/share/nav_msgs/cmake)
+[1.015s] -- Found tf2: 0.25.16 (/opt/ros/humble/share/tf2/cmake)
+[1.031s] -- Found tf2_ros: 0.25.16 (/opt/ros/humble/share/tf2_ros/cmake)
+[1.215s] -- Found tf2_geometry_msgs: 0.25.16 (/opt/ros/humble/share/tf2_geometry_msgs/cmake)
+[1.244s] -- Found eigen3_cmake_module: 0.1.1 (/opt/ros/humble/share/eigen3_cmake_module/cmake)
+[1.246s] -- Found Eigen3: TRUE (found version "3.4.0") 
+[1.246s] -- Ensuring Eigen3 include directory is part of orocos-kdl CMake target
+[1.257s] -- Found ament_lint_auto: 0.12.14 (/opt/ros/humble/share/ament_lint_auto/cmake)
+[1.500s] -- Added test 'cppcheck' to perform static code analysis on C / C++ code
+[1.500s] -- Configured cppcheck include dirs: 
+[1.501s] -- Configured cppcheck exclude dirs and/or files: 
+[1.501s] -- Added test 'flake8' to check Python code syntax and style conventions
+[1.504s] -- Added test 'lint_cmake' to check CMake code style
+[1.507s] -- Added test 'pep257' to check Python code against some of the docstring style conventions in PEP 257
+[1.512s] -- Added test 'uncrustify' to check C / C++ code style
+[1.512s] -- Configured uncrustify additional arguments: 
+[1.512s] -- Added test 'xmllint' to check XML markup files
+[1.517s] -- Configuring done
+[1.566s] -- Generating done
+[1.576s] -- Build files have been written to: /home/mobile/ros2_ws/src/build/segment_grid_localizer
+[1.596s] Invoked command in '/home/mobile/ros2_ws/src/build/segment_grid_localizer' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /home/mobile/ros2_ws/src/segment_grid_localizer -DCMAKE_INSTALL_PREFIX=/home/mobile/ros2_ws/src/install/segment_grid_localizer
+[1.600s] Invoking command in '/home/mobile/ros2_ws/src/build/segment_grid_localizer': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/mobile/ros2_ws/src/build/segment_grid_localizer -- -j16 -l16
+[1.716s] [ 50%] [32mBuilding CXX object CMakeFiles/segment_grid_localizer_node.dir/src/segment_grid_localizer.cpp.o[0m
+[5.225s] [01m[K/home/mobile/ros2_ws/src/segment_grid_localizer/src/segment_grid_localizer.cpp:98:12:[m[K [01;31m[Kerror: [m[K‘[01m[KBuffer[m[K’ in namespace ‘[01m[Ktf2_ros[m[K’ does not name a type
+[5.225s]    98 |   tf2_ros::[01;31m[KBuffer[m[K tf_buffer_;
+[5.225s]       |            [01;31m[K^~~~~~[m[K
+[5.388s] [01m[K/home/mobile/ros2_ws/src/segment_grid_localizer/src/segment_grid_localizer.cpp:[m[K In constructor ‘[01m[KSegmentGridLocalizer::SegmentGridLocalizer()[m[K’:
+[5.388s] [01m[K/home/mobile/ros2_ws/src/segment_grid_localizer/src/segment_grid_localizer.cpp:38:5:[m[K [01;31m[Kerror: [m[Kclass ‘[01m[KSegmentGridLocalizer[m[K’ does not have any field named ‘[01m[Ktf_buffer_[m[K’
+[5.388s]    38 |     [01;31m[Ktf_buffer_[m[K(this->get_clock()),
+[5.388s]       |     [01;31m[K^~~~~~~~~~[m[K
+[5.396s] [01m[K/home/mobile/ros2_ws/src/segment_grid_localizer/src/segment_grid_localizer.cpp:39:18:[m[K [01;31m[Kerror: [m[K‘[01m[Ktf_buffer_[m[K’ was not declared in this scope
+[5.396s]    39 |     tf_listener_([01;31m[Ktf_buffer_[m[K),
+[5.396s]       |                  [01;31m[K^~~~~~~~~~[m[K
+[5.448s] [01m[K/home/mobile/ros2_ws/src/segment_grid_localizer/src/segment_grid_localizer.cpp:[m[K In member function ‘[01m[Kbool SegmentGridLocalizer::ensureLidarTF(const LaserScan&)[m[K’:
+[5.448s] [01m[K/home/mobile/ros2_ws/src/segment_grid_localizer/src/segment_grid_localizer.cpp:195:16:[m[K [01;31m[Kerror: [m[K‘[01m[Ktf_buffer_[m[K’ was not declared in this scope
+[5.448s]   195 |       auto T = [01;31m[Ktf_buffer_[m[K.lookupTransform(frame_base_, scan.header.frame_id, scan.header.stamp, rclcpp::Duration::from_seconds(0.1));
+[5.448s]       |                [01;31m[K^~~~~~~~~~[m[K
+[5.455s] [01m[K/home/mobile/ros2_ws/src/segment_grid_localizer/src/segment_grid_localizer.cpp:[m[K In member function ‘[01m[Kdouble SegmentGridLocalizer::scorePose(const Pose2&, const std::vector<std::pair<double, double> >&) const[m[K’:
+[5.455s] [01m[K/home/mobile/ros2_ws/src/segment_grid_localizer/src/segment_grid_localizer.cpp:232:37:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[KH[m[K’ [[01;35m[K-Wunused-variable[m[K]
+[5.455s]   232 |     const int W = map_->info.width, [01;35m[KH[m[K = map_->info.height;
+[5.455s]       |                                     [01;35m[K^[m[K
+[9.218s] gmake[2]: *** [CMakeFiles/segment_grid_localizer_node.dir/build.make:76: CMakeFiles/segment_grid_localizer_node.dir/src/segment_grid_localizer.cpp.o] Error 1
+[9.218s] gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/segment_grid_localizer_node.dir/all] Error 2
+[9.218s] gmake: *** [Makefile:146: all] Error 2
+[9.220s] Invoked command in '/home/mobile/ros2_ws/src/build/segment_grid_localizer' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/mobile/ros2_ws/src/build/segment_grid_localizer -- -j16 -l16

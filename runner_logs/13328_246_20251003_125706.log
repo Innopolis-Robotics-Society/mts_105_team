@@ -1,0 +1,7 @@
+=== https://git.robot.cybertech.ai/xakaton-codenrockcom-21/truetecharena1758047997-team-13328/robots ===
+commit: 9be63d81eb4b4315ed0c9ad649f87e837cb1663b
+
+2025-10-03 12:57:10 [INFO] Ожидаем запуск docker-compose
+2025-10-03 12:57:11 [INFO] [Runner] Запуск контейнера участника
+2025-10-03 12:57:11 [INFO] [LOG] Ошибка Docker:
+

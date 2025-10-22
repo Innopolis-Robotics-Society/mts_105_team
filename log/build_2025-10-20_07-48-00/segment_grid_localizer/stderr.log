@@ -1,0 +1,21 @@
+[01m[K/home/mobile/ros2_ws/src/segment_grid_localizer/src/segment_grid_localizer.cpp:98:12:[m[K [01;31m[Kerror: [m[K‘[01m[KBuffer[m[K’ in namespace ‘[01m[Ktf2_ros[m[K’ does not name a type
+   98 |   tf2_ros::[01;31m[KBuffer[m[K tf_buffer_;
+      |            [01;31m[K^~~~~~[m[K
+[01m[K/home/mobile/ros2_ws/src/segment_grid_localizer/src/segment_grid_localizer.cpp:[m[K In constructor ‘[01m[KSegmentGridLocalizer::SegmentGridLocalizer()[m[K’:
+[01m[K/home/mobile/ros2_ws/src/segment_grid_localizer/src/segment_grid_localizer.cpp:38:5:[m[K [01;31m[Kerror: [m[Kclass ‘[01m[KSegmentGridLocalizer[m[K’ does not have any field named ‘[01m[Ktf_buffer_[m[K’
+   38 |     [01;31m[Ktf_buffer_[m[K(this->get_clock()),
+      |     [01;31m[K^~~~~~~~~~[m[K
+[01m[K/home/mobile/ros2_ws/src/segment_grid_localizer/src/segment_grid_localizer.cpp:39:18:[m[K [01;31m[Kerror: [m[K‘[01m[Ktf_buffer_[m[K’ was not declared in this scope
+   39 |     tf_listener_([01;31m[Ktf_buffer_[m[K),
+      |                  [01;31m[K^~~~~~~~~~[m[K
+[01m[K/home/mobile/ros2_ws/src/segment_grid_localizer/src/segment_grid_localizer.cpp:[m[K In member function ‘[01m[Kbool SegmentGridLocalizer::ensureLidarTF(const LaserScan&)[m[K’:
+[01m[K/home/mobile/ros2_ws/src/segment_grid_localizer/src/segment_grid_localizer.cpp:195:16:[m[K [01;31m[Kerror: [m[K‘[01m[Ktf_buffer_[m[K’ was not declared in this scope
+  195 |       auto T = [01;31m[Ktf_buffer_[m[K.lookupTransform(frame_base_, scan.header.frame_id, scan.header.stamp, rclcpp::Duration::from_seconds(0.1));
+      |                [01;31m[K^~~~~~~~~~[m[K
+[01m[K/home/mobile/ros2_ws/src/segment_grid_localizer/src/segment_grid_localizer.cpp:[m[K In member function ‘[01m[Kdouble SegmentGridLocalizer::scorePose(const Pose2&, const std::vector<std::pair<double, double> >&) const[m[K’:
+[01m[K/home/mobile/ros2_ws/src/segment_grid_localizer/src/segment_grid_localizer.cpp:232:37:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[KH[m[K’ [[01;35m[K-Wunused-variable[m[K]
+  232 |     const int W = map_->info.width, [01;35m[KH[m[K = map_->info.height;
+      |                                     [01;35m[K^[m[K
+gmake[2]: *** [CMakeFiles/segment_grid_localizer_node.dir/build.make:76: CMakeFiles/segment_grid_localizer_node.dir/src/segment_grid_localizer.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/segment_grid_localizer_node.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

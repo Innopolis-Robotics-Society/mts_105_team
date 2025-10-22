@@ -1,0 +1,26 @@
+[35m[1mConsolidate compiler generated dependencies of target nav2_goal_client[0m
+[100%] Built target nav2_goal_client
+-- Install configuration: ""
+-- Up-to-date: /home/mobile/ros2_ws/src/install/a105_path_planner/share/a105_path_planner//launch
+-- Up-to-date: /home/mobile/ros2_ws/src/install/a105_path_planner/share/a105_path_planner//launch/path_planner_nav2.launch.py
+-- Up-to-date: /home/mobile/ros2_ws/src/install/a105_path_planner/share/a105_path_planner//launch/go.launch.py
+-- Up-to-date: /home/mobile/ros2_ws/src/install/a105_path_planner/share/a105_path_planner//config
+-- Up-to-date: /home/mobile/ros2_ws/src/install/a105_path_planner/share/a105_path_planner//config/nav2_middle_age.yaml
+-- Up-to-date: /home/mobile/ros2_ws/src/install/a105_path_planner/share/a105_path_planner//config/nav2_params.yaml
+-- Up-to-date: /home/mobile/ros2_ws/src/install/a105_path_planner/share/a105_path_planner//config/nav2_old.yaml
+-- Up-to-date: /home/mobile/ros2_ws/src/install/a105_path_planner/lib/a105_path_planner/nav2_goal_client
+-- Up-to-date: /home/mobile/ros2_ws/src/install/a105_path_planner/share/ament_index/resource_index/package_run_dependencies/a105_path_planner
+-- Up-to-date: /home/mobile/ros2_ws/src/install/a105_path_planner/share/ament_index/resource_index/parent_prefix_path/a105_path_planner
+-- Up-to-date: /home/mobile/ros2_ws/src/install/a105_path_planner/share/a105_path_planner/environment/ament_prefix_path.sh
+-- Up-to-date: /home/mobile/ros2_ws/src/install/a105_path_planner/share/a105_path_planner/environment/ament_prefix_path.dsv
+-- Up-to-date: /home/mobile/ros2_ws/src/install/a105_path_planner/share/a105_path_planner/environment/path.sh
+-- Up-to-date: /home/mobile/ros2_ws/src/install/a105_path_planner/share/a105_path_planner/environment/path.dsv
+-- Up-to-date: /home/mobile/ros2_ws/src/install/a105_path_planner/share/a105_path_planner/local_setup.bash
+-- Up-to-date: /home/mobile/ros2_ws/src/install/a105_path_planner/share/a105_path_planner/local_setup.sh
+-- Up-to-date: /home/mobile/ros2_ws/src/install/a105_path_planner/share/a105_path_planner/local_setup.zsh
+-- Up-to-date: /home/mobile/ros2_ws/src/install/a105_path_planner/share/a105_path_planner/local_setup.dsv
+-- Installing: /home/mobile/ros2_ws/src/install/a105_path_planner/share/a105_path_planner/package.dsv
+-- Up-to-date: /home/mobile/ros2_ws/src/install/a105_path_planner/share/ament_index/resource_index/packages/a105_path_planner
+-- Up-to-date: /home/mobile/ros2_ws/src/install/a105_path_planner/share/a105_path_planner/cmake/a105_path_plannerConfig.cmake
+-- Up-to-date: /home/mobile/ros2_ws/src/install/a105_path_planner/share/a105_path_planner/cmake/a105_path_plannerConfig-version.cmake
+-- Up-to-date: /home/mobile/ros2_ws/src/install/a105_path_planner/share/a105_path_planner/package.xml

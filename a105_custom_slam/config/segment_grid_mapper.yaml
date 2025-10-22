@@ -1,0 +1,14 @@
+segment_grid_mapper:
+  ros__parameters:
+    cell: 0.5
+    x0: 0.25
+    y0: 0.25
+    range_max: 8.0
+    grid_res: 0.01
+    occ_prob_thresh: 0.65
+    min_wall_frac: 0.33
+    map_radius: 8.0
+    map_frame: map
+    base_frame: base_link
+    scan_topic: scan
+    map_topic: /map

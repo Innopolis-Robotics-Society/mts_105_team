@@ -1,0 +1,77 @@
+-- The C compiler identification is GNU 11.4.0
+-- The CXX compiler identification is GNU 11.4.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Found ament_cmake: 1.3.12 (/opt/ros/humble/share/ament_cmake/cmake)
+-- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+-- Found rclcpp: 16.0.15 (/opt/ros/humble/share/rclcpp/cmake)
+-- Found rosidl_generator_c: 3.1.7 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+-- Found rosidl_adapter: 3.1.7 (/opt/ros/humble/share/rosidl_adapter/cmake)
+-- Found rosidl_generator_cpp: 3.1.7 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+-- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+-- Found rmw_fastrtps_cpp: 6.2.8 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+-- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.2")  
+-- Found FastRTPS: /opt/ros/humble/include  
+-- Using RMW implementation 'rmw_fastrtps_cpp' as default
+-- Looking for pthread.h
+-- Looking for pthread.h - found
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+-- Found Threads: TRUE  
+-- Found sensor_msgs: 4.9.0 (/opt/ros/humble/share/sensor_msgs/cmake)
+-- Found nav_msgs: 4.9.0 (/opt/ros/humble/share/nav_msgs/cmake)
+-- Found tf2_ros: 0.25.16 (/opt/ros/humble/share/tf2_ros/cmake)
+-- Found ament_lint_auto: 0.12.14 (/opt/ros/humble/share/ament_lint_auto/cmake)
+-- Added test 'cppcheck' to perform static code analysis on C / C++ code
+-- Configured cppcheck include dirs: 
+-- Configured cppcheck exclude dirs and/or files: 
+-- Added test 'lint_cmake' to check CMake code style
+-- Added test 'uncrustify' to check C / C++ code style
+-- Configured uncrustify additional arguments: 
+-- Added test 'xmllint' to check XML markup files
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/mobile/ros2_ws/src/build/a105_webots_bridge
+[ 25%] [32mBuilding CXX object CMakeFiles/webots_bridge_node.dir/src/webots_bridge_node.cpp.o[0m
+[ 50%] [32mBuilding CXX object CMakeFiles/3d_webots_bridge_node.dir/src/3d_webots_bridge_node.cpp.o[0m
+[01m[K/home/mobile/ros2_ws/src/a105_webots_bridge/src/3d_webots_bridge_node.cpp:[m[K In member function ‘[01m[Kvoid ComboBridgeNode::handle_payload(const uint8_t*, size_t)[m[K’:
+[01m[K/home/mobile/ros2_ws/src/a105_webots_bridge/src/3d_webots_bridge_node.cpp:330:22:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[KminR[m[K’ [[01;35m[K-Wunused-variable[m[K]
+  330 |       const float    [01;35m[KminR[m[K= le32f(data + 12);
+      |                      [01;35m[K^~~~[m[K
+[01m[K/home/mobile/ros2_ws/src/a105_webots_bridge/src/3d_webots_bridge_node.cpp:331:22:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[KmaxR[m[K’ [[01;35m[K-Wunused-variable[m[K]
+  331 |       const float    [01;35m[KmaxR[m[K= le32f(data + 16);
+      |                      [01;35m[K^~~~[m[K
+[ 75%] [32m[1mLinking CXX executable webots_bridge_node[0m
+[ 75%] Built target webots_bridge_node
+[100%] [32m[1mLinking CXX executable 3d_webots_bridge_node[0m
+[100%] Built target 3d_webots_bridge_node
+-- Install configuration: ""
+-- Installing: /home/mobile/ros2_ws/src/install/a105_webots_bridge/lib/a105_webots_bridge/webots_bridge_node
+-- Set runtime path of "/home/mobile/ros2_ws/src/install/a105_webots_bridge/lib/a105_webots_bridge/webots_bridge_node" to ""
+-- Installing: /home/mobile/ros2_ws/src/install/a105_webots_bridge/lib/a105_webots_bridge/3d_webots_bridge_node
+-- Set runtime path of "/home/mobile/ros2_ws/src/install/a105_webots_bridge/lib/a105_webots_bridge/3d_webots_bridge_node" to ""
+-- Installing: /home/mobile/ros2_ws/src/install/a105_webots_bridge/share/ament_index/resource_index/package_run_dependencies/a105_webots_bridge
+-- Installing: /home/mobile/ros2_ws/src/install/a105_webots_bridge/share/ament_index/resource_index/parent_prefix_path/a105_webots_bridge
+-- Installing: /home/mobile/ros2_ws/src/install/a105_webots_bridge/share/a105_webots_bridge/environment/ament_prefix_path.sh
+-- Installing: /home/mobile/ros2_ws/src/install/a105_webots_bridge/share/a105_webots_bridge/environment/ament_prefix_path.dsv
+-- Installing: /home/mobile/ros2_ws/src/install/a105_webots_bridge/share/a105_webots_bridge/environment/path.sh
+-- Installing: /home/mobile/ros2_ws/src/install/a105_webots_bridge/share/a105_webots_bridge/environment/path.dsv
+-- Installing: /home/mobile/ros2_ws/src/install/a105_webots_bridge/share/a105_webots_bridge/local_setup.bash
+-- Installing: /home/mobile/ros2_ws/src/install/a105_webots_bridge/share/a105_webots_bridge/local_setup.sh
+-- Installing: /home/mobile/ros2_ws/src/install/a105_webots_bridge/share/a105_webots_bridge/local_setup.zsh
+-- Installing: /home/mobile/ros2_ws/src/install/a105_webots_bridge/share/a105_webots_bridge/local_setup.dsv
+-- Installing: /home/mobile/ros2_ws/src/install/a105_webots_bridge/share/a105_webots_bridge/package.dsv
+-- Installing: /home/mobile/ros2_ws/src/install/a105_webots_bridge/share/ament_index/resource_index/packages/a105_webots_bridge
+-- Installing: /home/mobile/ros2_ws/src/install/a105_webots_bridge/share/a105_webots_bridge/cmake/a105_webots_bridgeConfig.cmake
+-- Installing: /home/mobile/ros2_ws/src/install/a105_webots_bridge/share/a105_webots_bridge/cmake/a105_webots_bridgeConfig-version.cmake
+-- Installing: /home/mobile/ros2_ws/src/install/a105_webots_bridge/share/a105_webots_bridge/package.xml

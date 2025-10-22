@@ -1,0 +1,21 @@
+[35m[1mConsolidate compiler generated dependencies of target segment_grid_localizer_node[0m
+[100%] Built target segment_grid_localizer_node
+-- Install configuration: ""
+-- Up-to-date: /home/mobile/ros2_ws/src/install/segment_grid_localizer/lib/segment_grid_localizer/segment_grid_localizer_node
+-- Up-to-date: /home/mobile/ros2_ws/src/install/segment_grid_localizer/share/segment_grid_localizer/launch
+-- Up-to-date: /home/mobile/ros2_ws/src/install/segment_grid_localizer/share/segment_grid_localizer/launch/localizer.launch.py
+-- Up-to-date: /home/mobile/ros2_ws/src/install/segment_grid_localizer/share/ament_index/resource_index/package_run_dependencies/segment_grid_localizer
+-- Up-to-date: /home/mobile/ros2_ws/src/install/segment_grid_localizer/share/ament_index/resource_index/parent_prefix_path/segment_grid_localizer
+-- Up-to-date: /home/mobile/ros2_ws/src/install/segment_grid_localizer/share/segment_grid_localizer/environment/ament_prefix_path.sh
+-- Up-to-date: /home/mobile/ros2_ws/src/install/segment_grid_localizer/share/segment_grid_localizer/environment/ament_prefix_path.dsv
+-- Up-to-date: /home/mobile/ros2_ws/src/install/segment_grid_localizer/share/segment_grid_localizer/environment/path.sh
+-- Up-to-date: /home/mobile/ros2_ws/src/install/segment_grid_localizer/share/segment_grid_localizer/environment/path.dsv
+-- Up-to-date: /home/mobile/ros2_ws/src/install/segment_grid_localizer/share/segment_grid_localizer/local_setup.bash
+-- Up-to-date: /home/mobile/ros2_ws/src/install/segment_grid_localizer/share/segment_grid_localizer/local_setup.sh
+-- Up-to-date: /home/mobile/ros2_ws/src/install/segment_grid_localizer/share/segment_grid_localizer/local_setup.zsh
+-- Up-to-date: /home/mobile/ros2_ws/src/install/segment_grid_localizer/share/segment_grid_localizer/local_setup.dsv
+-- Installing: /home/mobile/ros2_ws/src/install/segment_grid_localizer/share/segment_grid_localizer/package.dsv
+-- Up-to-date: /home/mobile/ros2_ws/src/install/segment_grid_localizer/share/ament_index/resource_index/packages/segment_grid_localizer
+-- Up-to-date: /home/mobile/ros2_ws/src/install/segment_grid_localizer/share/segment_grid_localizer/cmake/segment_grid_localizerConfig.cmake
+-- Up-to-date: /home/mobile/ros2_ws/src/install/segment_grid_localizer/share/segment_grid_localizer/cmake/segment_grid_localizerConfig-version.cmake
+-- Up-to-date: /home/mobile/ros2_ws/src/install/segment_grid_localizer/share/segment_grid_localizer/package.xml

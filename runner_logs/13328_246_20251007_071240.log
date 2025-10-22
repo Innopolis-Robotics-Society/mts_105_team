@@ -1,0 +1,7 @@
+=== Repository URL: https://git.robot.cybertech.ai/xakaton-codenrockcom-21/truetecharena1758047997-team-13328/robots ===
+Commit: 1403ef16a201751b6d743ad7f6ead7ffe2d550b1
+
+2025-10-07 07:12:41 [INFO] [Checker/INFO] Detected programming language: python
+2025-10-07 07:12:44 [INFO] [Checker/INFO] Starting docker-compose. Wait...
+2025-10-07 07:12:44 [INFO] [Runner/DOCKER] Using prebuilt image fabook/champ:v0.0.3
+2025-10-07 07:12:44 [INFO] [Runner/CONTAINER] Starting team container

@@ -1,0 +1,7 @@
+=== Repository URL: https://git.robot.cybertech.ai/xakaton-codenrockcom-21/truetecharena1758047997-team-13328/zadacha-2-labirint-bez-karty-postroenie-lokalnoj-karty-i-planirovanie-265 ===
+Commit: 09f0c73a20d6720f213ba6fc956bc22ced0a61ba
+
+2025-10-17 20:26:37 [INFO] [Checker/INFO] Detected programming language: python
+2025-10-17 20:26:37 [INFO] [Checker/INFO] Starting docker-compose. Wait...
+2025-10-17 20:26:37 [INFO] [Runner/DOCKER] Using prebuilt image fabook/champ:v0.0.4
+2025-10-17 20:26:37 [INFO] [Runner/CONTAINER] Starting team container

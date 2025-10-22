@@ -1,0 +1,3 @@
+Invoking command in '/home/mobile/ros2_ws/src/build/a105_custom_slam': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /home/mobile/ros2_ws/src/a105_custom_slam -DCMAKE_INSTALL_PREFIX=/home/mobile/ros2_ws/src/install/a105_custom_slam
+Invoked command in '/home/mobile/ros2_ws/src/build/a105_custom_slam' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /home/mobile/ros2_ws/src/a105_custom_slam -DCMAKE_INSTALL_PREFIX=/home/mobile/ros2_ws/src/install/a105_custom_slam
+Invoking command in '/home/mobile/ros2_ws/src/build/a105_custom_slam': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/mobile/ros2_ws/src/build/a105_custom_slam -- -j16 -l16

@@ -1,0 +1,83 @@
+[0.019s] Invoking command in '/home/mobile/ros2_ws/src/build/a105_webots_bridge': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /home/mobile/ros2_ws/src/a105_webots_bridge -DCMAKE_INSTALL_PREFIX=/home/mobile/ros2_ws/src/install/a105_webots_bridge
+[0.063s] -- The C compiler identification is GNU 11.4.0
+[0.115s] -- The CXX compiler identification is GNU 11.4.0
+[0.120s] -- Detecting C compiler ABI info
+[0.175s] -- Detecting C compiler ABI info - done
+[0.183s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.184s] -- Detecting C compile features
+[0.184s] -- Detecting C compile features - done
+[0.187s] -- Detecting CXX compiler ABI info
+[0.250s] -- Detecting CXX compiler ABI info - done
+[0.257s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.258s] -- Detecting CXX compile features
+[0.258s] -- Detecting CXX compile features - done
+[0.261s] -- Found ament_cmake: 1.3.12 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.382s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[0.499s] -- Found rclcpp: 16.0.15 (/opt/ros/humble/share/rclcpp/cmake)
+[0.554s] -- Found rosidl_generator_c: 3.1.7 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[0.563s] -- Found rosidl_adapter: 3.1.7 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[0.575s] -- Found rosidl_generator_cpp: 3.1.7 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[0.592s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.614s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.661s] -- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[0.664s] -- Found rmw_fastrtps_cpp: 6.2.8 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[0.753s] -- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.2")  
+[0.781s] -- Found FastRTPS: /opt/ros/humble/include  
+[0.836s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[0.852s] -- Looking for pthread.h
+[0.905s] -- Looking for pthread.h - found
+[0.905s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+[0.954s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+[0.955s] -- Found Threads: TRUE  
+[1.020s] -- Found sensor_msgs: 4.9.0 (/opt/ros/humble/share/sensor_msgs/cmake)
+[1.046s] -- Found nav_msgs: 4.9.0 (/opt/ros/humble/share/nav_msgs/cmake)
+[1.058s] -- Found tf2_ros: 0.25.16 (/opt/ros/humble/share/tf2_ros/cmake)
+[1.263s] -- Found ament_lint_auto: 0.12.14 (/opt/ros/humble/share/ament_lint_auto/cmake)
+[1.379s] -- Added test 'cppcheck' to perform static code analysis on C / C++ code
+[1.380s] -- Configured cppcheck include dirs: 
+[1.380s] -- Configured cppcheck exclude dirs and/or files: 
+[1.381s] -- Added test 'lint_cmake' to check CMake code style
+[1.383s] -- Added test 'uncrustify' to check C / C++ code style
+[1.384s] -- Configured uncrustify additional arguments: 
+[1.385s] -- Added test 'xmllint' to check XML markup files
+[1.389s] -- Configuring done
+[1.431s] -- Generating done
+[1.437s] -- Build files have been written to: /home/mobile/ros2_ws/src/build/a105_webots_bridge
+[1.462s] Invoked command in '/home/mobile/ros2_ws/src/build/a105_webots_bridge' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /home/mobile/ros2_ws/src/a105_webots_bridge -DCMAKE_INSTALL_PREFIX=/home/mobile/ros2_ws/src/install/a105_webots_bridge
+[1.462s] Invoking command in '/home/mobile/ros2_ws/src/build/a105_webots_bridge': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/mobile/ros2_ws/src/build/a105_webots_bridge -- -j16 -l16
+[1.582s] [ 25%] [32mBuilding CXX object CMakeFiles/webots_bridge_node.dir/src/webots_bridge_node.cpp.o[0m
+[1.587s] [ 50%] [32mBuilding CXX object CMakeFiles/3d_webots_bridge_node.dir/src/3d_webots_bridge_node.cpp.o[0m
+[5.041s] [01m[K/home/mobile/ros2_ws/src/a105_webots_bridge/src/3d_webots_bridge_node.cpp:[m[K In member function ‘[01m[Kvoid ComboBridgeNode::handle_payload(const uint8_t*, size_t)[m[K’:
+[5.041s] [01m[K/home/mobile/ros2_ws/src/a105_webots_bridge/src/3d_webots_bridge_node.cpp:330:22:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[KminR[m[K’ [[01;35m[K-Wunused-variable[m[K]
+[5.041s]   330 |       const float    [01;35m[KminR[m[K= le32f(data + 12);
+[5.041s]       |                      [01;35m[K^~~~[m[K
+[5.041s] [01m[K/home/mobile/ros2_ws/src/a105_webots_bridge/src/3d_webots_bridge_node.cpp:331:22:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[KmaxR[m[K’ [[01;35m[K-Wunused-variable[m[K]
+[5.041s]   331 |       const float    [01;35m[KmaxR[m[K= le32f(data + 16);
+[5.041s]       |                      [01;35m[K^~~~[m[K
+[7.751s] [ 75%] [32m[1mLinking CXX executable webots_bridge_node[0m
+[8.000s] [ 75%] Built target webots_bridge_node
+[8.810s] [100%] [32m[1mLinking CXX executable 3d_webots_bridge_node[0m
+[9.086s] [100%] Built target 3d_webots_bridge_node
+[9.096s] Invoked command in '/home/mobile/ros2_ws/src/build/a105_webots_bridge' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/mobile/ros2_ws/src/build/a105_webots_bridge -- -j16 -l16
+[9.098s] Invoking command in '/home/mobile/ros2_ws/src/build/a105_webots_bridge': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/mobile/ros2_ws/src/build/a105_webots_bridge
+[9.105s] -- Install configuration: ""
+[9.105s] -- Installing: /home/mobile/ros2_ws/src/install/a105_webots_bridge/lib/a105_webots_bridge/webots_bridge_node
+[9.106s] -- Set runtime path of "/home/mobile/ros2_ws/src/install/a105_webots_bridge/lib/a105_webots_bridge/webots_bridge_node" to ""
+[9.106s] -- Installing: /home/mobile/ros2_ws/src/install/a105_webots_bridge/lib/a105_webots_bridge/3d_webots_bridge_node
+[9.108s] -- Set runtime path of "/home/mobile/ros2_ws/src/install/a105_webots_bridge/lib/a105_webots_bridge/3d_webots_bridge_node" to ""
+[9.108s] -- Installing: /home/mobile/ros2_ws/src/install/a105_webots_bridge/share/ament_index/resource_index/package_run_dependencies/a105_webots_bridge
+[9.108s] -- Installing: /home/mobile/ros2_ws/src/install/a105_webots_bridge/share/ament_index/resource_index/parent_prefix_path/a105_webots_bridge
+[9.109s] -- Installing: /home/mobile/ros2_ws/src/install/a105_webots_bridge/share/a105_webots_bridge/environment/ament_prefix_path.sh
+[9.109s] -- Installing: /home/mobile/ros2_ws/src/install/a105_webots_bridge/share/a105_webots_bridge/environment/ament_prefix_path.dsv
+[9.109s] -- Installing: /home/mobile/ros2_ws/src/install/a105_webots_bridge/share/a105_webots_bridge/environment/path.sh
+[9.109s] -- Installing: /home/mobile/ros2_ws/src/install/a105_webots_bridge/share/a105_webots_bridge/environment/path.dsv
+[9.109s] -- Installing: /home/mobile/ros2_ws/src/install/a105_webots_bridge/share/a105_webots_bridge/local_setup.bash
+[9.109s] -- Installing: /home/mobile/ros2_ws/src/install/a105_webots_bridge/share/a105_webots_bridge/local_setup.sh
+[9.109s] -- Installing: /home/mobile/ros2_ws/src/install/a105_webots_bridge/share/a105_webots_bridge/local_setup.zsh
+[9.109s] -- Installing: /home/mobile/ros2_ws/src/install/a105_webots_bridge/share/a105_webots_bridge/local_setup.dsv
+[9.109s] -- Installing: /home/mobile/ros2_ws/src/install/a105_webots_bridge/share/a105_webots_bridge/package.dsv
+[9.109s] -- Installing: /home/mobile/ros2_ws/src/install/a105_webots_bridge/share/ament_index/resource_index/packages/a105_webots_bridge
+[9.110s] -- Installing: /home/mobile/ros2_ws/src/install/a105_webots_bridge/share/a105_webots_bridge/cmake/a105_webots_bridgeConfig.cmake
+[9.110s] -- Installing: /home/mobile/ros2_ws/src/install/a105_webots_bridge/share/a105_webots_bridge/cmake/a105_webots_bridgeConfig-version.cmake
+[9.110s] -- Installing: /home/mobile/ros2_ws/src/install/a105_webots_bridge/share/a105_webots_bridge/package.xml
+[9.112s] Invoked command in '/home/mobile/ros2_ws/src/build/a105_webots_bridge' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/mobile/ros2_ws/src/build/a105_webots_bridge

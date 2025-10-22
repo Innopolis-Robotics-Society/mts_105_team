@@ -1,0 +1,7 @@
+[01m[K/home/mobile/ros2_ws/src/a105_webots_bridge/src/3d_webots_bridge_node.cpp:[m[K In member function ‘[01m[Kvoid ComboBridgeNode::handle_payload(const uint8_t*, size_t)[m[K’:
+[01m[K/home/mobile/ros2_ws/src/a105_webots_bridge/src/3d_webots_bridge_node.cpp:330:22:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[KminR[m[K’ [[01;35m[K-Wunused-variable[m[K]
+  330 |       const float    [01;35m[KminR[m[K= le32f(data + 12);
+      |                      [01;35m[K^~~~[m[K
+[01m[K/home/mobile/ros2_ws/src/a105_webots_bridge/src/3d_webots_bridge_node.cpp:331:22:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[KmaxR[m[K’ [[01;35m[K-Wunused-variable[m[K]
+  331 |       const float    [01;35m[KmaxR[m[K= le32f(data + 16);
+      |                      [01;35m[K^~~~[m[K

@@ -1,0 +1,25 @@
+[0.027s] Invoking command in '/home/mobile/ros2_ws/src/build/segment_grid_localizer': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/mobile/ros2_ws/src/build/segment_grid_localizer -- -j16 -l16
+[0.053s] [35m[1mConsolidate compiler generated dependencies of target segment_grid_localizer_node[0m
+[0.071s] [100%] Built target segment_grid_localizer_node
+[0.114s] Invoked command in '/home/mobile/ros2_ws/src/build/segment_grid_localizer' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/mobile/ros2_ws/src/build/segment_grid_localizer -- -j16 -l16
+[0.114s] Invoking command in '/home/mobile/ros2_ws/src/build/segment_grid_localizer': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/mobile/ros2_ws/src/build/segment_grid_localizer
+[0.138s] -- Install configuration: ""
+[0.138s] -- Up-to-date: /home/mobile/ros2_ws/src/install/segment_grid_localizer/lib/segment_grid_localizer/segment_grid_localizer_node
+[0.138s] -- Up-to-date: /home/mobile/ros2_ws/src/install/segment_grid_localizer/share/segment_grid_localizer/launch
+[0.138s] -- Up-to-date: /home/mobile/ros2_ws/src/install/segment_grid_localizer/share/segment_grid_localizer/launch/localizer.launch.py
+[0.138s] -- Up-to-date: /home/mobile/ros2_ws/src/install/segment_grid_localizer/share/ament_index/resource_index/package_run_dependencies/segment_grid_localizer
+[0.138s] -- Up-to-date: /home/mobile/ros2_ws/src/install/segment_grid_localizer/share/ament_index/resource_index/parent_prefix_path/segment_grid_localizer
+[0.138s] -- Up-to-date: /home/mobile/ros2_ws/src/install/segment_grid_localizer/share/segment_grid_localizer/environment/ament_prefix_path.sh
+[0.138s] -- Up-to-date: /home/mobile/ros2_ws/src/install/segment_grid_localizer/share/segment_grid_localizer/environment/ament_prefix_path.dsv
+[0.138s] -- Up-to-date: /home/mobile/ros2_ws/src/install/segment_grid_localizer/share/segment_grid_localizer/environment/path.sh
+[0.138s] -- Up-to-date: /home/mobile/ros2_ws/src/install/segment_grid_localizer/share/segment_grid_localizer/environment/path.dsv
+[0.138s] -- Up-to-date: /home/mobile/ros2_ws/src/install/segment_grid_localizer/share/segment_grid_localizer/local_setup.bash
+[0.138s] -- Up-to-date: /home/mobile/ros2_ws/src/install/segment_grid_localizer/share/segment_grid_localizer/local_setup.sh
+[0.138s] -- Up-to-date: /home/mobile/ros2_ws/src/install/segment_grid_localizer/share/segment_grid_localizer/local_setup.zsh
+[0.138s] -- Up-to-date: /home/mobile/ros2_ws/src/install/segment_grid_localizer/share/segment_grid_localizer/local_setup.dsv
+[0.138s] -- Installing: /home/mobile/ros2_ws/src/install/segment_grid_localizer/share/segment_grid_localizer/package.dsv
+[0.138s] -- Up-to-date: /home/mobile/ros2_ws/src/install/segment_grid_localizer/share/ament_index/resource_index/packages/segment_grid_localizer
+[0.138s] -- Up-to-date: /home/mobile/ros2_ws/src/install/segment_grid_localizer/share/segment_grid_localizer/cmake/segment_grid_localizerConfig.cmake
+[0.138s] -- Up-to-date: /home/mobile/ros2_ws/src/install/segment_grid_localizer/share/segment_grid_localizer/cmake/segment_grid_localizerConfig-version.cmake
+[0.138s] -- Up-to-date: /home/mobile/ros2_ws/src/install/segment_grid_localizer/share/segment_grid_localizer/package.xml
+[0.148s] Invoked command in '/home/mobile/ros2_ws/src/build/segment_grid_localizer' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/mobile/ros2_ws/src/build/segment_grid_localizer

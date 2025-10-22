@@ -1,0 +1,6 @@
+Invoking command in '/home/mobile/ros2_ws/src/build/a105_bringup': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /home/mobile/ros2_ws/src/a105_bringup -DCMAKE_INSTALL_PREFIX=/home/mobile/ros2_ws/src/install/a105_bringup
+Invoked command in '/home/mobile/ros2_ws/src/build/a105_bringup' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /home/mobile/ros2_ws/src/a105_bringup -DCMAKE_INSTALL_PREFIX=/home/mobile/ros2_ws/src/install/a105_bringup
+Invoking command in '/home/mobile/ros2_ws/src/build/a105_bringup': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/mobile/ros2_ws/src/build/a105_bringup -- -j16 -l16
+Invoked command in '/home/mobile/ros2_ws/src/build/a105_bringup' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/mobile/ros2_ws/src/build/a105_bringup -- -j16 -l16
+Invoking command in '/home/mobile/ros2_ws/src/build/a105_bringup': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/mobile/ros2_ws/src/build/a105_bringup
+Invoked command in '/home/mobile/ros2_ws/src/build/a105_bringup' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/mobile/ros2_ws/src/build/a105_bringup
