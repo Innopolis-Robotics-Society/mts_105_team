@@ -22,7 +22,7 @@ services:
     command: []
   
   terminal:
-    image: fabook/champ:<TBA>
+    image: fabook/champ:rpi-v0.0.1
     <<: *common-setup
     stdin_open: true  # dsocker run -i
     tty: true        # docker run -t
