@@ -2,7 +2,7 @@ a105_lidar:
   ros__parameters:
     port: "/dev/ttyUSB0"
     baud: 230400
-    frame_id: "laser"
+    frame_id: "liadr_link"
     inc_deg: 0.5
     range_min: 0.05
     range_max: 8.0
