@@ -8,33 +8,36 @@ from launch_ros.actions import Node  # Add this import
 
 def generate_launch_description():
 
-
     declare_use_sim_time_cmd = DeclareLaunchArgument(
         "use_sim_time", default_value="False", description="Use simulation (Gazebo) clock if true"
     )
 
-    controller = Node(
-            package='a105_webots_controller',
-            executable='sender',
-            arguments=['--ros-args', '--log-level', 'error']
-        )
-
-    bridge = Node(
-        package= 'a105_webots_bridge',
-        executable= 'webots_bridge_node',
-        name = "wbtg_combo_pub",
-        output='screen',
-        arguments=['--ros-args', '--log-level', 'error']
+    wheels = IncludeLaunchDescription(
+        PathJoinSubstitution([FindPackageShare("a105_cobra_driver"), "launch", "cobra.launch.py"]),
     )
 
+    lidar = IncludeLaunchDescription(
+        PathJoinSubstitution([FindPackageShare("a105_lidar"), "launch", "ld19.launch.py"]),
+    )
+
+    depth_camera = IncludeLaunchDescription(
+        PathJoinSubstitution([FindPackageShare("TO-DO"), "launch", "TO-DO.launch.py"]),
+    )
+
+    imu = IncludeLaunchDescription(
+        PathJoinSubstitution([FindPackageShare("TO-DO"), "launch", "TO-DO.launch.py"]),
+    )
 
     ld = LaunchDescription(
         [
             declare_use_sim_time_cmd,
 
-            bridge,
-            controller,
+            wheels,
+            lidar,
+            #depth_camera,
+            #imu,
         ]
     )
+
 
     return ld

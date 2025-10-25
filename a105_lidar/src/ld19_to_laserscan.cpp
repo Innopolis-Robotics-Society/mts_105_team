@@ -55,7 +55,7 @@ public:
   LD19ToLaserScan() : Node("ld19_to_laserscan") {
     port_         = this->declare_parameter<std::string>("port", "/dev/ttyUSB0");
     baud_         = this->declare_parameter<int>("baud", 230400);
-    frame_id_     = this->declare_parameter<std::string>("frame_id", "laser");
+    frame_id_     = this->declare_parameter<std::string>("frame_id", "lidar_link");
     inc_deg_      = this->declare_parameter<double>("inc_deg", 1.0);
     range_min_    = this->declare_parameter<double>("range_min", 0.05);
     range_max_    = this->declare_parameter<double>("range_max", 8.0);
