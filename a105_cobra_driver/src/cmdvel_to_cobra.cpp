@@ -95,6 +95,7 @@ private:
   }
   void send_json(const std::string& s){
     // строго только JSON. НИ одного \r или \n.
+    RCLCPP_INFO(get_logger(), "[TX] %s", s.c_str());
     ssize_t n = ::write(fd_, s.data(), s.size());
     (void)n;
   }
@@ -107,6 +108,13 @@ private:
       std::lock_guard<std::mutex> lk(m_);
       if (!expired && have_cmd_){ v = last_v_; w = last_w_; }
     }
+    if (expired && (last_deadman_state_.exchange(true) == false)) {
+      RCLCPP_WARN(get_logger(), "Deadman: no cmd_vel for %.2fs → sending zeros", deadman_s_);
+    }
+    if (!expired && (last_deadman_state_.exchange(false) == true)) {
+      RCLCPP_INFO(get_logger(), "Deadman cleared: cmd_vel active");
+    }
+
     char buf[96];
     std::snprintf(buf, sizeof(buf), "{\"T\":13,\"X\":%.3f,\"Z\":%.3f}", v, w);
     send_json(buf);
@@ -117,12 +125,10 @@ private:
 
   // -------- RX parsing + ODOM ----------
   static bool extract_int(const std::string& s, const char* key, int &out){
-    // ищем "key":<int>
     std::string pat = std::string("\"")+key+"\":";
     size_t p = s.find(pat);
     if (p==std::string::npos) return false;
     p += pat.size();
-    // пропустить пробелы и знак
     while (p<s.size() && (s[p]==' ')) ++p;
     char* end=nullptr;
     long v = std::strtol(s.c_str()+p, &end, 10);
@@ -143,7 +149,6 @@ private:
       // вычленяем полноценные JSON-объекты по балансировке {}
       size_t i=0;
       while (i < buf.size()){
-        // ищем начало
         while (i<buf.size() && buf[i] != '{') ++i;
         if (i>=buf.size()) break;
         int depth = 0;
@@ -152,77 +157,89 @@ private:
           if (buf[j]=='{') ++depth;
           else if (buf[j]=='}'){
             --depth;
-            if (depth==0){ // объект [i..j]
+            if (depth==0){
               std::string js = buf.substr(i, j-i+1);
+              // --- RAW RX LOG ---
+              RCLCPP_INFO(get_logger(), "[RX] %s", js.c_str());
               handle_json(js, last);
               i = j+1;
               break;
             }
           }
         }
-        if (j>=buf.size()) break; // ждём продолжение
+        if (j>=buf.size()) break;
       }
-      // удаляем уже разобранную часть
       if (i>0) buf.erase(0, i);
-      // ограничим буфер от разрастания
       if (buf.size() > 16384) buf.erase(0, buf.size()-1024);
     }
   }
 
   void handle_json(const std::string& js, rclcpp::Time &last_time){
-    // ожидаем T=1001 телеметрию: ...,"odl":<int>,"odr":<int>,...
     int tcode=0;
     if (!extract_int(js, "T", tcode)) return;
-    if (tcode != 1001) return;
 
-    int odl=0, odr=0;
-    if (!extract_int(js, "odl", odl)) return;
-    if (!extract_int(js, "odr", odr)) return;
+    // лог интересных пакетов сводкой
+    if (tcode == 1001) {
+      int odl=0, odr=0;
+      if (!extract_int(js, "odl", odl)) return;
+      if (!extract_int(js, "odr", odr)) return;
 
-    const auto tnow = now();
-    const double dt = (tnow - last_time).seconds();
-    if (dt <= 0.0) { last_time = tnow; return; }
+      const auto tnow = now();
+      const double dt = (tnow - last_time).seconds();
+      if (dt <= 0.0) { last_time = tnow; return; }
 
-    // перевод тиков в метры
-    const double Dl = (odl - last_left_ticks_) / tpm_;
-    const double Dr = (odr - last_right_ticks_) / tpm_;
-    last_left_ticks_  = odl;
-    last_right_ticks_ = odr;
+      const double Dl = (odl - last_left_ticks_) / tpm_;
+      const double Dr = (odr - last_right_ticks_) / tpm_;
+      last_left_ticks_  = odl;
+      last_right_ticks_ = odr;
 
-    // первая валидная пара тиков
-    if (!have_odo_){ have_odo_ = true; last_time = tnow; return; }
+      if (!have_odo_){ have_odo_ = true; last_time = tnow; return; }
 
-    const double dS = 0.5 * (Dl + Dr);
-    const double dTh = (Dr - Dl) / track_;
+      const double dS = 0.5 * (Dl + Dr);
+      const double dTh = (Dr - Dl) / track_;
+      const double th_mid = yaw_ + 0.5 * dTh;
+      x_   += dS * std::cos(th_mid);
+      y_   += dS * std::sin(th_mid);
+      yaw_ += dTh;
 
-    // интеграция позы (сколигатор)
-    const double th_mid = yaw_ + 0.5 * dTh;
-    x_   += dS * std::cos(th_mid);
-    y_   += dS * std::sin(th_mid);
-    yaw_ += dTh;
+      const double v = dS / dt;
+      const double w = dTh / dt;
 
-    // линейная и угловая скорость
-    const double v = dS / dt;
-    const double w = dTh / dt;
+      // опциональные поля телеметрии
+      int m1=0,m2=0,m3=0,m4=0, vraw=0;
+      bool has_m = extract_int(js, "M1", m1) | extract_int(js, "M2", m2) |
+                   extract_int(js, "M3", m3) | extract_int(js, "M4", m4);
+      bool has_v = extract_int(js, "v", vraw);
 
-    // публикация Odometry
-    nav_msgs::msg::Odometry od;
-    od.header.stamp = tnow;
-    od.header.frame_id = odom_frame_;
-    od.child_frame_id  = base_frame_;
-    od.pose.pose.position.x = x_;
-    od.pose.pose.position.y = y_;
-    od.pose.pose.position.z = 0.0;
-    // yaw -> quat (z-ось)
-    double half = 0.5 * yaw_;
-    od.pose.pose.orientation.z = std::sin(half);
-    od.pose.pose.orientation.w = std::cos(half);
-    od.twist.twist.linear.x  = v;
-    od.twist.twist.angular.z = w;
-    // ковариации можно задать параметрами при необходимости
-    odom_pub_->publish(od);
+      RCLCPP_INFO(get_logger(),
+        "[ODOM] x=%.3f y=%.3f yaw=%.3f  v=%.3f m/s w=%.3f rad/s  ticks(L,R)=(%d,%d)%s%s",
+        x_, y_, yaw_, v, w, odl, odr,
+        has_m ? " M[*]=yes" : "",
+        has_v ? " vraw=yes" : "");
 
-    last_time = tnow;
+      nav_msgs::msg::Odometry od;
+      od.header.stamp = tnow;
+      od.header.frame_id = odom_frame_;
+      od.child_frame_id  = base_frame_;
+      od.pose.pose.position.x = x_;
+      od.pose.pose.position.y = y_;
+      od.pose.pose.position.z = 0.0;
+      double half = 0.5 * yaw_;
+      od.pose.pose.orientation.z = std::sin(half);
+      od.pose.pose.orientation.w = std::cos(half);
+      od.twist.twist.linear.x  = v;
+      od.twist.twist.angular.z = w;
+      odom_pub_->publish(od);
+
+      last_time = tnow;
+      return;
+    }
+
+    if (tcode == 1000 || tcode == 130) {
+      // статус/пинг — просто отметим
+      RCLCPP_INFO(get_logger(), "[STAT] packet T=%d", tcode);
+      return;
+    }
   }
 
   // -------- helpers ----------
@@ -236,6 +253,7 @@ private:
   // cmd state
   std::mutex m_;
   double last_v_{0.0}, last_w_{0.0};
+  std::atomic<bool> last_deadman_state_{false};
   rclcpp::Time last_cmd_time_{0,0,RCL_ROS_TIME};
   bool have_cmd_{false};
 
