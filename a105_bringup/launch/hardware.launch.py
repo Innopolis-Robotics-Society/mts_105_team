@@ -25,7 +25,7 @@ def generate_launch_description():
     )
 
     imu = IncludeLaunchDescription(
-        PathJoinSubstitution([FindPackageShare("TO-DO"), "launch", "TO-DO.launch.py"]),
+        PathJoinSubstitution([FindPackageShare("bno055"), "launch", "bno055.launch.py"]),
     )
 
     ld = LaunchDescription(
