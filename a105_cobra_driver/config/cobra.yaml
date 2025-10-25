@@ -1,6 +1,6 @@
 a105_cobra_driver:
   ros__parameters:
-    port: "/dev/ttyUSB0"    # CHANGE THE GODDAMN PORT IF NEEDED
+    port: "/dev/ttyACM1"    # CHANGE THE GODDAMN PORT IF NEEDED
     baud: 115200
     track: 0.228
     wheel_d: 0.0745
