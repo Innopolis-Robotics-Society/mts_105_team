@@ -8,6 +8,7 @@ ENV ROS_DISTRO=humble
 ARG USERNAME=mobile
 ARG USER_UID=1000
 ARG USER_GID=$USER_UID
+ARG USER_PASSWORD=105team
 
 #Create USER
 RUN groupadd --gid $USER_GID $USERNAME \
@@ -15,7 +16,8 @@ RUN groupadd --gid $USER_GID $USERNAME \
     && apt-get update \
     && apt-get install -y sudo \
     && echo $USERNAME ALL=\(root\) NOPASSWD:ALL > /etc/sudoers.d/$USERNAME \
-    && chmod 0440 /etc/sudoers.d/$USERNAME
+    && chmod 0440 /etc/sudoers.d/$USERNAME \
+    && echo "${USERNAME}:${USER_PASSWORD}" | chpasswd
 
 # Update and install necessary packages
 RUN apt-get update && apt-get upgrade -y \
@@ -46,6 +48,17 @@ RUN apt-get update && apt-get upgrade -y && \
     ros-${ROS_DISTRO}-nav2-rviz-plugins \
     ros-${ROS_DISTRO}-robot-localization \
     ros-${ROS_DISTRO}-pointcloud-to-laserscan \
+    ros-${ROS_DISTRO}-image-transport \
+    ros-${ROS_DISTRO}-image-transport-plugins \ 
+    ros-${ROS_DISTRO}-compressed-image-transport \
+    ros-${ROS_DISTRO}-image-publisher \
+    ros-${ROS_DISTRO}-camera-info-manager \
+    ros-${ROS_DISTRO}-diagnostic-updater \ 
+    ros-${ROS_DISTRO}-diagnostic-msgs \
+    ros-${ROS_DISTRO}-statistics-msgs \
+    ros-${ROS_DISTRO}-backward-ros libdw-dev \
+    libgflags-dev \
+    nlohmann-json3-dev  \
     libcanberra-gtk-module \
     libcanberra-gtk3-module \
     at-spi2-core \
