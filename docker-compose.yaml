@@ -1,6 +1,7 @@
 x-common: &common-setup
   image: fabook/champ:v0.0.5
   network_mode: host
+  ipc: host
   privileged: true
   volumes:
     - ${HOME}/.Xauthority:/home/mobile/.Xauthority:rw
