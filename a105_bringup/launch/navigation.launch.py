@@ -43,13 +43,13 @@ def generate_launch_description():
         }]
     )
 
-    slam = Node(
-        package="a105_custom_slam",
-        executable="segment_grid_mapper",
-        name="segment_grid_mapper",
-        output="screen",
-        parameters=[slam_cfg],
-    )
+    # slam = Node(
+    #     package="a105_custom_slam",
+    #     executable="segment_grid_mapper",
+    #     name="segment_grid_mapper",
+    #     output="screen",
+    #     parameters=[slam_cfg],
+    # )
 
     amcl = Node(
         package="nav2_amcl",
@@ -85,9 +85,9 @@ def generate_launch_description():
             #lidar_odom,
             ekf,
             TimerAction(period=0.5, actions=[nav2]),
-            slam,
+            # slam,
             amcl,
-            goal,
+            # goal,
         ]
     )
 
