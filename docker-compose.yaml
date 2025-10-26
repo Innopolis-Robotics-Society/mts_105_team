@@ -7,9 +7,6 @@ x-common: &common-setup
     - .:/home/mobile/ros2_ws/src:rw
     - /tmp/.X11-unix:/tmp/.X11-unix:rw
     - /dev/dri:/dev/dri:rw
-  environment:
-    - DISPLAY
-    - QT_X11_NO_MITSHM=1
   working_dir: /home/mobile/ros2_ws
 
 
@@ -30,6 +27,9 @@ services:
   terminal-rpi:
     image: fabook/champ:rpi-v0.0.1
     <<: *common-setup
+    environment:
+    - DISPLAY=1
+    - QT_X11_NO_MITSHM=1
     stdin_open: true  # dsocker run -i
     tty: true        # docker run -t
     command: [
