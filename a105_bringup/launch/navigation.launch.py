@@ -14,6 +14,7 @@ def generate_launch_description():
     goal_frame = DeclareLaunchArgument('goal_frame', default_value='map')
     map_file = DeclareLaunchArgument("map_file", default_value="",)
     slam_cfg = PathJoinSubstitution([FindPackageShare("a105_custom_slam"), "config", "segment_grid_mapper.yaml"])
+    rviz_cfg = PathJoinSubstitution([FindPackageShare('a105_bringup'), 'rviz', 'simca.rviz'])
     amcl_cfg = PathJoinSubstitution([FindPackageShare("a105_navigation"), "config", "amcl.yaml"])
 
     declare_use_sim_time_cmd = DeclareLaunchArgument(
@@ -51,13 +52,13 @@ def generate_launch_description():
     #     parameters=[slam_cfg],
     # )
 
-    amcl = Node(
-        package="nav2_amcl",
-        executable="amcl",
-        name="amcl",
-        output="screen",
-        parameters=[amcl_cfg],
-    )
+    # amcl = Node(
+    #     package="nav2_amcl",
+    #     executable="amcl",
+    #     name="amcl",
+    #     output="screen",
+    #     parameters=[amcl_cfg],
+    # )
 
     goal_node = Node(
         package='a105_path_planner',
@@ -69,6 +70,12 @@ def generate_launch_description():
             'goal_yaw': LaunchConfiguration('goal_yaw'),
             'goal_frame': LaunchConfiguration('goal_frame'),
         }]
+    )
+
+    rviz2 = Node(
+        package= 'rviz2',
+        executable= 'rviz2',
+        arguments=['-d', rviz_cfg],
     )
 
     goal = TimerAction(period=4.0, actions=[goal_node])
@@ -85,8 +92,9 @@ def generate_launch_description():
             #lidar_odom,
             ekf,
             TimerAction(period=0.5, actions=[nav2]),
+            rviz2
             # slam,
-            amcl,
+            # amcl,
             # goal,
         ]
     )
