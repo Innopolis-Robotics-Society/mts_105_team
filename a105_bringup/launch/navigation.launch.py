@@ -25,7 +25,7 @@ def generate_launch_description():
         launch_arguments=[
             ("use_sim_time", LaunchConfiguration("use_sim_time")),
             ("map_file", LaunchConfiguration("map_file")),
-            ("slam", "False")
+            ("slam", "True")
         ],
     )
 
