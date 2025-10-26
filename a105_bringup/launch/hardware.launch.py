@@ -21,8 +21,18 @@ def generate_launch_description():
     )
 
     depth_camera = IncludeLaunchDescription(
-        PathJoinSubstitution([FindPackageShare("TO-DO"), "launch", "TO-DO.launch.py"]),
-    )
+    PythonLaunchDescriptionSource(
+        PathJoinSubstitution([FindPackageShare("orbbec_camera"), "launch", "dabai_dcw.launch.py"])
+    ),
+    launch_arguments={
+        "camera_name": "camera",
+        "enable_color": "true",
+        "enable_depth": "true",
+        "depth_registration": "true",
+        "color_width": "1280", "color_height": "720", "color_fps": "30",
+        "depth_width": "640",  "depth_height": "480", "depth_fps": "30",
+    }.items(),
+)
 
     imu = IncludeLaunchDescription(
         PathJoinSubstitution([FindPackageShare("bno055"), "launch", "bno055.launch.py"]),
@@ -34,7 +44,7 @@ def generate_launch_description():
 
             wheels,
             lidar,
-            #depth_camera,
+            depth_camera,
             #imu,
         ]
     )
