@@ -18,7 +18,7 @@ services:
     - TELEMETRY_PROTO=udp   # <-- was PROTO=tcp (unused). Use the var your node reads.
     - TEL_HOST=0.0.0.0      # <-- bind wildcard, receives from host
     - TEL_PORT=5600
-    image: fabook/champ:v0.0.5
+    image: fabook/champ:v0.0.6
     <<: *common-setup
     stdin_open: true  # dsocker run -i
     tty: true        # docker run -t
