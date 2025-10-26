@@ -1,4 +1,4 @@
-"""Launch file for Epson IMU node publishing on /imu/data_raw without orientation data for ess_imu_driver2 package"""
+"""Launch file for Epson IMU node publishing on /imu/data for a105_imu package"""
 
 from launch import LaunchDescription
 import launch_ros.actions
@@ -69,13 +69,22 @@ def generate_launch_description():
                 # 17: KAISER TAP128 Fc=100 Hz
                 # 18: KAISER TAP128 Fc=200 Hz
                 # 19: KAISER TAP128 Fc=400 Hz
-                default_value="6",
+                default_value="5",
                 description="Sets the IMU filter",
             ),
             DeclareLaunchArgument(
                 name="quaternion_output_en",
+                default_value="1",
+                description="Enables quaternion output for orientation",
+            ),
+            DeclareLaunchArgument(
+                name="atti_profile",
+                # value: attitude motion profile
+                # 0: modeA (standard)
+                # 1: modeB (vehicle/high)
+                # 2: modeC (construction/low)
                 default_value="0",
-                description="Disables quaternion output for orientation",
+                description="Sets the attitude motion profile, if attitude/quaternion enabled",
             ),
             DeclareLaunchArgument(
                 name="output_32bit_en",
@@ -88,8 +97,8 @@ def generate_launch_description():
                 description="Enables using IMU external counter reset function for timestamp with external 1PPS connected to IMU input pin for GPIO2/EXT",
             ),
             launch_ros.actions.Node(
-                package="ess_imu_driver2",
-                executable="ess_imu_driver2_node",
+                package="a105_imu",
+                executable="a105_imu_node",
                 output="screen",
                 parameters=[
                     {
@@ -102,6 +111,7 @@ def generate_launch_description():
                         "quaternion_output_en": LaunchConfiguration(
                             "quaternion_output_en"
                         ),
+                        "atti_profile": LaunchConfiguration("atti_profile"),
                         "output_32bit_en": LaunchConfiguration("output_32bit_en"),
                         "time_correction_en": LaunchConfiguration("time_correction_en"),
                     },

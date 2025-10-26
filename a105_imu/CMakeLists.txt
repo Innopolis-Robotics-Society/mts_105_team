@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.5)
-project(ess_imu_driver2)
+project(a105_imu)
 
 # Default to C99
 if(NOT CMAKE_C_STANDARD)
@@ -82,7 +82,7 @@ else()
 endif()
 
 # Declare library for Epson IMU functions
-add_library(ess_imu_driver2_lib
+add_library(a105_imu_lib
   ${lib_sources}
 )
 
@@ -92,7 +92,7 @@ if (PLATFORM STREQUAL "RPI")
   # Required for building on Raspberry Pi platform
   find_library(wiringPi_LIB NAMES wiringPi)
 
-  target_link_libraries(ess_imu_driver2_lib
+  target_link_libraries(a105_imu_lib
     ${wiringPi_LIB}
   )
 endif()
@@ -100,11 +100,11 @@ endif()
 
 # Declare a C++ executable ROS node from source file
 if (INTERFACE STREQUAL "SPI")
-add_executable(ess_imu_driver2_node
+add_executable(a105_imu_node
   src/epson_imu_spi_ros2_node.cpp
 )
 elseif (INTERFACE STREQUAL "UART")
-add_executable(ess_imu_driver2_node
+add_executable(a105_imu_node
   src/epson_imu_uart_ros2_node.cpp
 )
 else()
@@ -113,15 +113,15 @@ endif()
 
 
 # Link C libraries to C++ executable ROS node
-target_link_libraries(ess_imu_driver2_node
-  ess_imu_driver2_lib
+target_link_libraries(a105_imu_node
+  a105_imu_lib
   crypt
   rt
   pthread
 )
 
 # Link C++ Library to C++ executable ROS node
-ament_target_dependencies(ess_imu_driver2_node
+ament_target_dependencies(a105_imu_node
   rclcpp
   std_msgs
   sensor_msgs
@@ -129,7 +129,7 @@ ament_target_dependencies(ess_imu_driver2_node
 
 # Mark executables and/or libraries for installation
 install(
-   TARGETS ess_imu_driver2_node
+   TARGETS a105_imu_node
    DESTINATION lib/${PROJECT_NAME}
  )
 

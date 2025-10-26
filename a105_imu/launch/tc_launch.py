@@ -1,4 +1,4 @@
-"""Launch file for Epson IMU node publishing on /imu/data for ess_imu_driver2 package"""
+"""Launch file for Epson IMU node publishing on /imu/data for a105_imu package"""
 
 from launch import LaunchDescription
 import launch_ros.actions
@@ -97,8 +97,8 @@ def generate_launch_description():
                 description="Enables using IMU external counter reset function for timestamp with external 1PPS connected to IMU input pin for GPIO2/EXT",
             ),
             launch_ros.actions.Node(
-                package="ess_imu_driver2",
-                executable="ess_imu_driver2_node",
+                package="a105_imu",
+                executable="a105_imu_node",
                 output="screen",
                 parameters=[
                     {
