@@ -4,9 +4,10 @@ project(a105_cobra_driver)
 find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(geometry_msgs REQUIRED)
+find_package(nav_msgs REQUIRED)
 
 add_executable(cmdvel_to_cobra src/cmdvel_to_cobra.cpp)
-ament_target_dependencies(cmdvel_to_cobra rclcpp geometry_msgs)
+ament_target_dependencies(cmdvel_to_cobra rclcpp geometry_msgs nav_msgs)
 
 install(DIRECTORY launch DESTINATION share/${PROJECT_NAME})
 install(DIRECTORY config DESTINATION share/${PROJECT_NAME})
