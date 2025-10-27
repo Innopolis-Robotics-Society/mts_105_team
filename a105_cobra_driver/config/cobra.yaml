@@ -1,10 +1,10 @@
 a105_cobra_driver:
   ros__parameters:
     port: "/dev/ttyACM1"    # CHANGE THE GODDAMN PORT IF NEEDED
+    rate: 10.0
     baud: 115200
     track: 0.228
     wheel_d: 0.0745
     max_rpm: 180.0
-    rate_hz: 30.0
     deadman_s: 0.3
     test: false
