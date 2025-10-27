@@ -10,7 +10,6 @@ def generate_launch_description():
             package='a105_cobra_driver',
             executable='cmdvel_to_cobra',
             name='cmdvel_to_cobra',
-            output='screen',
-            parameters=[cfg],
+            output='screen'
         )
     ])
