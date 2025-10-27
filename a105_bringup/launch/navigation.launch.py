@@ -8,31 +8,82 @@ from launch_ros.actions import Node  # Add this import
 
 def generate_launch_description():
 
-    goal_x = DeclareLaunchArgument('goal_x', default_value='3.5')
-    goal_y  = DeclareLaunchArgument('goal_y', default_value='3.5')
-    goal_yaw  = DeclareLaunchArgument('goal_yaw', default_value='1.57')
-    goal_frame = DeclareLaunchArgument('goal_frame', default_value='map')
-    map_file = DeclareLaunchArgument("map_file", default_value="",)
-    slam_cfg = PathJoinSubstitution([FindPackageShare("a105_custom_slam"), "config", "segment_grid_mapper.yaml"])
-    rviz_cfg = PathJoinSubstitution([FindPackageShare('a105_bringup'), 'rviz', 'simca.rviz'])
-    amcl_cfg = PathJoinSubstitution([FindPackageShare("a105_navigation"), "config", "amcl.yaml"])
-
-    declare_use_sim_time_cmd = DeclareLaunchArgument(
-        "use_sim_time", default_value="False", description="Use simulation (Gazebo) clock if true"
+    goal_x = DeclareLaunchArgument(
+        'goal_x', 
+        default_value='3.5'
+        )
+    
+    goal_y  = DeclareLaunchArgument(
+        'goal_y', 
+        default_value='3.5'
+        )
+    
+    goal_yaw  = DeclareLaunchArgument(
+        'goal_yaw', 
+        default_value='1.57'
+        )
+    
+    goal_frame = DeclareLaunchArgument(
+        'goal_frame', 
+        default_value='map'
+        )
+    
+    map_file = DeclareLaunchArgument(
+        "map_file",
+        default_value="",
+        )
+    
+    use_slam = DeclareLaunchArgument(
+        "use_slam", default_value="True", 
+        description="Whether run a SLAM",)
+    
+    declare_autostart = DeclareLaunchArgument(
+        "autostart", 
+        default_value="True", 
+        description="Automatically startup the nav2 stack", )
+    
+    param_file = DeclareLaunchArgument(
+         "params_file", 
+         default_value=PathJoinSubstitution(
+            [
+                FindPackageShare("a105_navigation"),
+                "config",
+                "nav2_entire.yaml",
+            ]
+        ),
     )
 
-    nav2 = IncludeLaunchDescription(
-        PathJoinSubstitution([FindPackageShare("a105_path_planner"), "launch", "path_planner_nav2.launch.py"]),
-        launch_arguments=[
-            ("use_sim_time", LaunchConfiguration("use_sim_time")),
-            ("map_file", LaunchConfiguration("map_file")),
-            ("slam", "True")
-        ],
+    use_sim_time = DeclareLaunchArgument(
+        "use_sim_time",
+        default_value="False",
+        description="Use simulation (Gazebo) clock if true"
     )
+
+    map = DeclareLaunchArgument(
+        "map",
+        default_value="",
+    )
+
+    # slam_cfg = PathJoinSubstitution([FindPackageShare("a105_custom_slam"), "config", "segment_grid_mapper.yaml"])
+    # amcl_cfg = PathJoinSubstitution([FindPackageShare("a105_navigation"), "config", "amcl.yaml"])
+
 
     ekf = IncludeLaunchDescription(
         PathJoinSubstitution([FindPackageShare("a105_navigation"), "launch", "ekf.launch.py"]),
     )
+
+    nav2_bringup = IncludeLaunchDescription(
+        PathJoinSubstitution([FindPackageShare("nav2_bringup"), "launch", "bringup_launch.py"]),
+        launch_arguments=[
+            ("use_sim_time", LaunchConfiguration("use_sim_time")),
+            ("params_file", LaunchConfiguration("params_file")),
+            ("map", LaunchConfiguration("map")),
+            ("slam", LaunchConfiguration("use_slam")),
+            ("autostart", LaunchConfiguration("autostart")),
+        ],
+    )
+
+
 
     lidar_odom = Node(
         package='ros2_laser_scan_matcher',
@@ -43,6 +94,43 @@ def generate_launch_description():
             'publish_odom': '/lidar/odom',
         }]
     )
+
+    goal_node = Node(
+        package='a105_path_planner',
+        executable='nav2_goal_client',
+        name='nav2_goal_client',
+        parameters=[{
+            'goal_x': LaunchConfiguration('goal_x'),
+            'goal_y': LaunchConfiguration('goal_y'),
+            'goal_yaw': LaunchConfiguration('goal_yaw'),
+            'goal_frame': LaunchConfiguration('goal_frame'),
+        }]
+    )
+
+    goal = TimerAction(period=4.0, actions=[goal_node])
+
+    ld = LaunchDescription(
+        [
+            goal_x,
+            goal_y,
+            goal_yaw,
+            goal_frame,
+            use_sim_time,
+            map,
+            use_slam,
+            declare_autostart,
+            param_file,
+
+            #lidar_odom,
+            ekf,
+            TimerAction(period=0.5, actions=[nav2_bringup]),
+            # goal,
+        ]
+    )
+
+
+    return ld
+
 
     # slam = Node(
     #     package="a105_custom_slam",
@@ -60,44 +148,11 @@ def generate_launch_description():
     #     parameters=[amcl_cfg],
     # )
 
-    goal_node = Node(
-        package='a105_path_planner',
-        executable='nav2_goal_client',
-        name='nav2_goal_client',
-        parameters=[{
-            'goal_x': LaunchConfiguration('goal_x'),
-            'goal_y': LaunchConfiguration('goal_y'),
-            'goal_yaw': LaunchConfiguration('goal_yaw'),
-            'goal_frame': LaunchConfiguration('goal_frame'),
-        }]
-    )
-
-    rviz2 = Node(
-        package= 'rviz2',
-        executable= 'rviz2',
-        arguments=['-d', rviz_cfg],
-    )
-
-    goal = TimerAction(period=4.0, actions=[goal_node])
-
-    ld = LaunchDescription(
-        [
-            goal_x,
-            goal_y,
-            goal_yaw,
-            goal_frame,
-            declare_use_sim_time_cmd,
-            map_file,
-
-            #lidar_odom,
-            ekf,
-            TimerAction(period=0.5, actions=[nav2]),
-            rviz2
-            # slam,
-            # amcl,
-            # goal,
-        ]
-    )
-
-
-    return ld
+    # nav2 = IncludeLaunchDescription(
+    #     PathJoinSubstitution([FindPackageShare("a105_path_planner"), "launch", "path_planner_nav2.launch.py"]),
+    #     launch_arguments=[
+    #         ("use_sim_time", LaunchConfiguration("use_sim_time")),
+    #         ("map_file", LaunchConfiguration("map_file")),
+    #         ("slam", "True")
+    #     ],
+    # )

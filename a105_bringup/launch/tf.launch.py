@@ -15,15 +15,16 @@ def static_tf(name, x,y,z, r,p,yaw, parent, child):
 
 def generate_launch_description():
     tf_base_to_lidar = static_tf('tf_base_to_lidar', 0.0, 0.0, 0.15, 0.0, 0.0, 0.0, 'base_link', 'lidar_link')
-    tf_base_to_depth_opt = static_tf('tf_base_to_depth_opt', 0.0, 0.0, 0.15, 0.0, 0.0, 0.0, 'base_link', 'camera_depth_optical_frame')
+    # tf_base_to_depth_opt = static_tf('tf_base_to_depth_opt', 0.0, 0.0, 0.15, 0.0, 0.0, 0.0, 'base_link', 'camera_depth_optical_frame')
     tf_base_to_imu = static_tf('tf_base_to_imu', 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 'base_link', 'imu_link')
+    tf_base_to_depth = static_tf('tf_base_to_depth', -0.1, 0.0, 0.3, 0, 0.0, 0, 'base_link', 'camera_link')
+
     tf_map_to_odom = static_tf('tf_map_to_odom', 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 'map', 'odom')
     tf_odom_to_base = static_tf('tf_odom_to_base', 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 'odom', 'base_link')
-    tf_base_to_depth = static_tf('tf_base_to_depth', -0.1, 0.0, 0.3, -1.5707, 0.0, -2.15349449019, 'base_link', 'depth_camera')
 
     return LaunchDescription([
         tf_base_to_lidar,
-        tf_base_to_depth_opt,
+        #tf_base_to_depth_opt,
         tf_base_to_imu,
         tf_base_to_depth,
         tf_odom_to_base,
