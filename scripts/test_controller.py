@@ -126,5 +126,4 @@ def main():
         except: pass
         LOG.close()
 
-if name == "main":
-    main()
+main()

@@ -1,4 +1,4 @@
-// src/cmdvel_simple_cobra.cpp
+// src/cmdvel_to_cobra.cpp
 #include <rclcpp/rclcpp.hpp>
 #include <geometry_msgs/msg/twist.hpp>
 #include <nav_msgs/msg/odometry.hpp>
@@ -17,6 +17,8 @@
 #include <chrono>
 #include <cerrno>
 #include <cstring>
+#include <algorithm>  // для std::max
+
 
 class CmdVelToCobra : public rclcpp::Node {
 public:
@@ -26,6 +28,7 @@ public:
     track_ = declare_parameter<double>("track", 0.228);
     tpm_   = declare_parameter<double>("tpm", 1000.0);
     rate_  = declare_parameter<double>("rate", 10.0);
+    poll_hz_ = declare_parameter<double>("poll_hz", 5.0);
 
     fd_ = open_serial(port_.c_str(), baud_);
     if (fd_ < 0) throw std::runtime_error("serial open failed");
@@ -48,6 +51,11 @@ public:
     timer_ = create_wall_timer(
       std::chrono::milliseconds(int(1000.0 / rate_)),
       std::bind(&CmdVelToCobra::send_cmd, this));
+    poll_timer_ = create_wall_timer(
+      std::chrono::milliseconds(int(1000.0 / std::max(0.1, poll_hz_))),
+      [this]{ send_json("{\"T\":130}"); }   // однократный запрос статуса
+    );
+
 
     rx_thread_ = std::thread([this]{ rx_loop(); });
   }
@@ -266,6 +274,8 @@ private:
 
 
   // --- members ---
+  double poll_hz_{5.0};
+  rclcpp::TimerBase::SharedPtr poll_timer_;
   int fd_{-1};
   std::string port_;
   int baud_{115200};
