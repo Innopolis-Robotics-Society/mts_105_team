@@ -1,0 +1,13 @@
+mpu6500_spi_node:
+  ros__parameters:
+    bus: 0
+    dev: 0
+    speed: 1000000
+    rate: 200.0
+    gyro_range: 2000   # 250|500|1000|2000
+    accel_range: 16    # 2|4|8|16
+    dlpf: 3
+    smplrt_div: 4
+    frame_id: "imu_link"
+    gyro_variance: 0.02
+    accel_variance: 0.04
