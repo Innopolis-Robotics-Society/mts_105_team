@@ -121,7 +121,7 @@ def generate_launch_description():
             declare_autostart,
             param_file,
 
-            #lidar_odom,
+            lidar_odom,
             ekf,
             TimerAction(period=0.5, actions=[nav2_bringup]),
             # goal,
