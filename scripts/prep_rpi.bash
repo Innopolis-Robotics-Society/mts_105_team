@@ -2,7 +2,8 @@
 # Get keys for docker
 sudo apt-get update
 
-sudo apt install -y x11vnc xvfb openbox xterm
+sudo apt install -y x11vnc xvfb openbox xterm x11-xserver-utils
+mkdir -p ~/.vnc
 sudo x11vnc -storepasswd /etc/x11vnc.pass
 sudo chmod 600 /etc/x11vnc.pass
 Xvfb :1 -screen 0 1920x1080x24 -ac &
@@ -26,7 +27,7 @@ sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin 
 git clone --branch dev https://github.com/Innopolis-Robotics-Society/mts_105_team.git
 
 DISPLAY=:1 openbox-session &
-x11vnc -display :1 -rfbauth /etc/x11vnc.pass -forever -shared
+x11vnc -create -usepw -forever -shared -env X11VNC_CREATE_GEOM=1920x1080x24 -display :1 rfbauth /etc/x11vnc.pass
 
 #------------------------
 

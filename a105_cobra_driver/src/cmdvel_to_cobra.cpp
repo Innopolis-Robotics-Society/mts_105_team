@@ -43,7 +43,7 @@ public:
     send_json("{\"T\":12}");               // motors enable
 
     // --- ROS I/O ---
-    odom_pub_ = create_publisher<nav_msgs::msg::Odometry>("odom", rclcpp::QoS(10));
+    odom_pub_ = create_publisher<nav_msgs::msg::Odometry>("/wheel/odom", rclcpp::QoS(10));
     sub_ = create_subscription<geometry_msgs::msg::Twist>(
       "cmd_vel", 10, [this](geometry_msgs::msg::Twist::SharedPtr msg){
         std::lock_guard<std::mutex> lk(m_);
