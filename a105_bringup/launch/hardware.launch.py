@@ -35,7 +35,7 @@ def generate_launch_description():
     )
 
     imu = IncludeLaunchDescription(
-        PathJoinSubstitution([FindPackageShare("bno055"), "launch", "bno055.launch.py"]),
+        PathJoinSubstitution([FindPackageShare("a105_mpu6500_spi_driver"), "launch", "mpu6500_spi.launch.py"]),
     )
 
     ld = LaunchDescription(
@@ -45,7 +45,7 @@ def generate_launch_description():
             wheels,
             lidar,
             depth_camera,
-            #imu,
+            imu,
         ]
     )
 
