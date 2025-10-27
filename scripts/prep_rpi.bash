@@ -2,10 +2,17 @@
 # Get keys for docker
 sudo apt-get update
 
-sudo apt install -y x11vnc xvfb openbox xterm
-sudo x11vnc -storepasswd /etc/x11vnc.pass
-sudo chmod 600 /etc/x11vnc.pass
-Xvfb :1 -screen 0 1920x1080x24 -ac &
+sudo apt install -y x11vnc xvfb xauth openbox xterm x11-xserver-utils
+Xvfb :0 -screen 0 1920x1080x60 -ac 
+DISPLAY=:0 openbox-session &
+mkdir -p ~/.vnc
+x11vnc -storepasswd ~/.vnc/passwd
+chmod 600 ~/.vnc/passwd
+export DISPLAY=:0
+xhost +SI:localuser:$(whoami)
+# xterm : To debug
+x11vnc -create -usepw -forever -shared -env X11VNC_CREATE_GEOM=1920x1080x60
+
 
 sudo apt-get install ca-certificates curl
 sudo install -m 0755 -d /etc/apt/keyrings
@@ -25,8 +32,7 @@ sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin 
 # Get repo
 git clone --branch dev https://github.com/Innopolis-Robotics-Society/mts_105_team.git
 
-DISPLAY=:1 openbox-session &
-x11vnc -display :1 -rfbauth /etc/x11vnc.pass -forever -shared
+x11vnc -create -usepw -forever -shared -env X11VNC_CREATE_GEOM=1920x1080x24
 
 #------------------------
 
