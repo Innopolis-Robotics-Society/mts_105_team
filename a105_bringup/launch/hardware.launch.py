@@ -44,7 +44,7 @@ def generate_launch_description():
 
             wheels,
             lidar,
-            depth_camera,
+            #depth_camera,
             imu,
         ]
     )
