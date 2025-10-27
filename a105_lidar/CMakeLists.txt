@@ -19,7 +19,12 @@ install(DIRECTORY config DESTINATION share/${PROJECT_NAME})
 add_executable(ld19_to_laserscan src/ld19_to_laserscan.cpp)
 ament_target_dependencies(ld19_to_laserscan rclcpp sensor_msgs)
 
-install(TARGETS ld19_to_laserscan
+add_executable(ld19_to_scan src/ld19_to_scan.cpp)
+ament_target_dependencies(ld19_to_scan rclcpp sensor_msgs)
+
+install(TARGETS
+ld19_to_laserscan
+ld19_to_scan
   RUNTIME DESTINATION lib/${PROJECT_NAME})
 
 if(BUILD_TESTING)
