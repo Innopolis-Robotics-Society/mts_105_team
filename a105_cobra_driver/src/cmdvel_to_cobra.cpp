@@ -41,7 +41,7 @@ public:
     std::this_thread::sleep_for(std::chrono::milliseconds(100));
 
     // ROS I/O
-    odom_pub_ = create_publisher<nav_msgs::msg::Odometry>("odom", 10);
+    odom_pub_ = create_publisher<nav_msgs::msg::Odometry>("/wheel/odom", 10);
     sub_ = create_subscription<geometry_msgs::msg::Twist>(
       "cmd_vel", 10, std::bind(&CmdVelToCobra::cmd_cb, this, std::placeholders::_1));
 
