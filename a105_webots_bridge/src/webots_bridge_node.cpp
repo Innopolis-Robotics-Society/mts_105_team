@@ -31,7 +31,7 @@ struct RConfig {
   // Параметры лидара (удобно тоже тюнить отсюда)
   float scan_range_min = 0.02f;
   float scan_range_max = 8.0f;
-  float scan_fov_deg   = 90.0f;  // общий FOV
+  float scan_fov_deg   = 360.0f;  // общий FOV
   float scan_rate_hz   = 15.0f;
 };
 

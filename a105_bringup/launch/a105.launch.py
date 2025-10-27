@@ -15,10 +15,8 @@ def generate_launch_description():
     goal_frame = DeclareLaunchArgument('goal_frame', default_value='map')
     use_sim_time = DeclareLaunchArgument("use_sim_time", default_value="False", description="Use simulation (Gazebo) clock if true")
     use_sim = DeclareLaunchArgument("use_sim", default_value="False", description="Use simulation Webots")
-    rviz_cfg = PathJoinSubstitution([FindPackageShare('a105_bringup'), 'rviz', 'simca.rviz'])
+    rviz_cfg = PathJoinSubstitution([FindPackageShare('a105_bringup'), 'rviz', 'rpi.rviz'])
     map_file = DeclareLaunchArgument("map_file", default_value="",)
-    slam_cfg = PathJoinSubstitution([FindPackageShare("a105_custom_slam"), "config", "segment_grid_mapper.yaml"])
-    amcl_cfg = PathJoinSubstitution([FindPackageShare("a105_bringup"), "config", "amcl.yaml"])
     
 
     tf = IncludeLaunchDescription(
@@ -91,8 +89,8 @@ def generate_launch_description():
 
             tf,
             simca,
-            hardware,
-            #navigation,
+            #hardware,
+            navigation,
 
             rul,
             rviz2,
