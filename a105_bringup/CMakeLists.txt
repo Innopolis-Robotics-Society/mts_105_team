@@ -13,7 +13,7 @@ find_package(nav2_bringup REQUIRED)
 install(DIRECTORY
   launch
   rviz
-  config
+  #config
   DESTINATION share/${PROJECT_NAME}/
 )
 
