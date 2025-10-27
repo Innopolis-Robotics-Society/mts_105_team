@@ -176,50 +176,94 @@ private:
   void handle_json(const std::string& js, rclcpp::Time &last_t){
     RCLCPP_INFO(get_logger(), "[RX] %s", js.c_str());
 
-    int t=0;
-    if (!extract_int(js, "T", t)) return;
-    if (t != 1001) return;
+    auto find_i64 = [&](const char* key, long long &out)->bool{
+      std::string pat = std::string("\"")+key+"\":";
+      size_t p = js.find(pat);
+      if (p == std::string::npos) return false;
+      p += pat.size();
+      // пропуск пробелов
+      while (p < js.size() && (js[p] == ' ' || js[p] == '\t')) ++p;
+      // считывание знака и цифр
+      const char* s = js.c_str() + p;
+      char* e = nullptr;
+      errno = 0;
+      long long v = std::strtoll(s, &e, 10);
+      if (s == e || errno != 0) return false;
+      out = v;
+      return true;
+    };
 
-    int odl=0, odr=0;
-    if (!extract_int(js, "odl", odl)) return;
-    if (!extract_int(js, "odr", odr)) return;
+    long long tcode = 0;
+    if (!find_i64("T", tcode) || tcode != 1001) return;
+
+    // сначала пробуем абсолюты, потом дельты
+    long long odl_i=0, odr_i=0;
+    bool have_abs = find_i64("odl", odl_i) && find_i64("odr", odr_i);
+
+    long long dl_i=0, dr_i=0;
+    bool have_delta = find_i64("dl", dl_i) && find_i64("dr", dr_i);
+
+    if (!have_abs && !have_delta) return;
 
     auto tnow = now();
-    if (!odom_ready_){
-      last_left_ = odl; last_right_ = odr;
-      odom_ready_ = true; last_t = tnow;
+    double dt = (tnow - last_t).seconds();
+    if (dt <= 0.0) {
+      last_t = tnow;
       return;
     }
 
-    double dt = (tnow - last_t).seconds();
-    if (dt <= 0) return;
+    // подготовка инкрементов колёс
+    double Dl = 0.0, Dr = 0.0;
+    if (have_abs) {
+      if (!odom_ready_) {
+        // первая валидная пара абсолютов
+        last_left_  = static_cast<int>(odl_i);
+        last_right_ = static_cast<int>(odr_i);
+        odom_ready_ = true;
+        last_t = tnow;
+        return;
+      }
+      Dl = (static_cast<double>(odl_i - last_left_))  / std::max(1e-6, tpm_);
+      Dr = (static_cast<double>(odr_i - last_right_)) / std::max(1e-6, tpm_);
+      last_left_  = static_cast<int>(odl_i);
+      last_right_ = static_cast<int>(odr_i);
+    } else { // have_delta
+      Dl = static_cast<double>(dl_i) / std::max(1e-6, tpm_);
+      Dr = static_cast<double>(dr_i) / std::max(1e-6, tpm_);
+      if (!odom_ready_) odom_ready_ = true; // стартуем от (0,0,0)
+    }
 
-    double Dl = (odl - last_left_) / tpm_;
-    double Dr = (odr - last_right_) / tpm_;
-    last_left_ = odl; last_right_ = odr;
+    // кинематика дифф-платформы
+    const double dS  = 0.5 * (Dl + Dr);
+    const double dTh = (Dr - Dl) / std::max(1e-9, track_);
+    const double th_mid = yaw_ + 0.5 * dTh;
 
-    double dS  = 0.5*(Dl+Dr);
-    double dTh = (Dr-Dl)/track_;
-    double th_mid = yaw_ + 0.5*dTh;
-    x_ += dS*std::cos(th_mid);
-    y_ += dS*std::sin(th_mid);
+    x_   += dS * std::cos(th_mid);
+    y_   += dS * std::sin(th_mid);
     yaw_ += dTh;
 
+    // одометрия
     nav_msgs::msg::Odometry od;
     od.header.stamp = tnow;
     od.header.frame_id = "odom";
     od.child_frame_id  = "base_link";
     od.pose.pose.position.x = x_;
     od.pose.pose.position.y = y_;
-    double half = 0.5*yaw_;
+    const double half = 0.5 * yaw_;
     od.pose.pose.orientation.z = std::sin(half);
     od.pose.pose.orientation.w = std::cos(half);
-    od.twist.twist.linear.x  = dS/dt;
-    od.twist.twist.angular.z = dTh/dt;
+    od.twist.twist.linear.x  = dS / dt;
+    od.twist.twist.angular.z = dTh / dt;
+
     odom_pub_->publish(od);
+
+    RCLCPP_INFO(get_logger(),
+                "[ODOM] dt=%.3f Dl=%.4f Dr=%.4f dS=%.4f dTh=%.4f | x=%.3f y=%.3f yaw=%.3f",
+                dt, Dl, Dr, dS, dTh, x_, y_, yaw_);
 
     last_t = tnow;
   }
+
 
   // --- members ---
   int fd_{-1};
