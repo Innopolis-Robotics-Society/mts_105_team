@@ -26,7 +26,7 @@ services:
     command: []
   
   terminal-rpi:
-    image: fabook/champ:rpi-v0.0.1
+    image: fabook/champ:rpi-v0.0.2
     <<: *common-setup
     environment:
     - DISPLAY=:1
@@ -37,6 +37,7 @@ services:
       - "/dev/spidev0.0:/dev/spidev0.0"
       - "/dev/spidev0.1:/dev/spidev0.1"
       - "/dev/bus/usb:/dev/bus/usb"
+      - "/dev/video0:/dev/video0"
     command: [
       "/bin/bash","-lc","
       sudo chmod 666 /dev/ttyUSB* 2>/dev/null || true &&
