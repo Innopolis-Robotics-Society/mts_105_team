@@ -20,7 +20,7 @@ def generate_launch_description():
 
     imu = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(
-            PathJoinSubstitution([FindPackageShare("a105_mpu6500_spi_driver"), "launch", "mpu6500_spi.launch.py"])
+            PathJoinSubstitution([FindPackageShare("a105_imu"), "launch", "imu.launch.py"])
         )
     )
 
