@@ -7,17 +7,6 @@ from launch.substitutions import PathJoinSubstitution, LaunchConfiguration
 
 def generate_launch_description():
 
-    ekf_param_file = DeclareLaunchArgument(
-        "ekf_param_file",
-        default_value=PathJoinSubstitution(
-            [
-                FindPackageShare("a105_navigation"),
-                "config",
-                "ekf_params.yaml",
-            ]
-        ),
-    )
-
     imu = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(
             PathJoinSubstitution([FindPackageShare("a105_imu"), "launch", "imu.launch.py"])
@@ -37,14 +26,7 @@ def generate_launch_description():
         }]
     )
 
-    ekf = Node(package='robot_localization', executable='ekf_node',
-                           name='ekf_odom', output='screen',
-                           parameters=[LaunchConfiguration("ekf_param_file")])
-
-
     return LaunchDescription([
-        # ekf_param_file,
         imu,
         imu_filter,
-        # ekf,
     ])

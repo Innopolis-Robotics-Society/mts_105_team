@@ -56,13 +56,13 @@ RUN apt-get update && apt-get upgrade -y && \
     ros-${ROS_DISTRO}-diagnostic-updater \ 
     ros-${ROS_DISTRO}-diagnostic-msgs \
     ros-${ROS_DISTRO}-statistics-msgs \
-    ros-${ROS_DISTRO}-backward-ros libdw-dev \
-    ros-${ROS_DISTRO}-camera-info-manager \
+    ros-${ROS_DISTRO}-backward-ros \
     ros-${ROS_DISTRO}-camera-calibration-parsers \
     ros-${ROS_DISTRO}-image-publisher \
-    ros-${ROS_DISTRO}-image-transport \
     ros-${ROS_DISTRO}-teleop-twist-keyboard \
+    ros-${ROS_DISTRO}-imu-tools \
     libgflags-dev \
+    libdw-dev \
     nlohmann-json3-dev  \
     libcanberra-gtk-module \
     libcanberra-gtk3-module \
@@ -70,6 +70,10 @@ RUN apt-get update && apt-get upgrade -y && \
     x11-apps \
     xauth \
     --fix-missing
+
+RUN pip install \
+    pyserial \
+    spidev
 
 # Clean up
 RUN apt-get clean && rm -rf /var/lib/apt/lists/*
