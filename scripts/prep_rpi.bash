@@ -23,7 +23,7 @@ git clone --branch dev https://github.com/Innopolis-Robotics-Society/mts_105_tea
 # Go to repo
 cd mts_105_team/
 
-git submodule update --init --recursive
+git submodule update --init --recursive ld19
 
 # Get and start container
 sudo docker compose up --build terminal-rpi

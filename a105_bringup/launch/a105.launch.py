@@ -89,7 +89,7 @@ def generate_launch_description():
 
             tf,
             simca,
-            #hardware,
+            hardware,
             navigation,
 
             rul,
