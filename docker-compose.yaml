@@ -33,9 +33,14 @@ services:
     - QT_X11_NO_MITSHM=1
     stdin_open: true  # dsocker run -i
     tty: true        # docker run -t
+    devices:
+      - "/dev/spidev0.0:/dev/spidev0.0"
+      - "/dev/spidev0.1:/dev/spidev0.1"
+      - "/dev/bus/usb:/dev/bus/usb"
     command: [
       "/bin/bash","-lc","
       sudo chmod 666 /dev/ttyUSB* 2>/dev/null || true &&
+      sudo chmod 666 /dev/spidev* 2>/dev/null || true &&
       sudo chmod 666 /dev/ttyACM* 2>/dev/null || true;
       exec bash"
       ]
