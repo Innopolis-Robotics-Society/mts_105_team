@@ -1,0 +1,6 @@
+Invoking command in '/home/w1nchie/desktop/mts_105_team/build/a105_imu': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/w1nchie/desktop/mts_105_team/a105_imu -DCMAKE_INSTALL_PREFIX=/home/w1nchie/desktop/mts_105_team/install/a105_imu
+Invoked command in '/home/w1nchie/desktop/mts_105_team/build/a105_imu' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/w1nchie/desktop/mts_105_team/a105_imu -DCMAKE_INSTALL_PREFIX=/home/w1nchie/desktop/mts_105_team/install/a105_imu
+Invoking command in '/home/w1nchie/desktop/mts_105_team/build/a105_imu': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/w1nchie/desktop/mts_105_team/build/a105_imu -- -j16 -l16
+Invoked command in '/home/w1nchie/desktop/mts_105_team/build/a105_imu' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/w1nchie/desktop/mts_105_team/build/a105_imu -- -j16 -l16
+Invoking command in '/home/w1nchie/desktop/mts_105_team/build/a105_imu': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/w1nchie/desktop/mts_105_team/build/a105_imu
+Invoked command in '/home/w1nchie/desktop/mts_105_team/build/a105_imu' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/w1nchie/desktop/mts_105_team/build/a105_imu

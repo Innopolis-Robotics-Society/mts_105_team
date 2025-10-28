@@ -1,0 +1,2 @@
+Invoking command in '/home/w1nchie/desktop/mts_105_team/build/a105_imu': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/w1nchie/desktop/mts_105_team/a105_imu -DCMAKE_INSTALL_PREFIX=/home/w1nchie/desktop/mts_105_team/install/a105_imu
+Invoked command in '/home/w1nchie/desktop/mts_105_team/build/a105_imu' returned '1': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/w1nchie/desktop/mts_105_team/a105_imu -DCMAKE_INSTALL_PREFIX=/home/w1nchie/desktop/mts_105_team/install/a105_imu

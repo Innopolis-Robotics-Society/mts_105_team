@@ -1,141 +1,34 @@
-cmake_minimum_required(VERSION 3.5)
+cmake_minimum_required(VERSION 3.8)
 project(a105_imu)
-
-# Default to C99
-if(NOT CMAKE_C_STANDARD)
-  set(CMAKE_C_STANDARD 99)
-endif()
-
-# Default to C++14
-if(NOT CMAKE_CXX_STANDARD)
-  set(CMAKE_CXX_STANDARD 14)
-endif()
 
 if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
   add_compile_options(-Wall -Wextra -Wpedantic)
 endif()
 
-# Find dependencies
+# find dependencies
 find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(sensor_msgs REQUIRED)
 
-# NOTE: Refer to the README_src.md inside the src folder for more details about the C source files
+# add_executable(a105_imu src/imu_node.cpp)
+# ament_target_dependencies(a105_imu rclcpp sensor_msgs)
 
-################################################################
-# These two settings are typically the only changes required by
-# the user before building this ROS node
+add_executable(imu_node src/imu_node.cpp)
+ament_target_dependencies(imu_node rclcpp sensor_msgs)
 
-# 1. Select NONE for standard PC, or RPI for RaspberryPi
-set(PLATFORM "NONE")
-#set(PLATFORM "RPI")
+install(TARGETS imu_node DESTINATION lib/${PROJECT_NAME})
+install(DIRECTORY launch config DESTINATION share/${PROJECT_NAME})
 
-# 2. Select serial interface type UART or SPI
-set(INTERFACE "UART")
-#set(INTERFACE "SPI")
-
-###############################################################
-
-message(STATUS "---- Building for platform: ${PLATFORM}")
-message(STATUS "---- Building for interface: ${INTERFACE}")
-
-# When SPI interface selected, platform must be RPI (since PCs do not natively support SPI)
-if (INTERFACE STREQUAL "SPI")
-  set(PLATFORM "RPI")
-  message(STATUS "---- SPI selected forcing platform: ${PLATFORM}")
+if(BUILD_TESTING)
+  find_package(ament_lint_auto REQUIRED)
+  # the following line skips the linter which checks for copyrights
+  # comment the line when a copyright and license is added to all source files
+  set(ament_cmake_copyright_FOUND TRUE)
+  # the following line skips cpplint (only works in a git repo)
+  # comment the line when this package is in a git repo and when
+  # a copyright and license is added to all source files
+  set(ament_cmake_cpplint_FOUND TRUE)
+  ament_lint_auto_find_test_dependencies()
 endif()
-
-# Define macros variables for compilation
-add_definitions(-D${PLATFORM})
-add_definitions(-D${INTERFACE})
-
-# Create file list for C libraries based on PLATFORM
-if (PLATFORM STREQUAL "RPI")
-  set(lib_sources
-    src/hcl_rpi.c
-    src/hcl_gpio_rpi.c
-  )
-elseif (PLATFORM STREQUAL "NONE")
-  set(lib_sources
-    src/hcl_linux.c
-    src/hcl_gpio.c
-  )
-else()
-  message(FATAL_ERROR "**** Invalid Platform")
-endif()
-
-# Create file list for C libraries based on INTERFACE
-if (INTERFACE STREQUAL "SPI")
-  set(lib_sources ${lib_sources}
-    src/hcl_spi_rpi.c
-    src/sensor_epsonCommon.c
-    src/sensor_epsonSpi.c
-  )
-elseif (INTERFACE STREQUAL "UART")
-  set(lib_sources ${lib_sources}
-    src/hcl_uart.c
-    src/sensor_epsonCommon.c
-    src/sensor_epsonUart.c
-  )
-else()
-  message(FATAL_ERROR "**** Invalid Interface")
-endif()
-
-# Declare library for Epson IMU functions
-add_library(a105_imu_lib
-  ${lib_sources}
-)
-
-# Link any external libraries to Epson IMU Library
-if (PLATFORM STREQUAL "RPI")
-  # Determine location of wiringPi library on the host system
-  # Required for building on Raspberry Pi platform
-  find_library(wiringPi_LIB NAMES wiringPi)
-
-  target_link_libraries(a105_imu_lib
-    ${wiringPi_LIB}
-  )
-endif()
-
-
-# Declare a C++ executable ROS node from source file
-if (INTERFACE STREQUAL "SPI")
-add_executable(a105_imu_node
-  src/epson_imu_spi_ros2_node.cpp
-)
-elseif (INTERFACE STREQUAL "UART")
-add_executable(a105_imu_node
-  src/epson_imu_uart_ros2_node.cpp
-)
-else()
-  message(FATAL_ERROR "**** Invalid Interface")
-endif()
-
-
-# Link C libraries to C++ executable ROS node
-target_link_libraries(a105_imu_node
-  a105_imu_lib
-  crypt
-  rt
-  pthread
-)
-
-# Link C++ Library to C++ executable ROS node
-ament_target_dependencies(a105_imu_node
-  rclcpp
-  std_msgs
-  sensor_msgs
-)
-
-# Mark executables and/or libraries for installation
-install(
-   TARGETS a105_imu_node
-   DESTINATION lib/${PROJECT_NAME}
- )
-
-# Mark directories for installation
-install(
-   DIRECTORY launch DESTINATION share/${PROJECT_NAME}
-)
 
 ament_package()

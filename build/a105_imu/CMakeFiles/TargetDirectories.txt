@@ -1,0 +1,10 @@
+/home/w1nchie/desktop/mts_105_team/build/a105_imu/CMakeFiles/uninstall.dir
+/home/w1nchie/desktop/mts_105_team/build/a105_imu/CMakeFiles/a105_imu_uninstall.dir
+/home/w1nchie/desktop/mts_105_team/build/a105_imu/CMakeFiles/imu_node.dir
+/home/w1nchie/desktop/mts_105_team/build/a105_imu/CMakeFiles/test.dir
+/home/w1nchie/desktop/mts_105_team/build/a105_imu/CMakeFiles/edit_cache.dir
+/home/w1nchie/desktop/mts_105_team/build/a105_imu/CMakeFiles/rebuild_cache.dir
+/home/w1nchie/desktop/mts_105_team/build/a105_imu/CMakeFiles/list_install_components.dir
+/home/w1nchie/desktop/mts_105_team/build/a105_imu/CMakeFiles/install.dir
+/home/w1nchie/desktop/mts_105_team/build/a105_imu/CMakeFiles/install/local.dir
+/home/w1nchie/desktop/mts_105_team/build/a105_imu/CMakeFiles/install/strip.dir
