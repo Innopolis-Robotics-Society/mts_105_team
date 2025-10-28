@@ -8,35 +8,35 @@ ekf_odom:
     base_link_frame: base_link
     world_frame: odom
 
-    odom0: /wheel/odom
-    #             [x,     y,     z,      roll,  pitch, yaw,    vx,   vy,    vz,     vroll, vpitch, vyaw,  ax,    ay,    az]
-    odom0_config: [true, true, false,  false, false, false,  true, true, false,  false, false,  true,  false, false, false]
+    # odom0: /wheel/odom
+    # #             [x,     y,     z,      roll,  pitch, yaw,    vx,   vy,    vz,     vroll, vpitch, vyaw,  ax,    ay,    az]
+    # odom0_config: [true, true, false,  false, false, false,  true, true, false,  false, false,  true,  false, false, false]
+    # odom0_differential: false
+    # odom0_relative: false
+    # odom0_queue_size: 5
+    # odom0_nodelay: true
+
+    # lidar
+    odom0: /lidar/odom
+    odom0_config: [true, true, true, # x, y, z,
+                  false, false, true, # roll,  pitch, yaw
+                  true, true, true, # vx,   vy,    vz
+                  false, false,  true, #vroll, vpitch, vyaw
+                  false, false, false] # ax,    ay,    az
     odom0_differential: false
     odom0_relative: false
     odom0_queue_size: 5
     odom0_nodelay: true
 
-    # lidar
-    odom1: /lidar/odom
-    odom1_config: [false, false, false, # x, y, z,
-                  false, false, true, # roll,  pitch, yaw
-                  false, false, false, # vx,   vy,    vz
-                  false, false,  true, #vroll, vpitch, vyaw
-                  false, false, false] # ax,    ay,    az
-    odom1_differential: false
-    odom1_relative: false
-    odom1_queue_size: 5
-    odom1_nodelay: true
-
-    # # IMU raw → используем только yaw-rate (wz)
-    # imu0: /imu/data_raw
-    # #             [x,     y,     z,      roll,  pitch, yaw,    vx,    vy,    vz,     vroll, vpitch, vyaw,  ax,    ay,    az]
-    # imu0_config:  [false, false, false,  false, false, false,  false, false, false,  false, false,  true,  false, false, false]
-    # imu0_differential: false
-    # imu0_relative: false
-    # imu0_queue_size: 20
-    # imu0_nodelay: true
-    # imu0_remove_gravitational_acceleration: false
+    # IMU raw → используем только yaw-rate (wz)
+    imu0: /imu/data_raw
+    #             [x,     y,     z,      roll,  pitch, yaw,    vx,    vy,    vz,     vroll, vpitch, vyaw,  ax,    ay,    az]
+    imu0_config:  [true, true, true,  true, true, true,  false, false, false,  false, false,  true,  true, true, true]
+    imu0_differential: false
+    imu0_relative: false
+    imu0_queue_size: 20
+    imu0_nodelay: true
+    imu0_remove_gravitational_acceleration: false
 
     # ===== 15x15 process_noise_covariance (row-major) =====
     process_noise_covariance: [
