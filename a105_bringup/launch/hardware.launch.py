@@ -35,7 +35,7 @@ def generate_launch_description():
     )
 
     imu = IncludeLaunchDescription(
-        PathJoinSubstitution([FindPackageShare("a105_mpu6500_spi_py"), "launch", "mpu6500_spi.launch.py"]),
+        PathJoinSubstitution([FindPackageShare("a105_bringup"), "launch", "imu.launch.py"]),
     )
 
     ld = LaunchDescription(
