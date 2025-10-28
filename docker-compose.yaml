@@ -29,7 +29,7 @@ services:
     image: fabook/champ:rpi-v0.0.1
     <<: *common-setup
     environment:
-    - DISPLAY=1
+    - DISPLAY=:1
     - QT_X11_NO_MITSHM=1
     stdin_open: true  # dsocker run -i
     tty: true        # docker run -t

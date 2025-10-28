@@ -17,7 +17,7 @@ def generate_launch_description():
     )
 
     lidar = IncludeLaunchDescription(
-        PathJoinSubstitution([FindPackageShare("a105_lidar"), "launch", "ld19.launch.py"]),
+        PathJoinSubstitution([FindPackageShare("ldlidar_ros2"), "launch", "ld19.launch.py"]),
     )
 
     depth_camera = IncludeLaunchDescription(
