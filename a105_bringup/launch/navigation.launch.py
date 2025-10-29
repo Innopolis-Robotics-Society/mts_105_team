@@ -74,14 +74,14 @@ def generate_launch_description():
         parameters=[{
             'use_mag': False,
             'world_frame': 'enu',
-            'publish_tf': True,
+            'publish_tf': False,
             'gain': 0.1,
            # 'fixed_frame': 'base_link'
         }],
         remappings=[
             ('imu/data_raw',  '/imu/data_raw'),
             ('imu/data',      '/imu/data'),
-            #('/tf',          '/tf_imu_filter_drop')  # TF от этого узла уйдёт в «пустоту»
+            ('/tf',          '/tf_imu_filter_drop')  # TF от этого узла уйдёт в «пустоту»
         ]
     )
 
