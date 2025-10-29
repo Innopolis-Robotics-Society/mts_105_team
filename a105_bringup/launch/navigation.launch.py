@@ -143,7 +143,7 @@ def generate_launch_description():
             imu_filter,
             #ekf,
             TimerAction(period=0.5, actions=[nav2_bringup]),
-            # goal,
+            goal,
         ]
     )
 
