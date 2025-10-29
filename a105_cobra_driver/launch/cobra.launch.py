@@ -10,6 +10,7 @@ def generate_launch_description():
             package='a105_cobra_driver',
             executable='cmdvel_to_cobra',
             name='cmdvel_to_cobra',
-            output='screen'
+            output='screen',
+            arguments=['--ros-args', '--log-level', 'error']
         )
     ])

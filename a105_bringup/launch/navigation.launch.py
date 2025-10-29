@@ -64,8 +64,15 @@ def generate_launch_description():
         default_value="",
     )
 
-    # slam_cfg = PathJoinSubstitution([FindPackageShare("a105_custom_slam"), "config", "segment_grid_mapper.yaml"])
-    # amcl_cfg = PathJoinSubstitution([FindPackageShare("a105_navigation"), "config", "amcl.yaml"])
+    lidar_odom = Node(
+        package='ros2_laser_scan_matcher',
+        executable='laser_scan_matcher',
+        name='laser_scan_matcher',
+        parameters=[{
+            'publish_tf': False,
+            'publish_odom': '/lidar/odom',
+        }]
+    )
 
     imu_filter = Node(
         package='imu_filter_madgwick',
@@ -80,9 +87,7 @@ def generate_launch_description():
             'use_magnetic_field_msg': False
         }],
         remappings=[
-            ('imu/data_raw',  '/imu/data_raw'),
-            ('imu/data',      '/imu/data'),
-            ('/tf',          '/tf_imu_filter_drop')  # TF от этого узла уйдёт в «пустоту»
+            #('/tf',          '/tf_imu_filter_drop')  # TF от этого узла уйдёт в «пустоту»
         ]
     )
 
@@ -99,18 +104,6 @@ def generate_launch_description():
             ("slam", LaunchConfiguration("use_slam")),
             ("autostart", LaunchConfiguration("autostart")),
         ],
-    )
-
-
-
-    lidar_odom = Node(
-        package='ros2_laser_scan_matcher',
-        executable='laser_scan_matcher',
-        name='laser_scan_matcher',
-        parameters=[{
-            'publish_tf': True,
-            'publish_odom': '/lidar/odom',
-        }]
     )
 
     goal_node = Node(
@@ -141,8 +134,8 @@ def generate_launch_description():
 
             lidar_odom,
             imu_filter,
-            #ekf,
-            TimerAction(period=0.5, actions=[nav2_bringup]),
+            ekf,
+            #TimerAction(period=0.5, actions=[nav2_bringup]),
             # goal,
         ]
     )

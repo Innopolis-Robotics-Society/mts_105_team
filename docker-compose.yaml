@@ -31,6 +31,7 @@ services:
     environment:
     - DISPLAY=:1
     - QT_X11_NO_MITSHM=1
+    - ROS_DOMAIN_ID=105
     stdin_open: true  # dsocker run -i
     tty: true        # docker run -t
     devices:

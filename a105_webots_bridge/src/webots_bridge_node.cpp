@@ -89,7 +89,7 @@ int main(int argc, char** argv) {
 
   // Publishers
   auto odom_pub = node->create_publisher<nav_msgs::msg::Odometry>("/wheel/odom", rclcpp::QoS(10));
-  auto imu_pub  = node->create_publisher<sensor_msgs::msg::Imu>("/imu/data_raw", rclcpp::SensorDataQoS());
+  auto imu_pub  = node->create_publisher<sensor_msgs::msg::Imu>("/imu/data_rraw", rclcpp::SensorDataQoS());
   auto scan_pub = node->create_publisher<sensor_msgs::msg::LaserScan>("/scan", rclcpp::SensorDataQoS());
 
   // TCP endpoint
@@ -238,9 +238,9 @@ int main(int argc, char** argv) {
       // ориентацию не даём
       imu.orientation_covariance[0] = -1.0;
 
-      imu.angular_velocity.x = wx;
-      imu.angular_velocity.y = wy;
-      imu.angular_velocity.z = wz;
+      imu.angular_velocity.x = -wx;
+      imu.angular_velocity.y = wz;
+      imu.angular_velocity.z = wy;
       imu.angular_velocity_covariance = {
         g_R.imu_gyro_var_wx, 0.0, 0.0,
         0.0, g_R.imu_gyro_var_wy, 0.0,
