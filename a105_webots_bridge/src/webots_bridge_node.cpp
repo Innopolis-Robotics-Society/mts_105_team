@@ -12,31 +12,37 @@
 #include <cstring>
 #include <cmath>
 #include <algorithm>
+#include <string>
 
-// ---------------------- R-config (измерительные ковариации + пары скана) ----------------------
+// ---------------------- R-config (ковариации) ----------------------
 struct RConfig {
-  // Odometry pose (мы её не фузим, но кладём большие ковариации на случай использования)
-  double odom_pose_big_var = 1e-3;      // x,y,z,roll,pitch,yaw
+  // Odometry pose
+  double odom_pose_big_var = 1e-3;
 
-  // Odometry twist (используется EKF): R для [vx, vy, wz]
-  double odom_twist_var_vx = 0.05;  // tune 1st priority
-  double odom_twist_var_vy = 1.0;   // ignore
-  double odom_twist_var_wz = 0.02;  // tune 1st priority
+  // Odometry twist: [vx, vy, wz]
+  double odom_twist_var_vx = 0.05;
+  double odom_twist_var_vy = 1.0;
+  double odom_twist_var_wz = 0.02;
 
-  // IMU gyro (используется EKF): R для [wx, wy, wz]
-  double imu_gyro_var_wx = 1.0;  // ignore
-  double imu_gyro_var_wy = 1.0;  // ignore
-  double imu_gyro_var_wz = 0.02;  // Tune 1st priority
+  // IMU gyro: [wx, wy, wz]
+  double imu_gyro_var_wx = 1.0;
+  double imu_gyro_var_wy = 1.0;
+  double imu_gyro_var_wz = 0.02;
 
-  // Параметры лидара (удобно тоже тюнить отсюда)
+  // IMU accel: [ax, ay, az]  (НОВОЕ)
+  double imu_acc_var_ax = 0.2;
+  double imu_acc_var_ay = 0.2;
+  double imu_acc_var_az = 0.2;
+
+  // lidar
   float scan_range_min = 0.02f;
   float scan_range_max = 8.0f;
-  float scan_fov_deg   = 360.0f;  // общий FOV
+  float scan_fov_deg   = 360.0f;
   float scan_rate_hz   = 15.0f;
 };
 
 static RConfig g_R;
-// ----------------------------------------------------------------------------------------------
+// ------------------------------------------------------------------
 
 static bool read_exact(int fd, void* buf, size_t n) {
   auto* p = static_cast<uint8_t*>(buf);
@@ -65,7 +71,7 @@ int main(int argc, char** argv) {
   rclcpp::init(argc, argv);
   auto node = std::make_shared<rclcpp::Node>("wbtg_combo_pub");
 
-  // Позволим тюнить g_R также через параметры (не обязательно):
+  // Параметры для ковариаций
   declare_and_get(*node, "R.odom_pose_big_var",    g_R.odom_pose_big_var);
   declare_and_get(*node, "R.odom_twist_var_vx",    g_R.odom_twist_var_vx);
   declare_and_get(*node, "R.odom_twist_var_vy",    g_R.odom_twist_var_vy);
@@ -73,6 +79,9 @@ int main(int argc, char** argv) {
   declare_and_get(*node, "R.imu_gyro_var_wx",      g_R.imu_gyro_var_wx);
   declare_and_get(*node, "R.imu_gyro_var_wy",      g_R.imu_gyro_var_wy);
   declare_and_get(*node, "R.imu_gyro_var_wz",      g_R.imu_gyro_var_wz);
+  declare_and_get(*node, "R.imu_acc_var_ax",       g_R.imu_acc_var_ax); // NEW
+  declare_and_get(*node, "R.imu_acc_var_ay",       g_R.imu_acc_var_ay); // NEW
+  declare_and_get(*node, "R.imu_acc_var_az",       g_R.imu_acc_var_az); // NEW
   declare_and_get(*node, "R.scan_range_min",       g_R.scan_range_min);
   declare_and_get(*node, "R.scan_range_max",       g_R.scan_range_max);
   declare_and_get(*node, "R.scan_fov_deg",         g_R.scan_fov_deg);
@@ -116,36 +125,74 @@ int main(int argc, char** argv) {
     while (rclcpp::ok()) {
       uint32_t sz = 0;
       if (!read_exact(fd, &sz, 4)) break;
+
+      // минимальный размер: WBTA => 4(magic)+12*4 floats +4(N) = 56; WBTG => 44
       if (sz < 44) { RCLCPP_WARN(node->get_logger(), "packet too small: %u", sz); break; }
 
       std::vector<uint8_t> buf(sz);
       if (!read_exact(fd, buf.data(), sz)) break;
 
-      // [4..39] float x,y,th, vx,vy,vth, wx,wy,wz
-      float f[9];
-      std::memcpy(f, buf.data() + 4, 9 * sizeof(float));
-      float x = f[0], y = f[1], th = f[2];
-      float vx = f[3], vy = f[4], vth = f[5];
-      float wx = f[6], wy = f[7], wz = f[8];
+      // magic
+      if (sz < 8) { RCLCPP_WARN(node->get_logger(), "packet too small for magic"); break; }
+      char magic[5] = {0,0,0,0,0};
+      std::memcpy(magic, buf.data(), 4);
 
+      // формат
+      int m_floats = 0; // число float перед полем N
+      bool has_acc = false;
+      if (std::memcmp(magic, "WBTA", 4) == 0) { m_floats = 12; has_acc = true; }
+      else if (std::memcmp(magic, "WBTG", 4) == 0) { m_floats = 9; has_acc = false; }
+      else {
+        RCLCPP_WARN(node->get_logger(), "unknown magic: '%.4s'", magic);
+        break;
+      }
+
+      size_t header_floats_bytes = static_cast<size_t>(m_floats) * sizeof(float);
+      if (sz < 4 + header_floats_bytes + 4) {
+        RCLCPP_WARN(node->get_logger(), "packet too small for header floats: %u", sz);
+        break;
+      }
+
+      // извлечь float[]
+      float f[12] = {0};
+      std::memcpy(f, buf.data() + 4, header_floats_bytes);
+
+      // распаковка
+      float x   = f[0], y   = f[1], th  = f[2];
+      float vx  = f[3], vy  = f[4], vth = f[5];
+      float ax  = 0.0f, ay  = 0.0f, az  = 0.0f;
+      float wx, wy, wz;
+
+      if (has_acc) {
+        ax = f[6]; ay = f[7]; az = f[8];
+        wx = f[9]; wy = f[10]; wz = f[11];
+      } else {
+        wx = f[6]; wy = f[7];  wz = f[8];
+      }
+
+      // N и массив дальностей
       uint32_t N = 0;
-      std::memcpy(&N, buf.data() + 40, 4);
-      size_t need = 44ull + static_cast<size_t>(N) * sizeof(float);
+      size_t off_N = 4 + header_floats_bytes;
+      std::memcpy(&N, buf.data() + off_N, 4);
+
+      size_t need = off_N + 4ull + static_cast<size_t>(N) * sizeof(float);
       if (need > buf.size()) {
         RCLCPP_WARN(node->get_logger(), "bad ranges size: N=%u, packet=%u", N, sz);
         break;
       }
-      const float* ranges = reinterpret_cast<const float*>(buf.data() + 44);
+      const float* ranges = reinterpret_cast<const float*>(buf.data() + off_N + 4);
 
       auto finite = [](float v){ return std::isfinite(v); };
-      if (!(finite(x) && finite(y) && finite(th) && finite(vx) && finite(vth) && finite(wz))) {
+      if (!(finite(x) && finite(y) && finite(th) &&
+            finite(vx) && finite(vth) &&
+            finite(wx) && finite(wy) && finite(wz))) {
         RCLCPP_WARN(node->get_logger(), "NaN/Inf in incoming data, dropping frame");
         continue;
       }
 
       const rclcpp::Time stamp = node->get_clock()->now();
 
-      // ---------------- /wheel/odom (матрица R задаётся тут) ----------------
+      // ---------------- /wheel/odom ----------------
       nav_msgs::msg::Odometry odom;
       odom.header.stamp = stamp;
       odom.header.frame_id = "odom";
@@ -154,14 +201,13 @@ int main(int argc, char** argv) {
       double qx, qy, qz, qw;
       yaw_to_quat(th, qx, qy, qz, qw);
 
-      // Pose (заниженная доверенность одной скаляром)
       std::fill(odom.pose.covariance.begin(), odom.pose.covariance.end(), 0.0);
-      odom.pose.covariance[0]  = g_R.odom_pose_big_var; // x
-      odom.pose.covariance[7]  = g_R.odom_pose_big_var; // y
-      odom.pose.covariance[14] = g_R.odom_pose_big_var; // z
-      odom.pose.covariance[21] = g_R.odom_pose_big_var; // roll
-      odom.pose.covariance[28] = g_R.odom_pose_big_var; // pitch
-      odom.pose.covariance[35] = g_R.odom_pose_big_var; // yaw
+      odom.pose.covariance[0]  = g_R.odom_pose_big_var;
+      odom.pose.covariance[7]  = g_R.odom_pose_big_var;
+      odom.pose.covariance[14] = g_R.odom_pose_big_var;
+      odom.pose.covariance[21] = g_R.odom_pose_big_var;
+      odom.pose.covariance[28] = g_R.odom_pose_big_var;
+      odom.pose.covariance[35] = g_R.odom_pose_big_var;
 
       odom.pose.pose.position.x = x;
       odom.pose.pose.position.y = y;
@@ -171,11 +217,10 @@ int main(int argc, char** argv) {
       odom.pose.pose.orientation.z = qz;
       odom.pose.pose.orientation.w = qw;
 
-      // Twist (R для vx, vy, wz)
       std::fill(odom.twist.covariance.begin(), odom.twist.covariance.end(), 0.0);
-      odom.twist.covariance[0]  = g_R.odom_twist_var_vx; // var(vx)
-      odom.twist.covariance[7]  = g_R.odom_twist_var_vy; // var(vy)
-      odom.twist.covariance[35] = g_R.odom_twist_var_wz; // var(wz)
+      odom.twist.covariance[0]  = g_R.odom_twist_var_vx;
+      odom.twist.covariance[7]  = g_R.odom_twist_var_vy;
+      odom.twist.covariance[35] = g_R.odom_twist_var_wz;
 
       odom.twist.twist.linear.x  = vx;
       odom.twist.twist.linear.y  = vy;
@@ -185,12 +230,13 @@ int main(int argc, char** argv) {
       odom.twist.twist.angular.z = vth;
       odom_pub->publish(odom);
 
-      // ---------------- /imu/data_raw (R для gyro) ----------------
+      // ---------------- /imu/data_raw ----------------
       sensor_msgs::msg::Imu imu;
       imu.header.stamp = stamp;
       imu.header.frame_id = "imu_link";
+
+      // ориентацию не даём
       imu.orientation_covariance[0] = -1.0;
-      imu.linear_acceleration_covariance[0] = -1.0;
 
       imu.angular_velocity.x = wx;
       imu.angular_velocity.y = wy;
@@ -200,6 +246,17 @@ int main(int argc, char** argv) {
         0.0, g_R.imu_gyro_var_wy, 0.0,
         0.0, 0.0, g_R.imu_gyro_var_wz
       };
+
+      // ЛИНЕЙНЫЕ УСКОРЕНИЯ — НОВОЕ
+      imu.linear_acceleration.x = std::isfinite(ax) ? ax : 0.0;
+      imu.linear_acceleration.y = std::isfinite(ay) ? ay : 0.0;
+      imu.linear_acceleration.z = std::isfinite(az) ? az : 0.0;
+      imu.linear_acceleration_covariance = {
+        g_R.imu_acc_var_ax, 0.0, 0.0,
+        0.0, g_R.imu_acc_var_ay, 0.0,
+        0.0, 0.0, g_R.imu_acc_var_az
+      };
+
       imu_pub->publish(imu);
 
       // ---------------- /scan ----------------
