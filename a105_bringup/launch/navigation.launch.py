@@ -75,7 +75,8 @@ def generate_launch_description():
             'use_mag': False,
             'world_frame': 'enu',
             'publish_tf': True,
-            'gain': 0.1 
+            'gain': 0.1,
+           # 'fixed_frame': 'base_link'
         }],
         remappings=[
             ('imu/data_raw',  '/imu/data_raw'),
