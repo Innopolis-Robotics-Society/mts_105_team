@@ -77,6 +77,7 @@ def generate_launch_description():
             'publish_tf': False,
             'gain': 0.1,
            # 'fixed_frame': 'base_link'
+            'use_magnetic_field_msg': False
         }],
         remappings=[
             ('imu/data_raw',  '/imu/data_raw'),
