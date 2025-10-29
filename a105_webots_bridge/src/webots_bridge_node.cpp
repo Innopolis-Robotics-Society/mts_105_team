@@ -248,9 +248,9 @@ int main(int argc, char** argv) {
       };
 
       // ЛИНЕЙНЫЕ УСКОРЕНИЯ — НОВОЕ
-      imu.linear_acceleration.x = std::isfinite(ax) ? ax : 0.0;
-      imu.linear_acceleration.y = std::isfinite(ay) ? ay : 0.0;
-      imu.linear_acceleration.z = std::isfinite(az) ? az : 0.0;
+      imu.linear_acceleration.x = std::isfinite(ax) ? -ax : 0.0;
+      imu.linear_acceleration.y = std::isfinite(ay) ? az : 0.0;
+      imu.linear_acceleration.z = std::isfinite(az) ? ay : 0.0;
       imu.linear_acceleration_covariance = {
         g_R.imu_acc_var_ax, 0.0, 0.0,
         0.0, g_R.imu_acc_var_ay, 0.0,

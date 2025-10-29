@@ -13,20 +13,6 @@ def generate_launch_description():
         )
     )
 
-    imu_filter = Node(
-        package='imu_filter_madgwick',
-        executable='imu_filter_madgwick_node',
-        name='imu_filter_madgwick',
-        parameters=[{
-            'use_mag': False,
-            'world_frame': 'enu',
-            '/imu/data_raw': False,
-            '/imu/data_raw': '/imu/data_raw',
-            '/imu/data': '/imu/data'
-        }]
-    )
-
     return LaunchDescription([
         imu,
-        imu_filter,
     ])

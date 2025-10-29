@@ -67,6 +67,22 @@ def generate_launch_description():
     # slam_cfg = PathJoinSubstitution([FindPackageShare("a105_custom_slam"), "config", "segment_grid_mapper.yaml"])
     # amcl_cfg = PathJoinSubstitution([FindPackageShare("a105_navigation"), "config", "amcl.yaml"])
 
+    imu_filter = Node(
+        package='imu_filter_madgwick',
+        executable='imu_filter_madgwick_node',
+        name='imu_filter_madgwick',
+        parameters=[{
+            'use_mag': False,
+            'world_frame': 'enu',
+            'publish_tf': True,
+            'gain': 0.1 
+        }],
+        remappings=[
+            ('imu/data_raw',  '/imu/data_raw'),
+            ('imu/data',      '/imu/data'),
+            #('/tf',          '/tf_imu_filter_drop')  # TF от этого узла уйдёт в «пустоту»
+        ]
+    )
 
     ekf = IncludeLaunchDescription(
         PathJoinSubstitution([FindPackageShare("a105_navigation"), "launch", "ekf.launch.py"]),
@@ -122,6 +138,7 @@ def generate_launch_description():
             param_file,
 
             lidar_odom,
+            imu_filter,
             ekf,
             TimerAction(period=0.5, actions=[nav2_bringup]),
             # goal,
