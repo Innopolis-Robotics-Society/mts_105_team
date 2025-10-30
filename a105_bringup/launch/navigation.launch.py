@@ -106,7 +106,7 @@ def generate_launch_description():
         executable='laser_scan_matcher',
         name='laser_scan_matcher',
         parameters=[{
-            'publish_tf': False,
+            'publish_tf': True,
             'publish_odom': '/lidar/odom',
         }]
     )
@@ -139,7 +139,7 @@ def generate_launch_description():
 
             lidar_odom,
             #imu_filter,
-            ekf,
+            #ekf,
             TimerAction(period=0.5, actions=[nav2_bringup]),
             goal,
         ]
