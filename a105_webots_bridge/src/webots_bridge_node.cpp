@@ -238,9 +238,9 @@ int main(int argc, char** argv) {
       // ориентацию не даём
       imu.orientation_covariance[0] = -1.0;
 
-      imu.angular_velocity.x = wx;
-      imu.angular_velocity.y = wy;
-      imu.angular_velocity.z = wz;
+      imu.angular_velocity.x = -wx;
+      imu.angular_velocity.y = wz;
+      imu.angular_velocity.z = wy;
       imu.angular_velocity_covariance = {
         g_R.imu_gyro_var_wx, 0.0, 0.0,
         0.0, g_R.imu_gyro_var_wy, 0.0,
