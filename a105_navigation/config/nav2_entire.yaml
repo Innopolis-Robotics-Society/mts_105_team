@@ -149,7 +149,7 @@ controller_server:
       wz_std: 0.4
       vx_max: 0.28
       vx_min: -0.29
-      wz_max: 1.4
+      wz_max: 0.4
       ax_max: 1.5
       ax_min: -3.0
       az_max: 1.5
@@ -257,7 +257,7 @@ local_costmap:
       height: 3
       resolution: 0.03
       # robot_radius: 0.22
-      footprint: "[[0.115,  0.095], [0.115, -0.095], [-0.115, -0.095], [-0.115,  0.095]]"
+      footprint: "[[0.01,  0.008], [0.01, -0.008], [-0.01, -0.008], [-0.01,  0.008]]"
       plugins: ["voxel_layer", "inflation_layer"]
       always_send_full_costmap: True
 
@@ -298,7 +298,7 @@ global_costmap:
       global_frame: map
       robot_base_frame: base_link #base_link
       use_sim_time: False
-      footprint: "[[0.115,  0.095], [0.115, -0.095], [-0.115, -0.095], [-0.115,  0.095]]"
+      footprint: "[[0.01,  0.008], [0.01, -0.008], [-0.01, -0.008], [-0.01,  0.008]]"
       resolution: 0.01
       width: 10
       height: 10
