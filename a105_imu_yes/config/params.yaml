@@ -1,0 +1,13 @@
+a105_imu_yes:
+  ros__parameters:
+    device: "/dev/spidev0.0"
+    spi_speed_hz: 1000000          # 1 MHz
+    spi_mode: 3                    # CPOL=1, CPHA=1
+    frame_id: "imu_link"
+    odr_hz: 104                    # {12,26,52,104,208,416,833,1660}
+    accel_range_g: 4               # {2,4,8,16}
+    gyro_range_dps: 245            # {245,500,1000,2000}
+    bias_samples: 200              # stationary calibration samples
+    publish_rate_hz: 100
+    linear_accel_stddev: 0.03      # m/s^2
+    angular_velocity_stddev: 0.02  # rad/s

@@ -94,7 +94,7 @@ def generate_launch_description():
             navigation,
 
             #rul,
-            #rviz2,
+            rviz2,
         ]
     )
 
