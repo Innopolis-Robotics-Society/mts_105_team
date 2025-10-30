@@ -11,7 +11,7 @@ def generate_launch_description():
 
     return LaunchDescription([
         DeclareLaunchArgument('goal_x', default_value='0.0'),
-        DeclareLaunchArgument('goal_y', default_value='0.0'),
+        DeclareLaunchArgument('goal_y', default_value='2.75'),
         DeclareLaunchArgument('goal_yaw', default_value='0.0'),   # радианы
         DeclareLaunchArgument('goal_frame', default_value='map'),
 
