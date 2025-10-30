@@ -76,7 +76,7 @@ LaserScanMatcher::LaserScanMatcher() : Node("laser_scan_matcher"), initialized_(
     "Which frame to use for the odom");
   add_parameter("map_frame", rclcpp::ParameterValue(std::string("map")),
     "Which frame to use for the map");
-  add_parameter("laser_frame", rclcpp::ParameterValue(std::string("lidar_link")),
+  add_parameter("laser_frame", rclcpp::ParameterValue(std::string("base_laser")),
     "Which frame to use for the laser");
   add_parameter("kf_dist_linear", rclcpp::ParameterValue(0.10),
     "When to generate keyframe scan.");

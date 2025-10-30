@@ -265,7 +265,7 @@ Visualization Manager:
           Value: true
         imu_link:
           Value: true
-        lidar_link:
+        base_laser:
           Value: true
         map:
           Value: true
@@ -286,7 +286,7 @@ Visualization Manager:
                 {}
               imu_link:
                 {}
-              lidar_link:
+              base_laser:
                 {}
       Update Interval: 0
       Value: true

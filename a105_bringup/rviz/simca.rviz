@@ -93,7 +93,7 @@ Visualization Manager:
         All Enabled: true
         base_link:
           Value: true
-        lidar_link:
+        base_laser:
           Value: true
         map:
           Value: true
@@ -108,7 +108,7 @@ Visualization Manager:
         map:
           odom:
             base_link:
-              lidar_link:
+              base_laser:
                 {}
       Update Interval: 0
       Value: true

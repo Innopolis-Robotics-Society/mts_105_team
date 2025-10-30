@@ -205,7 +205,7 @@ int main(int argc, char** argv) {
       // ---------------- /scan ----------------
       sensor_msgs::msg::LaserScan scan;
       scan.header.stamp = stamp;
-      scan.header.frame_id = "lidar_link";
+      scan.header.frame_id = "base_laser";
       scan.range_min = g_R.scan_range_min;
       scan.range_max = g_R.scan_range_max;
 
