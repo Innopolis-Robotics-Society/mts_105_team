@@ -93,8 +93,8 @@ def generate_launch_description():
             hardware,
             navigation,
 
-            #rul,
-            #rviz2,
+            rul,
+            rviz2,
         ]
     )
 

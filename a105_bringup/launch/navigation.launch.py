@@ -123,7 +123,7 @@ def generate_launch_description():
         }]
     )
 
-    goal = TimerAction(period=5.0, actions=[goal_node])
+    goal = TimerAction(period=7.0, actions=[goal_node])
 
     ld = LaunchDescription(
         [
