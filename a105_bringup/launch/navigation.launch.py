@@ -138,38 +138,10 @@ def generate_launch_description():
             param_file,
 
             lidar_odom,
-            imu_filter,
+            #imu_filter,
             ekf,
             TimerAction(period=0.5, actions=[nav2_bringup]),
             goal,
         ]
     )
-
-
     return ld
-
-
-    # slam = Node(
-    #     package="a105_custom_slam",
-    #     executable="segment_grid_mapper",
-    #     name="segment_grid_mapper",
-    #     output="screen",
-    #     parameters=[slam_cfg],
-    # )
-
-    # amcl = Node(
-    #     package="nav2_amcl",
-    #     executable="amcl",
-    #     name="amcl",
-    #     output="screen",
-    #     parameters=[amcl_cfg],
-    # )
-
-    # nav2 = IncludeLaunchDescription(
-    #     PathJoinSubstitution([FindPackageShare("a105_path_planner"), "launch", "path_planner_nav2.launch.py"]),
-    #     launch_arguments=[
-    #         ("use_sim_time", LaunchConfiguration("use_sim_time")),
-    #         ("map_file", LaunchConfiguration("map_file")),
-    #         ("slam", "True")
-    #     ],
-    # )

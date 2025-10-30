@@ -11,7 +11,7 @@ def generate_launch_description():
 
     goal_x = DeclareLaunchArgument('goal_x', default_value='0.0')
     goal_y  = DeclareLaunchArgument('goal_y', default_value='2.75')
-    goal_yaw  = DeclareLaunchArgument('goal_yaw', default_value='1.57')
+    goal_yaw  = DeclareLaunchArgument('goal_yaw', default_value='3.14')
     goal_frame = DeclareLaunchArgument('goal_frame', default_value='map')
     use_sim_time = DeclareLaunchArgument("use_sim_time", default_value="False", description="Use simulation (Gazebo) clock if true")
     use_sim = DeclareLaunchArgument("use_sim", default_value="False", description="Use simulation Webots")
