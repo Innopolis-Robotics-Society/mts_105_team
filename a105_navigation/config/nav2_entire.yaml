@@ -385,7 +385,7 @@ behavior_server:
     simulate_ahead_time: 2.0
     max_rotational_vel: 1.0
     min_rotational_vel: 0.4
-    rotational_acc_lim: 3.2
+    rotational_acc_lim: 0.5
 
 smoother_server:
   ros__parameters:
@@ -436,14 +436,14 @@ slam_toolbox:
     #map_start_at_dock: true
 
     debug_logging: false
-    throttle_scans: 1
+    throttle_scans: 4
     transform_publish_period: 0.02 #if 0 never publishes odometry
     map_update_interval: 0.5
     resolution: 0.02
     min_laser_range: 0.02 #for rastering images
     max_laser_range: 8.0 #for rastering images
-    minimum_time_interval: 0.0
-    transform_timeout: 0.5
+    minimum_time_interval: 0.01
+    transform_timeout: 3.0
     tf_buffer_duration: 50.0
     stack_size_to_use: 40000000 #// program needs a larger stack size to serialize large maps
     enable_interactive_mode: true
@@ -451,15 +451,16 @@ slam_toolbox:
     # General Parameters
     use_scan_matching: true
     use_scan_barycenter: true
-    minimum_travel_distance: 0.03
-    minimum_travel_heading: 0.03
+    minimum_travel_distance: 0.05
+    minimum_travel_heading: 0.05
     scan_buffer_size: 10
     scan_buffer_maximum_scan_distance: 10.0
-    link_match_minimum_response_fine: 0.1  
-    link_scan_maximum_distance: 1.5
-    loop_search_maximum_distance: 3.0
+    link_match_minimum_response_coarse: 0.50
+    link_match_minimum_response_fine: 0.55  
+    link_scan_maximum_distance: 0.5
+    loop_search_maximum_distance: 2.0
     do_loop_closing: true 
-    loop_match_minimum_chain_size: 10           
+    loop_match_minimum_chain_size: 12           
     loop_match_maximum_variance_coarse: 3.0  
     loop_match_minimum_response_coarse: 0.35    
     loop_match_minimum_response_fine: 0.45
