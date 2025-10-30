@@ -116,7 +116,7 @@ controller_server:
     controller_frequency: 20.0
     base_frame_id: "base_link" #"base_footprint"
     min_x_velocity_threshold: 0.001
-    min_y_velocity_threshold: 0.5
+    min_y_velocity_threshold: 0.0
     min_theta_velocity_threshold: 0.001
     failure_tolerance: 0.3
     progress_checker_plugin: "progress_checker"
@@ -258,7 +258,7 @@ local_costmap:
       resolution: 0.02
       # robot_radius: 0.22
       footprint: "[[0.115,  0.095], [0.115, -0.095], [-0.115, -0.095], [-0.115,  0.095]]"
-      plugins: ["obstacle_layer", "inflation_layer"]
+      plugins: ["voxel_layer", "inflation_layer"]
       always_send_full_costmap: True
 
       inflation_layer:
@@ -266,17 +266,28 @@ local_costmap:
         enabled: True
         cost_scaling_factor: 4.0
         inflation_radius: 0.8
-        
-      obstacle_layer:
-        plugin: "nav2_costmap_2d::ObstacleLayer"
+
+      voxel_layer:
+        plugin: "nav2_costmap_2d::VoxelLayer"
+        enabled: True
+        publish_voxel_map: True
+        origin_z: 0.0
+        z_resolution: 0.01
+        z_voxels: 16
+        max_obstacle_height: 0.2
+        mark_threshold: 0
         observation_sources: scan
         scan:
           topic: /scan
-          data_type: LaserScan
-          marking: True
+          max_obstacle_height: 0.2
           clearing: True
-          obstacle_max_range: 5.0
+          marking: True
+          data_type: "LaserScan"
           raytrace_max_range: 8.0
+          raytrace_min_range: 0.02
+          obstacle_max_range: 5.0
+          obstacle_min_range: 0.0
+
 
 
 global_costmap:
