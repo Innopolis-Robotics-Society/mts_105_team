@@ -13,11 +13,11 @@ public:
 
 private:
   void broadcast() {
-    // base_link -> base_laser
+    // base_link -> lidar_link
     geometry_msgs::msg::TransformStamped lidar_tf;
     lidar_tf.header.stamp = this->get_clock()->now();
     lidar_tf.header.frame_id = "base_link";
-    lidar_tf.child_frame_id = "base_laser";
+    lidar_tf.child_frame_id = "lidar_link";
     lidar_tf.transform.translation.x = 0.0;
     lidar_tf.transform.translation.y = 0.0;
     lidar_tf.transform.translation.z = 0.15;
