@@ -138,8 +138,8 @@ def generate_launch_description():
             param_file,
 
             lidar_odom,
-            imu_filter,
-            ekf,
+            # imu_filter,
+            # ekf,
             TimerAction(period=0.5, actions=[nav2_bringup]),
             goal,
         ]
