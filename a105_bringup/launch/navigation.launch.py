@@ -34,7 +34,7 @@ def generate_launch_description():
         )
     
     use_slam = DeclareLaunchArgument(
-        "use_slam", default_value="True", 
+        "use_slam", default_value="False", 
         description="Whether run a SLAM",)
     
     declare_autostart = DeclareLaunchArgument(
@@ -74,7 +74,7 @@ def generate_launch_description():
         parameters=[{
             'use_mag': False,
             'world_frame': 'enu',
-            'publish_tf': True,
+            'publish_tf': False,
             'gain': 0.1 
         }],
         remappings=[
@@ -106,8 +106,8 @@ def generate_launch_description():
         executable='laser_scan_matcher',
         name='laser_scan_matcher',
         parameters=[{
-            'publish_tf': True,
-            'publish_odom': '/odom',
+            'publish_tf': False,
+            'publish_odom': '/lidar/odom',
         }]
     )
 
@@ -138,8 +138,8 @@ def generate_launch_description():
             param_file,
 
             lidar_odom,
-            #imu_filter,
-            #ekf,
+            imu_filter,
+            ekf,
             TimerAction(period=0.5, actions=[nav2_bringup]),
             goal,
         ]

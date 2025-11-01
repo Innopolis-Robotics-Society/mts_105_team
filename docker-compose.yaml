@@ -61,7 +61,7 @@ services:
       - "/dev/video0:/dev/video0"
     command: [
       "/bin/bash","-lc","
-      export ROS_DOMAIN_ID=105
+      export ROS_DOMAIN_ID=105 &&
       sudo chmod 666 /dev/ttyUSB* 2>/dev/null || true &&
       sudo chmod 666 /dev/spidev* 2>/dev/null || true &&
       sudo chmod 666 /dev/ttyACM* 2>/dev/null || true &&
