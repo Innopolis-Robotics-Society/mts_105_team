@@ -123,7 +123,7 @@ def generate_launch_description():
         }]
     )
 
-    goal = TimerAction(period=10.0, actions=[goal_node])
+    goal = TimerAction(period=7.0, actions=[goal_node])
 
     ld = LaunchDescription(
         [
@@ -141,7 +141,7 @@ def generate_launch_description():
             #imu_filter,
             #ekf,
             TimerAction(period=0.5, actions=[nav2_bringup]),
-            #goal,
+            goal,
         ]
     )
     return ld

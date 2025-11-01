@@ -113,7 +113,7 @@ bt_navigator:
 controller_server:
   ros__parameters:
     use_sim_time: False
-    controller_frequency: 20.0
+    controller_frequency: 10.0
     base_frame_id: "base_link" #"base_footprint"
     min_x_velocity_threshold: 0.001
     min_y_velocity_threshold: 0.0
@@ -126,8 +126,8 @@ controller_server:
     # Progress checker parameters
     progress_checker:
       plugin: "nav2_controller::SimpleProgressChecker"
-      required_movement_radius: 0.1
-      movement_time_allowance: 5.0
+      required_movement_radius: 0.01
+      movement_time_allowance: 50.0
     # Goal checker parameters
     #precise_goal_checker:
     #  plugin: "nav2_controller::SimpleGoalChecker"
@@ -142,9 +142,9 @@ controller_server:
     # DWB parameters
     FollowPath:
       plugin: "nav2_mppi_controller::MPPIController"
-      time_steps: 56
+      time_steps: 50
       model_dt: 0.1
-      batch_size: 2000
+      batch_size: 1500
       vx_std: 0.2
       wz_std: 0.4
       vx_max: 0.28
@@ -177,17 +177,17 @@ controller_server:
         cost_power: 1
         cost_weight: 4.0
       GoalCritic:
-        enabled: true
+        enabled: false
         cost_power: 1
         cost_weight: 5.0
         threshold_to_consider: 1.4
       GoalAngleCritic:
-        enabled: true
+        enabled: false
         cost_power: 1
         cost_weight: 3.0
         threshold_to_consider: 0.5
       PreferForwardCritic:
-        enabled: true
+        enabled: false
         cost_power: 1
         cost_weight: 5.0
         threshold_to_consider: 0.5
@@ -195,7 +195,7 @@ controller_server:
         enabled: true
         cost_power: 2
         repulsion_weight: 1.5
-        critical_weight: 50.0
+        critical_weight: 45.0
         consider_footprint: false
         collision_cost: 10000.0
         collision_margin_distance: 0.1
@@ -214,7 +214,7 @@ controller_server:
       PathAlignCritic:
         enabled: true
         cost_power: 1
-        cost_weight: 14.0
+        cost_weight: 18.0
         max_path_occupancy_ratio: 0.05
         trajectory_point_step: 4
         threshold_to_consider: 0.5
@@ -223,13 +223,13 @@ controller_server:
       PathFollowCritic:
         enabled: true
         cost_power: 1
-        cost_weight: 5.0
+        cost_weight: 15.0
         offset_from_furthest: 5
         threshold_to_consider: 1.4
       PathAngleCritic:
         enabled: true
         cost_power: 1
-        cost_weight: 2.0
+        cost_weight: 1.0
         offset_from_furthest: 4
         threshold_to_consider: 0.5
         max_angle_to_furthest: 1.0
@@ -255,38 +255,32 @@ local_costmap:
       rolling_window: True
       width: 3
       height: 3
-      resolution: 0.03
+      resolution: 0.02
       # robot_radius: 0.22
       footprint: "[[0.07,  0.068], [0.07, -0.068], [-0.07, -0.068], [-0.07,  0.068]]"
-      plugins: ["voxel_layer", "inflation_layer"]
+      plugins: ["obstacle_layer", "inflation_layer"]
       always_send_full_costmap: True
 
       inflation_layer:
         plugin: "nav2_costmap_2d::InflationLayer"
         enabled: True
-        cost_scaling_factor: 4.0
+        cost_scaling_factor: 2.0
         inflation_radius: 0.8
-
-      voxel_layer:
-        plugin: "nav2_costmap_2d::VoxelLayer"
+     
+      obstacle_layer:
+        plugin: "nav2_costmap_2d::ObstacleLayer"
         enabled: True
-        publish_voxel_map: True
-        origin_z: 0.0
-        z_resolution: 0.01
-        z_voxels: 16
-        max_obstacle_height: 0.2
-        mark_threshold: 0
         observation_sources: scan
         scan:
           topic: /scan
-          max_obstacle_height: 0.2
+          max_obstacle_height: 2.0
           clearing: True
           marking: True
           data_type: "LaserScan"
-          raytrace_max_range: 8.0
+          raytrace_max_range: 8.0 #3.0
           raytrace_min_range: 0.02
-          obstacle_max_range: 5.0
-          obstacle_min_range: 0.0
+          obstacle_max_range: 2.5
+          obstacle_min_range: 0.05
 
 
 
@@ -299,7 +293,7 @@ global_costmap:
       robot_base_frame: base_link #base_link
       use_sim_time: False
       footprint: "[[0.113,  0.089], [0.113, -0.089], [-0.113, -0.089], [-0.113,  0.089]]"
-      resolution: 0.01
+      resolution: 0.02
       width: 10
       height: 10
       origin_x: -5.0
@@ -353,7 +347,7 @@ map_saver:
 
 planner_server:
   ros__parameters:
-    expected_planner_frequency: 20.0
+    expected_planner_frequency: 10.0
     use_sim_time: False
     planner_plugins: ["GridBased"]
     GridBased:
@@ -436,7 +430,7 @@ slam_toolbox:
     #map_start_at_dock: true
 
     debug_logging: false
-    throttle_scans: 4
+    throttle_scans: 8
     transform_publish_period: 0.02 #if 0 never publishes odometry
     map_update_interval: 0.5
     resolution: 0.02
@@ -451,8 +445,8 @@ slam_toolbox:
     # General Parameters
     use_scan_matching: true
     use_scan_barycenter: true
-    minimum_travel_distance: 0.05
-    minimum_travel_heading: 0.05
+    minimum_travel_distance: 0.01
+    minimum_travel_heading: 0.01
     scan_buffer_size: 10
     scan_buffer_maximum_scan_distance: 10.0
     link_match_minimum_response_coarse: 0.50
