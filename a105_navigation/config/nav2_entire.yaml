@@ -431,7 +431,7 @@ slam_toolbox:
 
     debug_logging: false
     throttle_scans: 8
-    transform_publish_period: 0.02 #if 0 never publishes odometry
+    transform_publish_period: 0.00 #if 0 never publishes odometry
     map_update_interval: 0.5
     resolution: 0.02
     min_laser_range: 0.02 #for rastering images

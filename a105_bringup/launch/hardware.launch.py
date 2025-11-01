@@ -52,7 +52,9 @@ def generate_launch_description():
     )
 
     imu = IncludeLaunchDescription(
-        PathJoinSubstitution([FindPackageShare("a105_bringup"), "launch", "imu.launch.py"]),
+        PythonLaunchDescriptionSource(
+            PathJoinSubstitution([FindPackageShare("a105_imu"), "launch", "imu.launch.py"])
+        )
     )
 
     ld = LaunchDescription(

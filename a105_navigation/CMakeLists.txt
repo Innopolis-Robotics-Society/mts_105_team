@@ -7,15 +7,26 @@ endif()
 
 # find dependencies
 find_package(ament_cmake REQUIRED)
-# uncomment the following section in order to fill in
-# further dependencies manually.
-# find_package(<dependency> REQUIRED)
+find_package(ament_cmake REQUIRED)
+find_package(rclcpp REQUIRED)
+find_package(nav2_bringup REQUIRED)
+find_package(rclcpp_action REQUIRED)
+find_package(geometry_msgs REQUIRED)
+find_package(nav2_msgs REQUIRED)
+find_package(lifecycle_msgs REQUIRED)
 
 install(DIRECTORY
   launch
   config
   DESTINATION share/${PROJECT_NAME}/
 )
+
+add_executable(nav2_goal_client src/nav2_goal_client.cpp)
+ament_target_dependencies(nav2_goal_client
+  rclcpp rclcpp_action geometry_msgs nav2_msgs lifecycle_msgs)
+
+install(TARGETS nav2_goal_client
+DESTINATION lib/${PROJECT_NAME})
 
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)

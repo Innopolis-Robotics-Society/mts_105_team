@@ -74,7 +74,7 @@ def generate_launch_description():
         parameters=[{
             'use_mag': False,
             'world_frame': 'enu',
-            'publish_tf': True,
+            'publish_tf': False,
             'gain': 0.1 
         }],
         remappings=[
@@ -106,13 +106,13 @@ def generate_launch_description():
         executable='laser_scan_matcher',
         name='laser_scan_matcher',
         parameters=[{
-            'publish_tf': True,
+            'publish_tf': False,
             'publish_odom': '/lidar/odom',
         }]
     )
 
     goal_node = Node(
-        package='a105_path_planner',
+        package='a105_navigation',
         executable='nav2_goal_client',
         name='nav2_goal_client',
         parameters=[{
@@ -138,8 +138,8 @@ def generate_launch_description():
             param_file,
 
             lidar_odom,
-            #imu_filter,
-            #ekf,
+            imu_filter,
+            ekf,
             TimerAction(period=0.5, actions=[nav2_bringup]),
             goal,
         ]

@@ -18,7 +18,7 @@ sudo apt-get update
 sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 
 # Get repo
-git clone --branch main_dev https://github.com/Innopolis-Robotics-Society/mts_105_team.git
+git clone --branch dev https://github.com/Innopolis-Robotics-Society/mts_105_team.git
 
 # Go to repo
 cd mts_105_team/
