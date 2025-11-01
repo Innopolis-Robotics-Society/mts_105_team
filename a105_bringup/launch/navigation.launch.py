@@ -107,7 +107,7 @@ def generate_launch_description():
         name='laser_scan_matcher',
         parameters=[{
             'publish_tf': True,
-            'publish_odom': '/lidar/odom',
+            'publish_odom': '/odom',
         }]
     )
 
